@@ -1,0 +1,5 @@
+- menuArr = ['Анализы и цены', 'Адреса и время работы ', 'Выезд на дом ', 'Медицинским учреждениям и врачам ', 'Франшиза ', 'О компании']
+.main-nav
+  .container
+    for item, idx in menuArr
+      a(href="#" class=activeMenu == idx ? 'active' : '') #{item}

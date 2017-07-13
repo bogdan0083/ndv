@@ -1,0 +1,335 @@
+// COMMENTED
+  // start popups
+  #hot_line.hides.win_popup
+    .line_pp
+      h3 Горячая линия
+      p
+        | Получите консультацию врачей лаборатории по назначению и интерпретации результатов лабораторных исследований
+    .blc_pp_wt
+      form.hot_ln(action='#', method='post')
+        .pp_in.name_med
+          span
+            | Наименование медицинского учреждения 
+          input.ptt(type='text', name='medical_institution')
+        .pp_in.pp_name
+          span
+            | Ваше имя 
+            i *
+          input.ptt(type='text', name='firstname', required='')
+        .clearfix.tw_pp
+          .pp_in
+            span Телефон
+            input.phone.ptt(type='text')
+          .pp_in
+            span
+              | E-mail 
+              i *
+            input.email(type='text', name='mail', required='')
+        .blc_tstar
+          span
+            | Сообщение 
+            i *
+          textarea.ptt(name='txt')
+        .blc_check_results
+          p.pp_notis
+            i *
+            |  Обязательные поля для заполнения
+          button.get_go Отправить
+  #double-pp.hides.win_popup
+    .line_pp
+      .tabs(data-slider=".popup-slider")
+        a.tab-pane.js-active(href="#") 
+          span Отправить сообщение
+        a.tab-pane(href="#")
+          span Заказать звонок
+    .swiper-container.popup-slider
+      .swiper-wrapper
+        // start popup-slide
+        .swiper-slide
+          .blc_pp_wt
+            form.hot_ln(action='#', method='post')
+              .pp_in.pp_name
+                span
+                  | Ваше имя 
+                  i *
+                input.ptt(type='text', name='firstname', required='')
+              .clearfix.tw_pp
+                .pp_in
+                  span Телефон
+                  input.phone.ptt(type='text')
+                .pp_in
+                  span
+                    | E-mail 
+                    i *
+                  input.email(type='text', name='mail', required='')
+              .blc_tstar.name_sotr
+                span
+                  | Ваши планы по сотрудничеству
+                  i *
+                textarea.ptt(name='txt')
+              .i_agree
+                input#checkboxG3.css-checkbox(type='checkbox', name='checkboxG3')
+                label.css-label(for='checkboxG3')
+                  | Я согласен(а) на обработку 
+                  a(href='docs/consent_to_personal_data_processing.pdf', target='_blank') предоставленных мною персональных данных
+              .blc_check_results
+                p.pp_notis
+                  i *
+                  |  Обязательные поля для заполнения
+                button.get_go Отправить
+        // end popup-slide
+        // start popup-slide
+        .swiper-slide
+          .blc_pp_wt
+            form.hot_ln(action='#', method='post')
+              .clearfix.tw_pp
+                .pp_in
+                  span
+                    | Ваше имя 
+                    i *
+                  input.phone.ptt(type='text')
+                .pp_in
+                  span
+                    | Телефон
+                    i *
+                  input.phone(type='text', name='phone', required='')
+              .i_agree
+                input#checkboxG4.css-checkbox(type='checkbox', name='checkboxG4')
+                label.css-label(for='checkboxG4')
+                  | Я согласен(а) на обработку 
+                  a(href='docs/consent_to_personal_data_processing.pdf', target='_blank') предоставленных мною персональных данных
+              .blc_check_results
+                p.pp_notis
+                  i *
+                  |  Обязательные поля для заполнения
+                button.get_go Позвоните мне
+        // end popup-slide
+  #choose-franchise.hides.win_popup
+    .line_pp
+      h3 Выбрать франшизу
+      p
+        | Получить бесплатную консультацию при выборе франшизы
+    .blc_pp_wt
+      form.hot_ln(action='#', method='post')
+        .clearfix.tw_pp
+          .pp_in.pp_name
+            span
+              | Ваше имя 
+              i *
+            input.ptt(type='text', name='firstname', required='')
+          .pp_in
+            span
+              | Город
+              i *
+            input.ptt(type='text', name='city', required='')
+        .clearfix.tw_pp
+          .pp_in
+            span Телефон
+            input.phone.ptt(type='text')
+          .pp_in
+            span
+              | E-mail 
+              i *
+            input.email(type='text', name='mail', required='')
+        .clearfix.checkbox-block.inline
+          .text
+            | Опыт предпринимательства
+            i *
+          .content
+            label.checkbox.checkbox-inline
+              input(type="radio" name="exp" checked)
+              span Да
+            label.checkbox.checkbox-inline
+              input(type="radio" name="exp")
+              span Нет
+        .chearfix
+          .input-bl
+            .text
+              | Капитал для инвестиций в франшизу
+              i *
+            .inputs-double
+              .pp_in.pp_in_secondary.pp_in_range
+                span от
+                input.ptt(type='text')
+              .pp_in.pp_in_range.pp_in_secondary
+                span до
+                input.ptt(type='text')
+            .inputs-double
+              .pp_in.pp_in_range.pp_in_secondary
+                span от
+                input.ptt(type='text')
+              .pp_in.pp_in_range.pp_in_secondary
+                span до
+                input.ptt(type='text')
+        .clearfix.checkbox-block
+          .text
+            | Как вы узнали о нашей франшизе
+            i *
+          .content
+            label.checkbox
+              input(type="checkbox" name="capital" checked)
+              span Cотрудники компании
+            label.checkbox
+              input(type="checkbox" name="capital")
+              span Cоциальные сообщества
+            label.checkbox
+              input(type="checkbox" name="capital")
+              span Cайт www.labquest.ru
+            label.checkbox
+              input(type="checkbox" name="capital")
+              span Профессиональные сообщества
+            label.checkbox
+              input(type="checkbox" name="capital")
+              span Иное
+        .clearfix.pp_in.pp_in_calltime
+          span
+            | Удобное время для звонка
+            i *
+          input.ptt(type='text', name='calltime', required='')
+        .i_agree
+          input#checkboxG5.css-checkbox(type='checkbox', name='checkboxG5')
+          label.css-label(for='checkboxG5')
+            | Я согласен(а) на обработку 
+            a(href='docs/consent_to_personal_data_processing.pdf', target='_blank') предоставленных мною персональных данных
+        .blc_check_results
+          p.pp_notis
+            i *
+            |  Обязательные поля для заполнения
+          button.get_go Запросить информацию
+  #visit_lab.hides.win_popup
+    .line_pp
+      h3 Посетить лабораторию
+      p Оформить заявку на индивидуальный или коллегиальный лабораторный тур
+    .blc_pp_wt
+      form.vsl(action='#', method='post')
+        .pp_in.name_med
+          span
+            | Наименование медицинского учреждения 
+            i *
+          input.ptt(type='text', name='medical_institution', required='')
+        .pp_in.pp_name
+          span
+            | Ваше имя 
+            i *
+          input.ptt(type='text', name='firstname', required='')
+        .clearfix.tw_pp
+          .pp_in
+            span Телефон
+            input.phone.ptt(type='text')
+          .pp_in
+            span
+              | E-mail 
+              i *
+            input.email(type='text', name='mail')
+        .blc_tstar
+          span
+            | Сообщение 
+            i *
+          textarea.ptt(name='txt')
+        .blc_check_results
+          p.pp_notis
+            i *
+            |  Обязательные поля для заполнения
+          button.get_go Отправить
+  #enter_contract.hides.win_popup
+    .line_pp
+      h3 Заключить договор
+      p
+        | Оформить обращение на разработку индивидуального плана лабораторного обслуживания и ценового предложения
+    .blc_pp_wt
+      form.enc(action='#', method='post')
+        .pp_in.name_med
+          span
+            | Наименование медицинского учреждения 
+            i *
+          input.ptt(type='text', name='medical_institution', required='')
+        .pp_in.pp_name
+          span
+            | Ваше имя 
+            i *
+          input.ptt(type='text', name='firstname', required='')
+        .clearfix.tw_pp
+          .pp_in
+            span Телефон
+            input.phone.ptt(type='text')
+          .pp_in
+            span
+              | E-mail 
+              i *
+            input.email(type='text', name='mail')
+        .blc_tstar
+          span
+            | Сообщение 
+            i *
+          textarea.ptt(name='txt')
+        .blc_check_results
+          p.pp_notis
+            i *
+            |  Обязательные поля для заполнения
+          button.get_go Отправить
+  #job_seekers.hides.win_popup
+    .line_pp
+      h3 Для соискателей вакансии
+      p
+        | Подать заявку на замещение вакантных должностей для медицинского и административного персонала
+    .blc_pp_wt
+      form#upload.jbs(action='#', method='post')
+        .pp_in.pp_name
+          span
+            | Ваше имя 
+            i *
+          input.ptt(type='text', name='firstname', required='')
+        .clearfix.tw_pp
+          .pp_in
+            span Телефон
+            input.phone.ptt(type='text')
+          .pp_in
+            span
+              | E-mail 
+              i *
+            input.email(type='text', name='mail', required='')
+        .blc_tstar
+          span
+            | Комменатрий 
+            i *
+          textarea.ptt(name='txt', required='')
+        .blc_fole_upl
+          #drop.clearfix
+            a.dwn Прикрепить резюме
+            input.mulip(type='file', name='upl', multiple='')
+          ul.clearfix.list_dwn
+            // The file uploads will be shown here
+        .i_agree
+          input#checkboxG1.css-checkbox(type='checkbox', name='checkboxG1')
+          label.css-label(for='checkboxG1')
+            | Я согласен(а) на обработку 
+            a(href='docs/consent_to_personal_data_processing.pdf', target='_blank') предоставленных мною персональных данных
+        .clearfix.blc_check_results
+          p.pp_notis
+            i *
+            |  Обязательные поля для заполнения
+          button.get_go Отправить
+  #thank_you.hides.win_popup
+    .line_pp
+      h3 Спасибо!
+    .blc_pp_wt
+      p Ваше обращение успешно отправлено
+      span и его уже рассматривают специалисты лабораторииh1 Index page
+  #face-card.hides.face-card-popup
+    a.popup-close(href="javascript:$.fancybox.close()")
+    h2 Карточка юридического лица
+    table.face-card-table
+      tbody
+        tr
+          td Наименование
+          td АО «ЛабКвест»
+        tr
+          td Юридический адрес
+          td 121059, г. Москва, Бережковская наб., д. 20, стр. 13
+        tr
+          td Фактический адрес
+          td 121059, г. Москва, Бережковская наб., д. 20, стр. 13
+        tr
+          td Лицензия
+          td ЛО-77-01-013785 от 19 января 2017 г.
+  // end popups

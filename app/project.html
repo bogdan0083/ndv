@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>NDV</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="sic global_filter">
+        <div class="gf_in">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="gf_sl">
+                <ul class="gf_list">
+                    <li class="active">
+                        <div class="desc_ttl">
+                            <h4><span>Новостройки</span></h4>
+                        </div>
+                        <div class="desc_txt" style="display: block">
+                            <div class="clearfix rows">
+                                <p class="ttl">Цена:
+                                    <button id="f_all" class="btn_price active">за все</button>
+                                    <span>/</span>
+                                    <button id="p_meter" class="btn_price">за метр</button>
+                                </p>
+                                <div class="row_in">
+                                    <input type="text" class="intg" placeholder="от">
+                                    <input type="text" class="intg" placeholder="до">
+                                    <span class="ru">Р</span>
+                                </div>
+                            </div>
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                                <select class="select">
+                                    <option>Дом сдан</option>
+                                    <option>3 кв. 2017</option>
+                                    <option>3 кв. 2018</option>
+                                    <option>4 кв. 2020</option>
+                                    <option>1 кв. 2021</option>
+                                </select>
+                            </div>
+                            <div class="clearfix rows">
+                                <p class="ttl">Количество комнат</p>
+                                <div id="number_rooms" class="group_btn">
+                                    <button class="gb">1</button>
+                                    <button class="gb">2</button>
+                                    <button class="gb">3</button>
+                                    <button class="gb">4</button>
+                                    <button class="gb">5+</button>
+                                </div>
+                            </div>
+                            <div class="clearfix rows adv_search_desc">
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Общая площадь, м<sup>2</sup>
+                                    </p>
+                                    <div class="row_in">
+                                        <input type="text" class="intg" placeholder="от">
+                                        <input type="text" class="intg" placeholder="до">
+                                    </div>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Этаж</p>
+                                    <div class="row_in">
+                                        <input type="text" class="intg" placeholder="от">
+                                        <input type="text" class="intg" placeholder="до">
+                                    </div>
+                                </div>
+                                <div class="clearfix rows_in" style="margin-bottom: 14px;">
+                                    <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" />
+                                    <label for="checkboxG1" class="css-label">Балкон / лоджия</label>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Отделка</p>
+                                    <div id="finish_btn" class="group_btn trio_btn">
+                                        <button class="gb">Есть</button>
+                                        <button class="gb">Нет</button>
+                                        <button class="gb">Не важно</button>
+                                    </div>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Расположение</p>
+                                    <div id="location_btn" class="group_btn trio_btn">
+                                        <button class="gb">Метро</button>
+                                        <button class="gb">Район</button>
+                                        <button class="gb">Область карты</button>
+                                    </div>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Класс объекта</p>
+                                    <select class="select">
+                                        <option>Комфорт</option>
+                                        <option>Стандарт</option>
+                                        <option>Премиум</option>
+                                        <option>Элитное</option>
+                                    </select>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Материал строительства</p>
+                                    <select class="select">
+                                        <option>Кирпич</option>
+                                        <option>Керамоблок</option>
+                                        <option>Газобетонные блоки</option>
+                                        <option>Пеноблок</option>
+                                    </select>
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Застройщик</p>
+                                    <select class="select">
+                                        <option>Пример: ГК ПИК</option>
+                                        <option>ГК Эталон</option>
+                                        <option>ГК МонАрх</option>
+                                        <option>СК ПЕТРОСТРОЙ</option>
+                                        <option>ГК Европея</option>
+                                        <option>Группа компаний КомСтрин</option>
+                                        <option>Кировский сельский строительный комбинат</option>
+                                        <option>RDI Group</option>
+                                        <option>Окружной фонд развития жилищного строительства Жилище</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clearfix rows">
+                                <button class="adv_search">
+                                    <span>Расширенный поиск</span>
+                                </button>
+                            </div>
+                            <div class="offers_shares">
+                                <button class="os_btn">Предложения по акциям</button>
+                            </div>
+                            <div class="clearfix rows offers_shares_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores saepe vero, obcaecati numquam esse rerum itaque quae adipisci nam. Eius labore quia possimus adipisci earum quaerat aspernatur saepe, amet et!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Ипотека</span><span class="lbl">от 10%</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Вторичная</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Коммерческая</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Загородная</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="sic clearfix" id="wrapper">
+        <div class="clearfix header">
+            <div id="hmbrg" class="brg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hdr_menu">
+                <ul class="menu">
+                    <li><a href="#">О компании</a>
+                    </li>
+                    <li><a href="#">Застройщикам</a>
+                    </li>
+                    <li class="active"><a href="#">Офисы НДВ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hdr_my_office">
+                <a href="#" class="star"></a>
+                <a href="#" class="my_ofs">Мой кабинет</a>
+            </div>
+            <div class="hdr_phone">
+                <a href="tel:84959884422">8 (495) 988-44-22</a>
+                <a href="tel:88002004402"> 8 (800) 200-44-02</a>
+            </div>
+            <div class="hdr_request_call"><a href="#">Заказать звонок</a>
+            </div>
+        </div>
+        <div class="clearfix gr_btns_brds">
+            <div class="go_back_ln"><a class="go_back_link" href="#">К списку</a>
+            </div>
+            <div class="bread_crumbs">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Все квартиры в новостройках</a>
+                    </li>
+                    <li><a href="#">Новостройки</a>
+                    </li>
+                    <li><a href="#">Подмосковья</a>
+                    </li>
+                    <li><a href="#">Квартал «Новые Котельники»</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="rgh_btn">
+                <button class="comparison">К сравнению</button>
+                <button class="favorites">В избранное</button>
+            </div>
+        </div>
+        <div class="clearfix card_product">
+            <div class="clearfix cp" id="cp_l">
+                <div class="cpl_l">
+                    <div class="cpl_ttl">
+                        <h3>«Новые Котельники»</h3>
+                        <p>Сдача в 4 кв. 2017</p>
+                        <div class="brdh"></div>
+                    </div>
+                    <div class="clearfix cp_desc">
+                        <div class="cpd_l">
+                            <ul class="cpd_list">
+                                <li class="active">
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="" />
+                                            <h5>Котельники</h5>
+                                        </div>
+                                        <div class="desc_txt" style="display: block;"><span class="foot">7 мин</span><span class="drive">3 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="" />
+                                            <h5>Лермонтовский проспект</h5>
+                                        </div>
+                                        <div class="desc_txt"><span class="foot">8 мин</span><span class="drive">4 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="" />
+                                            <h5>Жулебино</h5>
+                                        </div>
+                                        <div class="desc_txt"><span class="foot">5 мин</span><span class="drive">2 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p>г. Котельники, ул. Угрешская</p>
+                        </div>
+                        <div class="cpd_r">
+                            <p class="price"><span class="sl">от</span> 2.1 млн. <span class="ru_b">P</span>
+                            </p>
+                            <p class="price_m"><span class="sl">от</span> 64 160 <span class="ru_s">P</span>/м<sup>2</sup>
+                            </p>
+                            <p class="mortgage">Ипотека <span class="lbl"><span>от </span>10%</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix cp_btm"><a class="submit_your_application" href="#">Оставить заявку</a><a class="forum_inhabitants" href="#">Форум жителей</a><a class="house_link" href="#">kvartal-kotelniki.ru</a>
+                    </div>
+                </div>
+                <div class="cpl_r">
+                    <div class="virtual_tour"><a class="vt_link" href="#">Виртуальный тур</a>
+                    </div>
+                    <div class="webcams"><a class="wc_link" href="#">Веб-камеры <span>3</span></a>
+                    </div>
+                    <div class="cp_map">
+                        <div id="cp_map"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp" id="cp_r">
+                <div class="swiper-container slr_card_product">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="" />
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span>
+                                </p>
+                            </div><span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="" />
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span>
+                                </p>
+                            </div><span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="" />
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span>
+                                </p>
+                            </div><span class="key"></span>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cp_mdl_menu">
+            <ul class="cmm_menu">
+                <li class="active"><a href="#">Общее</a>
+                </li>
+                <li><a href="#">Квартиры в наличии</a>
+                </li>
+                <li><a href="#">О проекте</a>
+                </li>
+                <li><a href="#">Ход строительства</a>
+                </li>
+                <li><a href="#">Документы</a>
+                </li>
+                <li><a href="#">Генплан</a>
+                </li>
+                <li><a href="#">Как добраться</a>
+                </li>
+            </ul>
+        </div>
+        <!-- start inner-nav-->
+        <nav class="inner-nav padded">
+            <h3>Описание</h3>
+            <div class="links"><a class="dotted scrollTo" href="#filter-inner">Стоимость </a><a class="dotted scrollTo" href="#ipoteka">Ипотека </a><a class="dotted scrollTo" href="#info">Информация о ЖК </a><a class="dotted scrollTo" href="#location">Расположение  </a>
+            </div>
+        </nav>
+        <!-- end inner-nav-->
+        <!-- start project-desc-->
+        <div class="project-desc padded">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-4">
+                    <table>
+                        <tr>
+                            <td><span class="colored-gray">Застройщик</span>
+                            </td>
+                            <td>
+                                <img src="img/zastroy-pic.jpg" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="colored-gray">Класс ЖК</span>
+                            </td>
+                            <td>Бизнес класс</td>
+                        </tr>
+                        <tr>
+                            <td><span class="colored-gray">Тип дома</span>
+                            </td>
+                            <td>Монолитный</td>
+                        </tr>
+                        <tr>
+                            <td><span class="colored-gray">Домов</span>
+                            </td>
+                            <td>8 корпусов</td>
+                        </tr>
+                        <tr>
+                            <td><span class="colored-gray">Этажность</span>
+                            </td>
+                            <td>24 этажа</td>
+                        </tr>
+                        <tr>
+                            <td><span class="colored-gray">Паркинг</span>
+                            </td>
+                            <td>Крытая парковка</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <table>
+                        <tr>
+                            <td><span class="colored-gray">Срок сдачи</span>
+                            </td>
+                            <td>
+                                <div>от 2-го квартала 2019 до 2-го квартала 2020, есть сданные:</div>
+                                <div>2-й квартал 2019 — 5 очередь</div>
+                                <div>2-й квартал 2020 — 6 очередь</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td><span class="colored-gray">Квартиры</span>
+                            </td>
+                            <td>
+                                <div><a class="dotted" href="#">1-комнатные</a> от 3 398 892 <span class="ruble">Р</span> за 35 м²</div>
+                                <div><a class="dotted" href="#">2-комнатные</a> от 5 130 173 <span class="ruble">Р</span> за 53 м²</div>
+                                <div><a class="dotted" href="#">3-комнатные</a> от 6 928 262 <span class="ruble">Р</span> за 83 м²</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div><a class="btn btn-action"><span class="text">Записаться на просмотр</span><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15"><path fill="#193863" d="M3 3v2h2V3zm11 1H8V0H0v15h14zM7 14H1V1h6zm1-9h5v9H8v-1h3v-1H8v-1h3v-1H8V9h3V8H8V7h3V6H8zM3 6v2h2V6zm0 3v2h2V9z"/></svg></div></a>
+        </div>
+        <!-- end project-desc-->
+        <!-- start filter-inner-->
+        <section class="filter-inner padded" id="filter-inner">
+            <div class="top">
+                <h3>Стоимость</h3>
+                <a class="follow-price-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="17" viewBox="0 0 33 17">
+                        <path d="M3.52 11.99H3.5A2.5 2.5 0 1 0 3.48 17h.02a2.5 2.5 0 0 0 1.9-4.13l.24.24 4-3.93c.46.5 1.11.81 1.84.82h.02a2.5 2.5 0 0 0 2.03-1.05l4.5 1.93A2.5 2.5 0 0 0 20.48 13h.02a2.5 2.5 0 0 0 2.4-3.22l5.15-4.2-.27-.26c.45.42 1.04.68 1.7.68h.02a2.5 2.5 0 0 0 .02-5.01h-.02a2.51 2.51 0 0 0-1.8 4.25l-.36-.36-5.04 3.89a2.51 2.51 0 0 0-1.78-.78h-.02c-1.16 0-2.14.8-2.42 1.88L13.93 8.1a2.52 2.52 0 0 0-2.4-3.1l-.03-.01a2.51 2.51 0 0 0-2.23 3.63l-.24-.23-4.1 4.02.17.17a2.5 2.5 0 0 0-1.58-.59zm15.49-1.72l-.07-.03c.13-.75.78-1.32 1.56-1.32h.01c.87.01 1.57.72 1.57 1.59a1.59 1.59 0 0 1-1.58 1.56h-.01a1.58 1.58 0 0 1-1.56-1.72zM3.5 16.07h-.01c-.87 0-1.57-.72-1.57-1.59.01-.86.72-1.56 1.58-1.56h.01c.87.01 1.57.72 1.57 1.59a1.59 1.59 0 0 1-1.58 1.56zm8-7h-.01c-.87 0-1.57-.72-1.57-1.59.01-.86.72-1.56 1.58-1.56h.01c.87.01 1.57.72 1.57 1.59a1.59 1.59 0 0 1-1.58 1.56zm18-4h-.01c-.87 0-1.57-.72-1.57-1.59.01-.86.72-1.56 1.58-1.56h.01c.87.01 1.57.72 1.57 1.59a1.59 1.59 0 0 1-1.58 1.56z"
+                        />
+                    </svg><span class="text dotted">Следить за изменением цены</span>
+                </a>
+            </div>
+            <div class="content">
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Количество комнат</p>
+                    <div class="group_btn" id="number_rooms">
+                        <button class="gb">1</button>
+                        <button class="gb">2</button>
+                        <button class="gb">3</button>
+                        <button class="gb">4</button>
+                        <button class="gb">5+</button>
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Общая площадь, м<sup>2</sup>
+                    </p>
+                    <div class="row_in">
+                        <input class="intg" type="text" placeholder="от" />
+                        <input class="intg" type="text" placeholder="до" />
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Цена:
+                        <button class="btn_price active" id="f_all">за все</button><span>/</span>
+                        <button class="btn_price" id="p_meter">за метр</button>
+                    </p>
+                    <div class="row_in">
+                        <input class="intg" type="text" placeholder="от" />
+                        <input class="intg" type="text" placeholder="до" /><span class="ru">Р</span>
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <div class="filter-results"><a class="btn btn-action" href="#"><span class="text">Найдено 150 квартир</span><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15"><path fill="#193863" d="M3 3v2h2V3zm11 1H8V0H0v15h14zM7 14H1V1h6zm1-9h5v9H8v-1h3v-1H8v-1h3v-1H8V9h3V8H8V7h3V6H8zM3 6v2h2V6zm0 3v2h2V9z"/></svg></div></a>
+                    <button
+                    class="adv_search"><span class="dotted">Расширенный поиск</span>
+                        </button>
+                </div>
+            </div>
+            <div class="js-filter-toggle">
+                <!-- start filter-block-->
+                <div class="filter-block filter-block-select">
+                    <p class="ttl">Срок сдачи</p>
+                    <select class="select">
+                        <option>Дом сдан</option>
+                        <option>3 кв. 2017</option>
+                        <option>3 кв. 2018</option>
+                        <option>4 кв. 2020</option>
+                        <option>1 кв. 2021</option>
+                    </select>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Этаж</p>
+                    <div class="row_in">
+                        <input class="intg" type="text" placeholder="от" />
+                        <input class="intg" type="text" placeholder="до" />
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block filter-block-checkbox">
+                    <input class="css-checkbox" type="checkbox" name="checkboxG4" id="checkboxG4" />
+                    <label class="css-label" for="checkboxG4">Балкон / лоджия</label>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Отделка</p>
+                    <div class="group_btn trio_btn" id="number_rooms">
+                        <button class="gb">Есть</button>
+                        <button class="gb">Нет</button>
+                        <button class="gb">Не важно</button>
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block">
+                    <p class="ttl">Расположение</p>
+                    <div class="group_btn trio_btn" id="number_rooms">
+                        <button class="gb">Метро</button>
+                        <button class="gb">Район</button>
+                        <button class="gb">Область карты</button>
+                    </div>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block filter-block-select">
+                    <p class="ttl">Класс объекта</p>
+                    <select class="select">
+                        <option>Класс объекта</option>
+                        <option>Комфорт</option>
+                        <option>Стандарт</option>
+                        <option>Премиум</option>
+                        <option>Элитное</option>
+                    </select>
+                </div>
+                <!-- end filter-block-->
+                <!-- start filter-block-->
+                <div class="filter-block filter-block-select">
+                    <p class="ttl">Материал строительства</p>
+                    <select class="select">
+                        <option>Кирпич</option>
+                        <option>Керамоблок</option>
+                        <option>Газобетонные блоки</option>
+                        <option>Пеноблок</option>
+                    </select>
+                </div>
+                <!-- end filter-block-->
+                <div class="filter-block filter-block-select">
+                    <p class="ttl">Материал строительства</p>
+                    <select class="select">
+                        <option>ГК Эталон</option>
+                        <option>ГК МонАрх</option>
+                        <option>СК ПЕТРОСТРОЙ</option>
+                        <option>ГК Европея</option>
+                        <option>Группа компаний КомСтрин</option>
+                        <option>Кировский сельский строительный комбинат</option>
+                        <option>RDI Group</option>
+                        <option>Окружной фонд развития жилищного строительства Жилище</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-sort-buttons">
+                <button class="js-sort-btn active"><span class="dotted">Все</span>
+                </button>
+                <button class="js-sort-btn"> <span class="dotted">Строящиеся корпуса</span>
+                </button>
+                <button class="js-sort-btn"> <span class="dotted">Готовые корпуса</span>
+                </button>
+            </div>
+        </section>
+        <!-- end filter-inner-->
+        <!-- start projects-table-->
+        <section class="projects-table padded">
+            <div class="table-responsive js-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Корпус <span class="sep">/</span> готовность</th>
+                            <th>Студия</th>
+                            <th>1-комн. кв</th>
+                            <th>2-комн. кв</th>
+                            <th>3-комн. кв</th>
+                            <th>4-комн. кв</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray labeled" data-text="5%">2 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.25" data-fill="{ &quot;color&quot;: &quot;#f75538&quot; }">25%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">3 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.75" data-fill="{ &quot;color&quot;: &quot;#a6d260&quot; }">75%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <span class="colored-gray">1 корпус</span>
+                                <div class="projects-circle js-circle" data-value="0.5" data-fill="{ &quot;color&quot;: &quot;#efc448&quot; }">50%</div><span class="colored-black">IV кв-л 2018 г.</span>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray"> 26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="icon-stuff"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="projects-table-area"><span class="colored-gray">26,8 м <sup>2</sup></span>
+                                    <div class="projects-table-price"> <span>2 126 448 </span><span class="ruble">Р</span><span class="ruble">Р</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- start bottomline-->
+            <div class="bottomline"><a class="btn js-table-toggle"><span class="text">Показать все</span><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="5" viewBox="0 0 13 5"><path fill="red" d="M1.32 1.37l4.63 3.51c.18.12.4.15.6.1.18.05.4.02.58-.1l4.55-3.51a.75.75 0 0 0 .2-1.02.7.7 0 0 0-.99-.21L6.54 3.49 2.13.14a.73.73 0 0 0-1.01.21.75.75 0 0 0 .2 1.02z"/></svg></div></a>
+            </div>
+            <!-- end bottomline-->
+        </section>
+        <!-- end projects-table-->
+        <!-- start ipoteka-->
+        <section class="ipoteka" id="ipoteka">
+            <div class="container">
+                <h3>Ипотека от 9,4% от ведущих банков России</h3>
+                <div class="logos">
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo1.png" alt="" />
+                    </div>
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo2.png" alt="" />
+                    </div>
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo3.png" alt="" />
+                    </div>
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo4.png" alt="" style="margin-top: -4px;" />
+                    </div>
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo5.png" alt="" />
+                    </div>
+                    <div class="ipoteka-logo">
+                        <img src="img/ipoteka-logo6.png" alt="" />
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="range-block">
+                        <p>Стоимость недвижимости, <span class="ruble">Р</span>
+                        </p>
+                        <div class="range-input-wrap">
+                            <input class="js-input" type="text" name="price" id="ipoteka-price" />
+                            <div class="js-triangle"></div>
+                        </div>
+                        <div class="range-slider js-range-slider" id="range-slider-price"></div>
+                        <div class="labels"><span>1,8 млн</span><span>30 млн</span>
+                        </div>
+                    </div>
+                    <div class="range-block">
+                        <p>Первоначальный взнос, <span class="ruble">Р</span>
+                        </p>
+                        <div class="range-input-wrap">
+                            <input class="js-input" type="text" name="price" id="ipoteka-vznos" />
+                            <div class="js-triangle"></div>
+                        </div>
+                        <div class="range-slider js-range-slider" data-min="500000" data-max="3200000" data-from="1200000" id="range-slider-price"></div>
+                        <div class="labels"><span>15 %</span><span>95 %</span>
+                        </div>
+                    </div>
+                    <div class="range-block">
+                        <p>Срок, <span class="colored-gray">лет</span>
+                        </p>
+                        <div class="range-input-wrap">
+                            <input class="js-input" type="text" name="price" id="ipoteka-vznos" />
+                            <div class="js-triangle"></div>
+                        </div>
+                        <div class="range-slider js-range-slider" data-min="1" data-max="20" data-from="5" data-step="1" id="range-slider-price"></div>
+                        <div class="labels"><span>1 год</span><span>20 лет</span>
+                        </div>
+                    </div>
+                    <div class="ipoteka-overall">
+                        <p>Платеж, <span class="colored-gray">мес</span>
+                        </p>
+                        <h3>35 246 <span class="ruble">Р</span></h3>
+                    </div>
+                </div>
+                <div class="bottomline"><a class="btn btn-action"><span class="text">Оставить заявку</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- end ipoteka-->
+        <!-- start project-info-->
+        <section class="project-info" id="info">
+            <div class="left">
+                <h3></h3>
+                <p></p><a class="btn"><span class="text">Узнать больше</span><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="13" viewBox="0 0 6 13"><path fill="red" d="M1.37 11.68l3.5-4.63c.13-.18.16-.4.1-.6a.7.7 0 0 0-.1-.58l-3.5-4.55a.75.75 0 0 0-1.02-.2.7.7 0 0 0-.2.99l3.34 4.35-3.35 4.41a.72.72 0 0 0 .2 1.01c.35.22.8.13 1.03-.2z"/></svg></div></a>
+            </div>
+            <div class="project-preview-slider swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-video"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <!-- end project-info-->
+        <!-- start why-project-->
+        <section class="why-project">
+            <h3>Почему стоит выбрать <span class="colored-red">ЖК «Новые Котельники»</span></h3>
+            <div class="group">
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>м. «Котельники»</h5>
+                    <p>10 минут на транспорте</p>
+                </div>
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>МКАД — 1,5 км.</h5>
+                    <p>10 минут на транспорте</p>
+                </div>
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>Архитектура</h5>
+                    <p>Стиль «Сталинский ампир»</p>
+                </div>
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>Пляж и спорт</h5>
+                    <p>Зоны в пешей доступности</p>
+                </div>
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>Монолитные дома</h5>
+                    <p>Высота домов 13-25 этажей</p>
+                </div>
+                <div class="why-project-item">
+                    <img src="img/palace.svg" alt="ЖК Новые Котельники" />
+                    <h5>Инфраструктура</h5>
+                    <p>Школы, дет.сады, мед. центры</p>
+                </div>
+            </div>
+        </section>
+        <!-- end why-project-->
+        <!-- start project-location-->
+        <div class="project-location" id="location">
+            <div class="left">
+                <h3>Расположение</h3>
+                <ul class="metro-list">
+                    <!-- start metro-item-->
+                    <li class="metro-item"><a class="metro-link" href="#">Котельники</a>
+                        <div class="metro-item-distance"><span class="dist-by-foot">7 мин.</span><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end metro-item-->
+                    <!-- start metro-item-->
+                    <li class="metro-item"><a class="metro-link" href="#">Котельники</a>
+                        <div class="metro-item-distance"><span class="dist-by-foot">7 мин.</span><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end metro-item-->
+                    <!-- start metro-item-->
+                    <li class="metro-item"><a class="metro-link" href="#">Жулебино</a>
+                        <div class="metro-item-distance"><span class="dist-by-foot">7 мин.</span><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end metro-item-->
+                </ul>
+                <ul class="ring-list">
+                    <!-- start ring-item-->
+                    <li class="ring-item"><a class="ring-link" href="#">МКАД</a>
+                        <div class="metro-item-distance"><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end ring-item-->
+                    <!-- start ring-item-->
+                    <li class="ring-item"><a class="ring-link" href="#">ТТК</a>
+                        <div class="metro-item-distance"><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end ring-item-->
+                    <!-- start ring-item-->
+                    <li class="ring-item"><a class="ring-link" href="#">Садовое</a>
+                        <div class="metro-item-distance"><span class="dist-by-car">3 мин.</span>
+                        </div>
+                    </li>
+                    <!-- end ring-item-->
+                </ul>
+            </div><a class="btn" href="#"><span class="text">Как добраться</span><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="13" viewBox="0 0 10 13"><path fill="#1a3964" d="M5 13a.31.31 0 0 1-.24-.11L1.3 8.7A5.28 5.28 0 0 1 0 5.2 5.1 5.1 0 0 1 5 0c2.76 0 5 2.33 5 5.2 0 1.3-.41 2.42-1.3 3.5l-3.46 4.19A.31.31 0 0 1 5 13zM5 1C2.86 1 1 2.68 1 5c0 1.05.44 2.32 1.22 3.27L5 11.81l2.78-3.54A5.42 5.42 0 0 0 9 5c0-2.32-1.86-4-4-4zm0 6.01a2.01 2.01 0 1 1 0-4.03 2.01 2.01 0 0 1 0 4.03zM6 5a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/></svg></div></a>
+            <!-- start right-->
+            <div class="project-location-map">
+                <div class="map-label">
+                    <div class="text">МКАД</div>
+                    <div class="distance">1.5 км</div>
+                </div>
+                <div id="location-map"></div>
+            </div>
+            <!-- end right-->
+        </div>
+        <!-- end project-location-->
+        <!-- start form-->
+        <div class="cnt_form">
+            <div class="cf_ttl">
+                <h3>Записаться на просмотр объекта </h3>
+                <p>Просмотры проводятся еженедельно по субботам с 10:00 до 19:00 часов</p>
+            </div>
+            <div class="cf_form">
+                <form action="#" method="post">
+                    <div class="clearfix rows">
+                        <div class="cols">
+                            <input type="text" placeholder="ФИО" />
+                        </div>
+                        <div class="cols">
+                            <input class="phone" type="text" placeholder="Телефон" />
+                        </div>
+                        <div class="btn btn-action"><span class="text">Записаться</span>
+                            <div class="ic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15">
+                                    <path fill="#193863" d="M3 3v2h2V3zm11 1H8V0H0v15h14zM7 14H1V1h6zm1-9h5v9H8v-1h3v-1H8v-1h3v-1H8V9h3V8H8V7h3V6H8zM3 6v2h2V6zm0 3v2h2V9z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end form-->
+        <!-- start housing_complex-->
+        <div class="housing_complex">
+            <div class="hc_ttl">
+                <h3>Мы нашли варианты, похожие на ЖК «Новые котельники»</h3>
+            </div>
+            <div class="hc_list">
+                <ul class="mc_list">
+                    <li>
+                        <div class="desc">
+                            <a href="#">
+                                <div class="desc_in">
+                                    <div class="desc_img">
+                                        <img src="img/img1.jpg" alt="" />
+                                        <div class="labels"><span class="building"></span>
+                                        </div><span class="over"></span>
+                                    </div>
+                                    <div class="desc_txt">
+                                        <h3>Квартал «Новые Котельники»</h3>
+                                        <div class="clearfix desc_txt_str2">
+                                            <div class="dts_l">
+                                                <div class="underground">
+                                                    <p><span><img src="img/m_orange.png" alt=""/></span> Площадь Ильича</p>
+                                                    <p><span><img src="img/m_green.png" alt=""/></span> Римская</p>
+                                                </div>
+                                                <!--<div class="city">
+<p>г. Котельники</p>
+</div>--></div>
+                                            <div class="dts_r">
+                                                <p>от 2.4 млн. <span class="ru_s">P</span>
+                                                </p>
+                                                <p>от 81 000 <span class="ru_s">P</span>/м<sup>2</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc">
+                            <a href="#">
+                                <div class="desc_in">
+                                    <div class="desc_img">
+                                        <img src="img/img1.jpg" alt="" />
+                                        <div class="labels">
+                                            <!-- <span class="key"></span>--><span class="new"></span><span class="building"></span>
+                                        </div><span class="over"></span>
+                                    </div>
+                                    <div class="desc_txt">
+                                        <h3>Квартал «Новые Котельники»</h3>
+                                        <div class="clearfix desc_txt_str2">
+                                            <div class="dts_l">
+                                                <div class="underground">
+                                                    <p><span><img src="img/m_orange.png" alt=""/></span> Площадь Ильича</p>
+                                                    <p><span><img src="img/m_green.png" alt=""/></span> Римская</p>
+                                                </div>
+                                                <!--<div class="city">
+<p>г. Котельники</p>
+</div>--></div>
+                                            <div class="dts_r">
+                                                <p>от 2.4 млн. <span class="ru_s">P</span>
+                                                </p>
+                                                <p>от 81 000 <span class="ru_s">P</span>/м<sup>2</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc">
+                            <a href="#">
+                                <div class="desc_in">
+                                    <div class="desc_img">
+                                        <img src="img/img1.jpg" alt="" />
+                                        <div class="labels"><span class="key"></span>
+                                            <!--<span class="new"></span>
+<span class="building"></span>-->
+                                        </div><span class="over"></span>
+                                    </div>
+                                    <div class="desc_txt">
+                                        <h3>Квартал «Новые Котельники»</h3>
+                                        <div class="clearfix desc_txt_str2">
+                                            <div class="dts_l">
+                                                <div class="underground">
+                                                    <p><span><img src="img/m_purple.png" alt=""/></span> Площадь Ильича</p>
+                                                    <p><span><img src="img/m_green.png" alt=""/></span> Римская</p>
+                                                </div>
+                                                <!--<div class="city">
+<p>г. Котельники</p>
+</div>--></div>
+                                            <div class="dts_r">
+                                                <p>от 2.4 млн. <span class="ru_s">P</span>
+                                                </p>
+                                                <p>от 81 000 <span class="ru_s">P</span>/м<sup>2</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc">
+                            <a href="#">
+                                <div class="desc_in">
+                                    <div class="desc_img">
+                                        <img src="img/img1.jpg" alt="" />
+                                        <div class="labels">
+                                            <!-- <span class="key"></span>--><span class="new"></span>
+                                            <!-- <span class="building"></span>-->
+                                        </div><span class="over"></span>
+                                    </div>
+                                    <div class="desc_txt">
+                                        <h3>Квартал «Новые Котельники»</h3>
+                                        <div class="clearfix desc_txt_str2">
+                                            <div class="dts_l">
+                                                <div class="underground">
+                                                    <p><span><img src="img/m_orange.png" alt=""/></span> Площадь Ильича</p>
+                                                    <p><span><img src="img/m_green.png" alt=""/></span> Римская</p>
+                                                </div>
+                                                <!--<div class="city">
+<p>г. Котельники</p>
+</div>--></div>
+                                            <div class="dts_r">
+                                                <p>от 2.4 млн. <span class="ru_s">P</span>
+                                                </p>
+                                                <p>от 81 000 <span class="ru_s">P</span>/м<sup>2</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desc">
+                            <a href="#">
+                                <div class="desc_in">
+                                    <div class="desc_img">
+                                        <img src="img/img1.jpg" alt="" />
+                                        <div class="labels"><span class="key"></span>
+                                            <!-- <span class="new"></span>--><span class="building"></span>
+                                        </div><span class="over"></span>
+                                    </div>
+                                    <div class="desc_txt">
+                                        <h3>Квартал «Новые Котельники»</h3>
+                                        <div class="clearfix desc_txt_str2">
+                                            <div class="dts_l">
+                                                <div class="underground">
+                                                    <p><span><img src="img/m_orange.png" alt=""/></span> Площадь Ильича</p>
+                                                    <p><span><img src="img/m_darkgreen.png" alt=""/></span> Римская</p>
+                                                </div>
+                                                <!--<div class="city">
+<p>г. Котельники</p>
+</div>--></div>
+                                            <div class="dts_r">
+                                                <p>от 2.4 млн. <span class="ru_s">P</span>
+                                                </p>
+                                                <p>от 81 000 <span class="ru_s">P</span>/м<sup>2</sup>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end housing_complex-->
+        <div class="supermarket_realestate">
+            <div class="sr_ttl">
+                <h3>«НДВ» — супермаркет недвижимости <span>№ 1 в России!</span></h3>
+            </div>
+            <ul class="sr_list">
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>Быстрый поиск по всем новостройкам</p>
+                        <span>Найдите квартиру рядом с работой</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>Удобные способы оплаты в личном кабинете</p>
+                        <span>Оплачивайте ипотеку в личном кабинете</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>Лучшие цены на рынке недвижимости</p>
+                        <span>Без предоплат — цены от застройщика</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>Более 30 наград</p>
+                        <span>Лучшая компания в сфере недвижимости</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>Сотрудничество с крупными банками</p>
+                        <span>Ипотечные кредиты на льготных условиях</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="desc">
+                        <img src="img/i21.png" alt="">
+                        <p>22 569 сделок за 2016 год</p>
+                        <span>Купить квартиру онлайн — легко</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="learn_more_about_company">
+                <a href="#">Узнать больше о компании</a>
+            </div>
+            <div class="f_menu">
+                <div class="b_menu">
+                    <div class="tab_menu">
+                        <ul class="tm_list">
+                            <li class="active">Новостройки</li>
+                            <li>Вторичная</li>
+                            <li>Коммерческая</li>
+                            <li>Загородная</li>
+                        </ul>
+                        <div class="tm_desc active">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a>
+                                </li>
+                                <li><a href="#">Арбатско-Покровская линия</a>
+                                </li>
+                                <li><a href="#">Бутовская линия</a>
+                                </li>
+                                <li><a href="#">Замоскворецкая линия</a>
+                                </li>
+                                <li><a href="#">Калининская линия</a>
+                                </li>
+                                <li><a href="#">Калужско-Рижская линия</a>
+                                </li>
+                                <li><a href="#">Каховская линия</a>
+                                </li>
+                                <li><a href="#">Кольцевая линия</a>
+                                </li>
+                                <li><a href="#">Все станции</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a>
+                                </li>
+                                <li><a href="#">Восточный округ</a>
+                                </li>
+                                <li><a href="#">Западный округ</a>
+                                </li>
+                                <li><a href="#">Зеленоград</a>
+                                </li>
+                                <li><a href="#">Новомосковский округ</a>
+                                </li>
+                                <li><a href="#">Северный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Восточный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Западный округ</a>
+                                </li>
+                                <li><a href="#">Все районы</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a>
+                                </li>
+                                <li><a href="#">Белорусское напр.</a>
+                                </li>
+                                <li><a href="#">Горьковское напр.</a>
+                                </li>
+                                <li><a href="#">Казанское напр.</a>
+                                </li>
+                                <li><a href="#">Киевское напр.</a>
+                                </li>
+                                <li><a href="#">Курское напр.</a>
+                                </li>
+                                <li><a href="#">Ленинградское напр.</a>
+                                </li>
+                                <li><a href="#">Павелецкое напр.</a>
+                                </li>
+                                <li><a href="#">Все шоссе</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a>
+                                </li>
+                                <li><a href="#">Вакансии</a>
+                                </li>
+                                <li><a href="#">Программа лояльности</a>
+                                </li>
+                                <li><a href="#">Консалтинг и аналитика</a>
+                                </li>
+                                <li><a href="#">Пресс-центр</a>
+                                </li>
+                                <li><a href="#">Застройщикам</a>
+                                </li>
+                                <li><a href="#">Офисы <span>НДВ</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tm_desc">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a>
+                                </li>
+                                <li><a href="#">Арбатско-Покровская линия</a>
+                                </li>
+                                <li><a href="#">Бутовская линия</a>
+                                </li>
+                                <li><a href="#">Замоскворецкая линия</a>
+                                </li>
+                                <li><a href="#">Калининская линия</a>
+                                </li>
+                                <li><a href="#">Калужско-Рижская линия</a>
+                                </li>
+                                <li><a href="#">Каховская линия</a>
+                                </li>
+                                <li><a href="#">Кольцевая линия</a>
+                                </li>
+                                <li><a href="#">Все станции</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a>
+                                </li>
+                                <li><a href="#">Восточный округ</a>
+                                </li>
+                                <li><a href="#">Западный округ</a>
+                                </li>
+                                <li><a href="#">Зеленоград</a>
+                                </li>
+                                <li><a href="#">Новомосковский округ</a>
+                                </li>
+                                <li><a href="#">Северный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Восточный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Западный округ</a>
+                                </li>
+                                <li><a href="#">Все районы</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a>
+                                </li>
+                                <li><a href="#">Белорусское напр.</a>
+                                </li>
+                                <li><a href="#">Горьковское напр.</a>
+                                </li>
+                                <li><a href="#">Казанское напр.</a>
+                                </li>
+                                <li><a href="#">Киевское напр.</a>
+                                </li>
+                                <li><a href="#">Курское напр.</a>
+                                </li>
+                                <li><a href="#">Ленинградское напр.</a>
+                                </li>
+                                <li><a href="#">Павелецкое напр.</a>
+                                </li>
+                                <li><a href="#">Все шоссе</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a>
+                                </li>
+                                <li><a href="#">Вакансии</a>
+                                </li>
+                                <li><a href="#">Программа лояльности</a>
+                                </li>
+                                <li><a href="#">Консалтинг и аналитика</a>
+                                </li>
+                                <li><a href="#">Пресс-центр</a>
+                                </li>
+                                <li><a href="#">Застройщикам</a>
+                                </li>
+                                <li><a href="#">Офисы <span>НДВ</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tm_desc">
+
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a>
+                                </li>
+                                <li><a href="#">Арбатско-Покровская линия</a>
+                                </li>
+                                <li><a href="#">Бутовская линия</a>
+                                </li>
+                                <li><a href="#">Замоскворецкая линия</a>
+                                </li>
+                                <li><a href="#">Калининская линия</a>
+                                </li>
+                                <li><a href="#">Калужско-Рижская линия</a>
+                                </li>
+                                <li><a href="#">Каховская линия</a>
+                                </li>
+                                <li><a href="#">Кольцевая линия</a>
+                                </li>
+                                <li><a href="#">Все станции</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a>
+                                </li>
+                                <li><a href="#">Восточный округ</a>
+                                </li>
+                                <li><a href="#">Западный округ</a>
+                                </li>
+                                <li><a href="#">Зеленоград</a>
+                                </li>
+                                <li><a href="#">Новомосковский округ</a>
+                                </li>
+                                <li><a href="#">Северный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Восточный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Западный округ</a>
+                                </li>
+                                <li><a href="#">Все районы</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a>
+                                </li>
+                                <li><a href="#">Белорусское напр.</a>
+                                </li>
+                                <li><a href="#">Горьковское напр.</a>
+                                </li>
+                                <li><a href="#">Казанское напр.</a>
+                                </li>
+                                <li><a href="#">Киевское напр.</a>
+                                </li>
+                                <li><a href="#">Курское напр.</a>
+                                </li>
+                                <li><a href="#">Ленинградское напр.</a>
+                                </li>
+                                <li><a href="#">Павелецкое напр.</a>
+                                </li>
+                                <li><a href="#">Все шоссе</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a>
+                                </li>
+                                <li><a href="#">Вакансии</a>
+                                </li>
+                                <li><a href="#">Программа лояльности</a>
+                                </li>
+                                <li><a href="#">Консалтинг и аналитика</a>
+                                </li>
+                                <li><a href="#">Пресс-центр</a>
+                                </li>
+                                <li><a href="#">Застройщикам</a>
+                                </li>
+                                <li><a href="#">Офисы <span>НДВ</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tm_desc">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a>
+                                </li>
+                                <li><a href="#">Арбатско-Покровская линия</a>
+                                </li>
+                                <li><a href="#">Бутовская линия</a>
+                                </li>
+                                <li><a href="#">Замоскворецкая линия</a>
+                                </li>
+                                <li><a href="#">Калининская линия</a>
+                                </li>
+                                <li><a href="#">Калужско-Рижская линия</a>
+                                </li>
+                                <li><a href="#">Каховская линия</a>
+                                </li>
+                                <li><a href="#">Кольцевая линия</a>
+                                </li>
+                                <li><a href="#">Все станции</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a>
+                                </li>
+                                <li><a href="#">Восточный округ</a>
+                                </li>
+                                <li><a href="#">Западный округ</a>
+                                </li>
+                                <li><a href="#">Зеленоград</a>
+                                </li>
+                                <li><a href="#">Новомосковский округ</a>
+                                </li>
+                                <li><a href="#">Северный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Восточный округ</a>
+                                </li>
+                                <li><a href="#">Северо-Западный округ</a>
+                                </li>
+                                <li><a href="#">Все районы</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a>
+                                </li>
+                                <li><a href="#">Белорусское напр.</a>
+                                </li>
+                                <li><a href="#">Горьковское напр.</a>
+                                </li>
+                                <li><a href="#">Казанское напр.</a>
+                                </li>
+                                <li><a href="#">Киевское напр.</a>
+                                </li>
+                                <li><a href="#">Курское напр.</a>
+                                </li>
+                                <li><a href="#">Ленинградское напр.</a>
+                                </li>
+                                <li><a href="#">Павелецкое напр.</a>
+                                </li>
+                                <li><a href="#">Все шоссе</a>
+                                </li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a>
+                                </li>
+                                <li><a href="#">Вакансии</a>
+                                </li>
+                                <li><a href="#">Программа лояльности</a>
+                                </li>
+                                <li><a href="#">Консалтинг и аналитика</a>
+                                </li>
+                                <li><a href="#">Пресс-центр</a>
+                                </li>
+                                <li><a href="#">Застройщикам</a>
+                                </li>
+                                <li><a href="#">Офисы <span>НДВ</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="clearfix footer">
+            <div class="social">
+                <ul class="soc_list">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix ftr">
+                <div class="copyright">
+                    <p>© NDV, 1997-2017 г. Все права защищены</p>
+                </div>
+                <span>/</span>
+                <div class="developer">
+                    <p>Разработка сайта — <a href="http://www.liqium.ru/" target="_blank">Liqium</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUzkTMNpgd0SuQyESCTt5mQH5ve2tm6Ds"></script>
+    <script src="js/video.min.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

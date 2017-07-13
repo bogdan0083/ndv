@@ -1,0 +1,30 @@
+- var menuArr = ['Анализы и цены', 'Консалтинг', 'Условия сотрудничества', 'Лаболатории', 'О компании']
+- var menuArrAbout = ['Частным лицам', 'Бизнесу', 'Новости', 'Вакансии', 'Пресс-центр']
+- var menuArrMain = ['Частным лицам', 'Бизнесу', 'Лаболатории', '3D-тур', 'обратная связь']
+- var addressArrMain = ['Индивидуальные программы', 'Подготовка к анализам', 'Второе мнение', 'Получение результатов', 'Акции']
+
+if (aboutFooterNav)
+  .main-nav.main-nav-about
+    .container
+      for item, idx in menuArrAbout
+        a(href="#") #{item}
+else if (mainFooterNav)
+  .main-nav.main-nav-main-page
+    .container
+      for item, idx in menuArrMain
+        a(href="#") #{item}
+else if (addressFooterNav)
+  .main-nav.main-nav-addresses-page
+    .container
+      for item, idx in addressArrMain
+        a(href="#") #{item}
+else
+  .main-nav
+    .container
+      if (!aboutFooterNav && !mainFooterNav)
+        for item, idx in menuArr
+          a(href="#") #{item}
+      else if (aboutFooterNav)
+        for item, idx in menuArrAbout
+          a(href="#") #{item}
+      else if (mainFooterNav)

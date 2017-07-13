@@ -1,0 +1,107 @@
+//BEGIN header
+if (headerEmpty)
+  .hdr_top
+    .gmb
+      span
+      span
+      span
+    #hdr_ti_adp.hdr_top_in
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .logo
+              span.bgl
+                span
+                  img(src='img/logo.svg', alt='logo')
+            .hdr_right
+              .clearfix.hdr_rght_top
+                .hdr_search Поиск
+                .hdr_personal_area
+                  a(href='#') Личный кабинет
+              .hdr_rght_btm
+                a(href='tel:88007001072') 8 (800) 700 10 72
+                a(href='tel:84957251072') 8 (495) 725 10 72
+              .hdr_left
+                .hot_line
+                  a.fancybox(href='#hot_line') Горячая линия
+    .hdr_top_in(class=headerTransparent ? 'hdr_top_in_transparent' : '')
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .hdr_left
+              .clearfix.select_office
+                span Выберите офис:
+                p.city Москва  Московская область
+              .hot_line
+                a.fancybox(href='#hot_line') Горячая линия
+            .hdr_right
+              .clearfix.hdr_rght_top
+                .hdr_search Поиск
+                .hdr_personal_area
+                  a(href='#') Личный кабинет
+              .hdr_rght_btm
+                a(href='tel:88007001072') 8 (800) 700 10 72
+                a(href='tel:84957251072') 8 (495) 725 10 72
+            .logo
+              span.bgl
+                span
+                  img(src='img/logo.svg', alt='logo')
+  //END header
+else
+  .hdr_top.hdr_top_full
+    .gmb
+      span
+      span
+      span
+    #hdr_ti_adp.hdr_top_in
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .logo
+              span.bgl
+                span
+                  img(src='img/logo.svg', alt='logo')
+            .hdr_right
+              .clearfix.hdr_rght_top
+                .hdr_search Поиск
+                .hdr_personal_area
+                  a(href='#') Личный кабинет
+              .hdr_rght_btm
+                a(href='tel:88007001072') 8 (800) 700 10 72
+                a(href='tel:84957251072') 8 (495) 725 10 72
+              .hdr_left
+                .hot_line
+                  a.fancybox(href='#hot_line') Горячая линия
+      include _main-nav.pug
+    .hdr_top_in(class=headerTransparent ? 'hdr_top_in_transparent' : '')
+      .container
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            .hdr_left
+              .clearfix.select_office
+                span Выберите офис:
+                p.city Москва  Московская область
+              .hot_line
+                a.fancybox(href='#hot_line') Горячая линия
+            .hdr_right
+              .clearfix.hdr_rght_top
+                .hdr_search Поиск
+                .hdr_personal_area
+                  a(href='#') Личный кабинет
+              if (headerCart)
+                a.hdr_cart_link(href="#")
+                  .count 0
+                  .circle.circle-cart
+              if (headerCartFull)
+                a.hdr_cart_link.hdr_cart_link_full(href="#")
+                  .count 0
+                  .circle.circle-cart
+              .hdr_rght_btm
+                a(href='tel:88007001072') 8 (800) 700 10 72
+                a(href='tel:84957251072') 8 (495) 725 10 72
+            .logo
+              span.bgl
+                span
+                  img(src='img/logo.svg', alt='logo')
+      include _main-nav.pug
+  //END header

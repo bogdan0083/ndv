@@ -1,0 +1,756 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>NDV</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head> 
+<body>
+    <div class="sic global_filter">
+        <div class="gf_in">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="gf_sl">
+                <ul class="gf_list">
+                    <li class="active">
+                        <div class="desc_ttl">
+                            <h4><span>Новостройки</span></h4>
+                        </div>
+                        <div class="desc_txt" style="display: block">
+                            <div class="clearfix rows">
+                                <p class="ttl">Цена: 
+                                    <button id="f_all" class="btn_price active">за все</button> 
+                                    <span>/</span> 
+                                    <button id="p_meter" class="btn_price">за метр</button>
+                                </p>
+                                <div class="row_in">
+                                    <input type="text" class="intg" placeholder="от">
+                                    <input type="text" class="intg" placeholder="до">
+                                    <span class="ru">Р</span>                                    
+                                </div> 
+                            </div>
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                                <select class="select">
+                                    <option>Дом сдан</option>
+                                    <option>3 кв. 2017</option>
+                                    <option>3 кв. 2018</option>
+                                    <option>4 кв. 2020</option>
+                                    <option>1 кв. 2021</option>                                    
+                                </select>
+                            </div>
+                            <div class="clearfix rows">
+                                <p class="ttl">Количество комнат</p>
+                                <div id="number_rooms" class="group_btn">
+                                    <button class="gb">1</button>
+                                    <button class="gb">2</button>
+                                    <button class="gb">3</button>
+                                    <button class="gb">4</button>
+                                    <button class="gb">5+</button>
+                                </div>
+                            </div> 
+                            <div class="clearfix rows adv_search_desc">
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Общая площадь, м<sup>2</sup></p>
+                                    <div class="row_in">
+                                        <input type="text" class="intg" placeholder="от">
+                                        <input type="text" class="intg" placeholder="до">                                   
+                                    </div>                                
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Этаж</p>
+                                    <div class="row_in">
+                                        <input type="text" class="intg" placeholder="от">
+                                        <input type="text" class="intg" placeholder="до">                                   
+                                    </div>                                
+                                </div>  
+                                <div class="clearfix rows_in" style="margin-bottom: 14px;">
+                                    <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" />
+                                    <label for="checkboxG1" class="css-label">Балкон / лоджия</label>                                                            
+                                </div> 
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Отделка</p> 
+                                    <div id="finish_btn" class="group_btn trio_btn">
+                                        <button class="gb">Есть</button>
+                                        <button class="gb">Нет</button>
+                                        <button class="gb">Не важно</button>
+                                    </div>                                                                  
+                                </div>  
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Расположение</p> 
+                                    <div id="location_btn" class="group_btn trio_btn">
+                                        <button class="gb">Метро</button>
+                                        <button class="gb">Район</button>
+                                        <button class="gb">Область карты</button>
+                                    </div>                                                                  
+                                </div>
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Класс объекта</p> 
+                                    <select class="select">
+                                        <option>Комфорт</option>
+                                        <option>Стандарт</option>
+                                        <option>Премиум</option>
+                                        <option>Элитное</option>                                    
+                                    </select>                                                                 
+                                </div> 
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Материал строительства</p> 
+                                    <select class="select">
+                                        <option>Кирпич</option>
+                                        <option>Керамоблок</option>
+                                        <option>Газобетонные блоки</option>
+                                        <option>Пеноблок</option>                                    
+                                    </select>                                                                 
+                                </div> 
+                                <div class="clearfix rows_in">
+                                    <p class="ttl">Застройщик</p> 
+                                    <select class="select">
+                                        <option>Пример: ГК ПИК</option>
+                                        <option>ГК Эталон</option>
+                                        <option>ГК МонАрх</option>
+                                        <option>СК ПЕТРОСТРОЙ</option>
+                                        <option>ГК Европея</option>
+                                        <option>Группа компаний КомСтрин</option>
+                                        <option>Кировский сельский строительный комбинат</option>
+                                        <option>RDI Group</option>
+                                        <option>Окружной фонд развития жилищного строительства Жилище</option>                                    
+                                    </select>                                                                 
+                                </div>                                                                                                          
+                            </div>                          
+                            <div class="clearfix rows">
+                                <button class="adv_search">
+                                    <span>Расширенный поиск</span>
+                                </button>
+                            </div> 
+                            <div class="offers_shares">
+                                <button class="os_btn">Предложения по акциям</button>
+                            </div>
+                            <div class="clearfix rows offers_shares_desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores saepe vero, obcaecati numquam esse rerum itaque quae adipisci nam. Eius labore quia possimus adipisci earum quaerat aspernatur saepe, amet et!</p>
+                            </div>                                     
+                        </div>                           
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Ипотека</span><span class="lbl">от 10%</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>                        
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Вторичная</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>                        
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Коммерческая</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>                        
+                    </li>
+                    <li>
+                        <div class="desc_ttl">
+                            <h4><span>Загородная</span></h4>
+                        </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
+                        </div>                        
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+    <div id="wrapper" class="sic clearfix">
+        <div class="clearfix header">
+            <div id="hmbrg" class="brg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hdr_menu">
+                <ul class="menu">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Застройщикам</a></li>
+                    <li class="active"><a href="#">Офисы НДВ</a></li>
+                </ul>
+            </div>
+            <div class="hdr_my_office">
+                <a href="#" class="star"></a>
+                <a href="#" class="my_ofs">Мой кабинет</a>
+            </div>
+            <div class="hdr_phone">
+                <a href="tel:84959884422">8 (495) 988-44-22</a>
+                <a href="tel:88002004402"> 8 (800) 200-44-02</a>
+            </div>
+            <div class="hdr_request_call"><a href="#">Заказать звонок</a></div>
+        </div>
+
+        <div class="clearfix gr_btns_brds">
+            <div class="go_back_ln">
+                <a href="#" class="go_back_link">К списку</a>
+            </div>
+            <div class="bread_crumbs">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Все квартиры в новостройках</a></li>
+                    <li><a href="#">Новостройки</a></li>
+                    <li><a href="#">Подмосковья</a></li>
+                    <li><a href="#">Квартал «Новые Котельники»</a></li>
+                </ul>
+            </div>
+            <div class="rgh_btn">
+                <button class="comparison">К сравнению</button>
+                <button class="favorites">В избранное</button>
+            </div>
+        </div>
+        
+        <div class="clearfix card_product">
+            <div id="cp_l" class="clearfix cp">
+                <div class="cpl_l">
+                    <div class="cpl_ttl">
+                        <h3>«Новые Котельники»</h3>
+                        <p>Сдача в 4 кв. 2017</p>
+                        <div class="brdh"></div>
+                    </div>
+                    <div class="clearfix cp_desc">
+                        <div class="cpd_l">
+                            <ul class="cpd_list">
+                                <li class="active">
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Котельники</h5>
+                                        </div>
+                                        <div class="desc_txt"  style="display: block">
+                                            <span class="foot">7 мин</span>
+                                            <span class="drive">3 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Лермонтовский проспект</h5>
+                                        </div>
+                                        <div class="desc_txt">
+                                            <span class="foot">8 мин</span>
+                                            <span class="drive">4 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Жулебино</h5>
+                                        </div>
+                                        <div class="desc_txt">
+                                            <span class="foot">5 мин</span>
+                                            <span class="drive">2 мин</span>
+                                        </div>
+                                    </div>
+                                </li>                                                                
+                            </ul>
+                            <p>г. Котельники, ул. Угрешская</p>
+                        </div>
+                        <div class="cpd_r">
+                            <p class="price"><span class="sl">от</span> 2.1 млн. <span class="ru_b">P</span></p>
+                            <p class="price_m"><span class="sl">от</span> 64 160 <span class="ru_s">P</span>/м<sup>2</sup></p>
+                            <p class="mortgage">Ипотека <span class="lbl"><span>от </span>10%</span></p>
+                        </div>
+                    </div>
+                    <div class="clearfix cp_btm">
+                        <a href="#" class="submit_your_application">Оставить заявку</a>
+                        <a href="#" class="forum_inhabitants">Форум жителей</a>
+                        <a href="#" class="house_link">kvartal-kotelniki.ru</a>
+                    </div>
+                </div>
+                <div class="cpl_r">
+                    <div class="virtual_tour">
+                        <a href="#" class="vt_link">Виртуальный тур</a>
+                    </div>
+                    <div class="webcams">
+                        <a href="#" class="wc_link">Веб-камеры <span>3</span></a>
+                    </div>
+                    <div class="cp_map">
+                        <div id="cp_map"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="cp_r" class="cp">
+                <div class="swiper-container slr_card_product">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="cp_mdl_menu">
+            <ul class="cmm_menu">
+                <li><a href="#">Общее</a></li>
+                <li><a href="#">Квартиры в наличии</a></li>
+                <li><a href="#">О проекте</a></li>
+                <li class="active"><a href="#">Ход строительства</a></li>
+                <li><a href="#">Документы</a></li>
+                <li><a href="#">Генплан</a></li>
+                <li><a href="#">Как добраться</a></li>
+            </ul>
+        </div>
+        <div class="clearfix course_construction">
+            <h3>Ход строительства</h3>
+            <div class="cc_list">
+                <select class="select">
+                    <option>Выберите корпус</option>
+                    <option>Выберите корпус 2</option>
+                    <option>Выберите корпус 3</option>
+                    <option>Выберите корпус 4</option>
+                    <option>Выберите корпус 5</option>
+                </select>                
+            </div>
+        </div>
+        <div class="albums">
+            <ul class="albums_list">
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl1">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl2">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl3">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl4">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl5">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl6">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl7">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl8">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl9">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl10">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g1.jpg" class="fancy_albums" rel="gl11">
+                        <div class="desc">
+                            <img src="img/g1.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+                <li><a href="img/g2.jpg" class="fancy_albums" rel="gl12">
+                        <div class="desc">
+                            <img src="img/g2.jpg" alt="">
+                            <div class="date">16 июня 2017</div>
+                            <div class="ics">35</div>
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="more_albums">
+            <button class="more_nb_btn">Загрузить еще 25 альбомов</button>
+        </div>  
+        <div class="subscribe_new_ads">
+            <p><a href="#">Подпишитесь</a> на новые объявления</p>
+        </div>
+        <div class="supermarket_realestate">
+            <div class="sr_ttl">
+                <h3>«НДВ» — супермаркет недвижимости <span>№ 1 в России!</span></h3>
+            </div>
+            <div class="learn_more_about_company">
+                <a href="#">Узнать больше о компании</a>
+            </div>
+            <div class="f_menu">
+                <div class="b_menu">
+                    <div class="tab_menu">
+                        <ul class="tm_list">
+                            <li class="active">Новостройки</li>
+                            <li>Вторичная</li>
+                            <li>Коммерческая</li>
+                            <li>Загородная</li>
+                        </ul>
+                        <div class="tm_desc active">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a></li>
+                                <li><a href="#">Арбатско-Покровская линия</a></li>
+                                <li><a href="#">Бутовская линия</a></li>
+                                <li><a href="#">Замоскворецкая линия</a></li>
+                                <li><a href="#">Калининская линия</a></li>
+                                <li><a href="#">Калужско-Рижская линия</a></li>
+                                <li><a href="#">Каховская линия</a></li>
+                                <li><a href="#">Кольцевая линия</a></li>
+                                <li><a href="#">Все станции</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a></li>
+                                <li><a href="#">Восточный округ</a></li>
+                                <li><a href="#">Западный округ</a></li>
+                                <li><a href="#">Зеленоград</a></li>
+                                <li><a href="#">Новомосковский округ</a></li>
+                                <li><a href="#">Северный округ</a></li>
+                                <li><a href="#">Северо-Восточный округ</a></li>
+                                <li><a href="#">Северо-Западный округ</a></li>
+                                <li><a href="#">Все районы</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a></li>
+                                <li><a href="#">Белорусское напр.</a></li>
+                                <li><a href="#">Горьковское напр.</a></li>
+                                <li><a href="#">Казанское напр.</a></li>
+                                <li><a href="#">Киевское напр.</a></li>
+                                <li><a href="#">Курское напр.</a></li>
+                                <li><a href="#">Ленинградское напр.</a></li>
+                                <li><a href="#">Павелецкое напр.</a></li>
+                                <li><a href="#">Все шоссе</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Вакансии</a></li>
+                                <li><a href="#">Программа лояльности</a></li>
+                                <li><a href="#">Консалтинг и аналитика</a></li>
+                                <li><a href="#">Пресс-центр</a></li>
+                                <li><a href="#">Застройщикам</a></li>
+                                <li><a href="#">Офисы <span>НДВ</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="tm_desc">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a></li>
+                                <li><a href="#">Арбатско-Покровская линия</a></li>
+                                <li><a href="#">Бутовская линия</a></li>
+                                <li><a href="#">Замоскворецкая линия</a></li>
+                                <li><a href="#">Калининская линия</a></li>
+                                <li><a href="#">Калужско-Рижская линия</a></li>
+                                <li><a href="#">Каховская линия</a></li>
+                                <li><a href="#">Кольцевая линия</a></li>
+                                <li><a href="#">Все станции</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a></li>
+                                <li><a href="#">Восточный округ</a></li>
+                                <li><a href="#">Западный округ</a></li>
+                                <li><a href="#">Зеленоград</a></li>
+                                <li><a href="#">Новомосковский округ</a></li>
+                                <li><a href="#">Северный округ</a></li>
+                                <li><a href="#">Северо-Восточный округ</a></li>
+                                <li><a href="#">Северо-Западный округ</a></li>
+                                <li><a href="#">Все районы</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a></li>
+                                <li><a href="#">Белорусское напр.</a></li>
+                                <li><a href="#">Горьковское напр.</a></li>
+                                <li><a href="#">Казанское напр.</a></li>
+                                <li><a href="#">Киевское напр.</a></li>
+                                <li><a href="#">Курское напр.</a></li>
+                                <li><a href="#">Ленинградское напр.</a></li>
+                                <li><a href="#">Павелецкое напр.</a></li>
+                                <li><a href="#">Все шоссе</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Вакансии</a></li>
+                                <li><a href="#">Программа лояльности</a></li>
+                                <li><a href="#">Консалтинг и аналитика</a></li>
+                                <li><a href="#">Пресс-центр</a></li>
+                                <li><a href="#">Застройщикам</a></li>
+                                <li><a href="#">Офисы <span>НДВ</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="tm_desc">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a></li>
+                                <li><a href="#">Арбатско-Покровская линия</a></li>
+                                <li><a href="#">Бутовская линия</a></li>
+                                <li><a href="#">Замоскворецкая линия</a></li>
+                                <li><a href="#">Калининская линия</a></li>
+                                <li><a href="#">Калужско-Рижская линия</a></li>
+                                <li><a href="#">Каховская линия</a></li>
+                                <li><a href="#">Кольцевая линия</a></li>
+                                <li><a href="#">Все станции</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a></li>
+                                <li><a href="#">Восточный округ</a></li>
+                                <li><a href="#">Западный округ</a></li>
+                                <li><a href="#">Зеленоград</a></li>
+                                <li><a href="#">Новомосковский округ</a></li>
+                                <li><a href="#">Северный округ</a></li>
+                                <li><a href="#">Северо-Восточный округ</a></li>
+                                <li><a href="#">Северо-Западный округ</a></li>
+                                <li><a href="#">Все районы</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a></li>
+                                <li><a href="#">Белорусское напр.</a></li>
+                                <li><a href="#">Горьковское напр.</a></li>
+                                <li><a href="#">Казанское напр.</a></li>
+                                <li><a href="#">Киевское напр.</a></li>
+                                <li><a href="#">Курское напр.</a></li>
+                                <li><a href="#">Ленинградское напр.</a></li>
+                                <li><a href="#">Павелецкое напр.</a></li>
+                                <li><a href="#">Все шоссе</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Вакансии</a></li>
+                                <li><a href="#">Программа лояльности</a></li>
+                                <li><a href="#">Консалтинг и аналитика</a></li>
+                                <li><a href="#">Пресс-центр</a></li>
+                                <li><a href="#">Застройщикам</a></li>
+                                <li><a href="#">Офисы <span>НДВ</span></a></li>
+                            </ul>                            </div>
+                        <div class="tm_desc">
+                            <ul class="f_list">
+                                <li><a href="#">У метро</a></li>
+                                <li><a href="#">Арбатско-Покровская линия</a></li>
+                                <li><a href="#">Бутовская линия</a></li>
+                                <li><a href="#">Замоскворецкая линия</a></li>
+                                <li><a href="#">Калининская линия</a></li>
+                                <li><a href="#">Калужско-Рижская линия</a></li>
+                                <li><a href="#">Каховская линия</a></li>
+                                <li><a href="#">Кольцевая линия</a></li>
+                                <li><a href="#">Все станции</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">В районе</a></li>
+                                <li><a href="#">Восточный округ</a></li>
+                                <li><a href="#">Западный округ</a></li>
+                                <li><a href="#">Зеленоград</a></li>
+                                <li><a href="#">Новомосковский округ</a></li>
+                                <li><a href="#">Северный округ</a></li>
+                                <li><a href="#">Северо-Восточный округ</a></li>
+                                <li><a href="#">Северо-Западный округ</a></li>
+                                <li><a href="#">Все районы</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">Шоссе</a></li>
+                                <li><a href="#">Белорусское напр.</a></li>
+                                <li><a href="#">Горьковское напр.</a></li>
+                                <li><a href="#">Казанское напр.</a></li>
+                                <li><a href="#">Киевское напр.</a></li>
+                                <li><a href="#">Курское напр.</a></li>
+                                <li><a href="#">Ленинградское напр.</a></li>
+                                <li><a href="#">Павелецкое напр.</a></li>
+                                <li><a href="#">Все шоссе</a></li>
+                            </ul>
+                            <ul class="f_list">
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Вакансии</a></li>
+                                <li><a href="#">Программа лояльности</a></li>
+                                <li><a href="#">Консалтинг и аналитика</a></li>
+                                <li><a href="#">Пресс-центр</a></li>
+                                <li><a href="#">Застройщикам</a></li>
+                                <li><a href="#">Офисы <span>НДВ</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div id="footer" class="clearfix footer">
+            <div class="social">
+                <ul class="soc_list">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="clearfix ftr">
+                <div class="copyright">
+                    <p>© NDV, 1997-2017 г. Все права защищены</p>
+                </div>
+                <span>/</span> 
+                <div class="developer">
+                   <p>Разработка сайта — <a href="http://www.liqium.ru/" target="_blank">Liqium</a></p>
+               </div>                       
+            </div>
+        </div>         
+    </div>        
+    <script src="js/lib.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUzkTMNpgd0SuQyESCTt5mQH5ve2tm6Ds'></script>    
+    <script src="js/custom.js"></script>
+
+    <div id="gal1" class="gals">
+        <a rel="gl1" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl1" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl1" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl1" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+    </div>
+    <div id="gal2" class="gals">
+        <a rel="gl2" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl2" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl2" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl2" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+    </div>
+    <div id="gal3" class="gals">
+        <a rel="gl3" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl3" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl3" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl3" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal4" class="gals">
+        <a rel="gl4" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl4" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl4" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl4" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal5" class="gals">
+        <a rel="gl5" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl5" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl5" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl5" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal6" class="gals">
+        <a rel="gl6" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl6" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl6" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl6" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal7" class="gals">
+        <a rel="gl7" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl7" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl7" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl7" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal8" class="gals">
+        <a rel="gl8" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl8" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl8" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl8" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal9" class="gals">
+        <a rel="gl9" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl9" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl9" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl9" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal10" class="gals">
+        <a rel="gl10" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl10" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl10" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl10" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+    </div>
+    <div id="gal11" class="gals">
+        <a rel="gl11" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl11" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl11" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl11" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+    </div>
+    <div id="gal12" class="gals">
+        <a rel="gl12" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl12" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl12" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
+        <a rel="gl12" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
