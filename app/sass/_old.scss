@@ -2547,13 +2547,13 @@ body {
 
 .sr_list li .desc p {
   font: 300 19px/24px 'Calibri';
-  color: #28456d;
+  color: #000;
   margin: 17px 0 3px;
 }
 
 .sr_list li .desc span {
   font: 300 17px/21px 'Calibri';
-  color: #a6a6a6;
+  color: #7b7b7b;
 }
 
 @media (max-width: 1600px) {
@@ -2596,7 +2596,7 @@ body {
 }
 
 .learn_more_about_company a:hover {
-  color: #f60304;
+  color: #000;
   -webkit-transition: 0.35s;
   -o-transition: 0.35s;
   transition: 0.35s;
@@ -2604,11 +2604,11 @@ body {
 
 .learn_more_about_company a:after {
   content: "";
-  background: url(../img/logos.png) no-repeat 0 0;
-  width: 71px;
-  height: 40px;
+  background: url(../img/i7.png) no-repeat center;
+  width: 47px;
+  height: 33px;
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   left: 0;
   right: 0;
   margin: auto;
@@ -2896,7 +2896,7 @@ body {
   border: 1px solid #d0d0d0;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  color: #141414;
+  color: #828282;
   font-size: 18px;
   -webkit-transition: 0.35s;
   -o-transition: 0.35s;
@@ -2904,7 +2904,7 @@ body {
 }
 
 #footer .social .soc_list li a:hover {
-  color: #828282;
+  color: #141414;
   -webkit-transition: 0.35s;
   -o-transition: 0.35s;
   transition: 0.35s;

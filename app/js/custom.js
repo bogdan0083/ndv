@@ -421,4 +421,71 @@ $(window).load(function () {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
+    var projectPreviewSlider = new Swiper('.project-preview-slider', {
+  		loop: false,
+  		autoplay: 0,
+  		speed: 4200,
+      pagination: '.swiper-pagination',
+      slidesPerView: 1,
+      paginationClickable: true,
+      spaceBetween: 0,
+  		preventClicks: false,
+  		nextButton: '.swiper-button-next',
+  		prevButton: '.swiper-button-prev',
+  		paginationType: 'fraction'
+    });
+
+    // Яндекс карты
+    ymaps.ready(init);
+    var locationMap;
+
+    function init(){
+        // Карта с локациями (обзорная страница проекта)
+
+        // Если элемент присутствует в DOM, запускаем карту
+        if ($('.location-map').length > 0) {
+          locationMap = new ymaps.Map("location-map", {
+              center: [55.637988, 37.845992],
+              zoom: 16,
+              controls: []
+          });
+          // Метки
+          myPlacemark1 = new ymaps.Placemark([55.639902, 37.849477], {}, {
+            iconLayout: 'default#image',
+            iconImageSize: [47, 50],
+            iconImageHref: 'img/mark-building.svg'
+          });
+
+          myPlacemark2 = new ymaps.Placemark([55.638340, 37.846000], {}, {
+            iconLayout: 'default#image',
+            iconImageSize: [47, 50],
+            iconImageHref: 'img/mark-bus.svg'
+          });
+
+          myPlacemark3 = new ymaps.Placemark([55.637502, 37.846901], {}, {
+            iconLayout: 'default#image',
+            iconImageSize: [47, 50],
+            iconImageHref: 'img/mark-bus.svg'
+          });
+
+          myPlacemark4 = new ymaps.Placemark([55.637976, 37.841279], {}, {
+            iconLayout: 'default#image',
+            iconImageSize: [47, 50],
+            iconImageHref: 'img/mark-bus.svg'
+          });
+
+          myPlacemark5 = new ymaps.Placemark([55.637108, 37.839906], {}, {
+            iconLayout: 'default#image',
+            iconImageSize: [47, 50],
+            iconImageHref: 'img/mark-metro.svg'
+          });
+          
+          locationMap.geoObjects
+            .add(myPlacemark1)
+            .add(myPlacemark2)
+            .add(myPlacemark3)
+            .add(myPlacemark4)
+            .add(myPlacemark5)
+          }
+    }
 })(jQuery);

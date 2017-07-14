@@ -1,0 +1,1045 @@
+//- title: Index Page
+//- extends layouts/_layout
+//- block head
+//- block header
+//- block content
+//-   .clearfix.gr_btns_brds
+//-     .go_back_ln
+//-       a.go_back_link(href='#') К списку
+//-     .bread_crumbs
+//-       ul.breadcrumbs
+//-         li
+//-           a(href='#') Все квартиры в новостройках
+//-         li
+//-           a(href='#') Новостройки
+//-         li
+//-           a(href='#') Подмосковья
+//-         li
+//-           a(href='#') Квартал «Новые Котельники»
+//-     .rgh_btn
+//-       button.comparison К сравнению
+//-       button.favorites В избранное
+//-   .clearfix.card_product
+//-     #cp_l.clearfix.cp
+//-       .cpl_l
+//-         .cpl_ttl
+//-           h3 «Новые Котельники»
+//-           p Сдача в 4 кв. 2017
+//-           .brdh
+//-         .clearfix.cp_desc
+//-           .cpd_l
+//-             ul.cpd_list
+//-               li.active
+//-                 .desc
+//-                   .desc_ttl
+//-                     img(src='img/m_purple.png', alt='')
+//-                     h5 Котельники
+//-                   .desc_txt(style='display: block')
+//-                     span.foot 7 мин
+//-                     span.drive 3 мин
+//-               li
+//-                 .desc
+//-                   .desc_ttl
+//-                     img(src='img/m_purple.png', alt='')
+//-                     h5 Лермонтовский проспект
+//-                   .desc_txt
+//-                     span.foot 8 мин
+//-                     span.drive 4 мин
+//-               li
+//-                 .desc
+//-                   .desc_ttl
+//-                     img(src='img/m_purple.png', alt='')
+//-                     h5 Жулебино
+//-                   .desc_txt
+//-                     span.foot 5 мин
+//-                     span.drive 2 мин
+//-             p г. Котельники, ул. Угрешская
+//-           .cpd_r
+//-             p.price
+//-               span.sl от
+//-               |  2.1 млн. 
+//-               span.ru_b P
+//-             p.price_m
+//-               span.sl от
+//-               |  64 160 
+//-               span.ru_s P
+//-               | /м
+//-               sup 2
+//-             p.mortgage
+//-               | Ипотека 
+//-               span.lbl
+//-                 span от 
+//-                 | 10%
+//-         .clearfix.cp_btm
+//-           a.submit_your_application(href='#') Оставить заявку
+//-           a.forum_inhabitants(href='#') Форум жителей
+//-           a.house_link(href='#') kvartal-kotelniki.ru
+//-       .cpl_r
+//-         .virtual_tour
+//-           a.vt_link(href='#') Виртуальный тур
+//-         .webcams
+//-           a.wc_link(href='#')
+//-             | Веб-камеры 
+//-             span 3
+//-         .cp_map
+//-           #cp_map
+//-     #cp_r.cp
+//-       .swiper-container.slr_card_product
+//-         .swiper-wrapper
+//-           .swiper-slide
+//-             img(src='img/cp1.jpg', alt='')
+//-             .benefit_up
+//-               p
+//-                 | Выгода до 150 000 
+//-                 span.ru Р
+//-             span.key
+//-           .swiper-slide
+//-             img(src='img/cp1.jpg', alt='')
+//-             .benefit_up
+//-               p
+//-                 | Выгода до 150 000 
+//-                 span.ru Р
+//-             span.key
+//-           .swiper-slide
+//-             img(src='img/cp1.jpg', alt='')
+//-             .benefit_up
+//-               p
+//-                 | Выгода до 150 000 
+//-                 span.ru Р
+//-             span.key
+//-         .swiper-pagination
+//-         .swiper-button-prev
+//-         .swiper-button-next
+//-   .cp_mdl_menu
+//-     ul.cmm_menu
+//-       li.active
+//-         a(href='#') Общее
+//-       li
+//-         a(href='#') Квартиры в наличии
+//-       li
+//-         a(href='#') О проекте
+//-       li
+//-         a(href='#') Ход строительства
+//-       li
+//-         a(href='#') Документы
+//-       li
+//-         a(href='#') Генплан
+//-       li
+//-         a(href='#') Как добраться
+//-   // start inner-nav
+//-   nav.inner-nav.padded
+//-     h3 Описание
+//-     .links
+//-       a.dotted.scrollTo(href="#filter-inner") Стоимость 
+//-       a.dotted.scrollTo(href="#ipoteka") Ипотека 
+//-       a.dotted.scrollTo(href="#info") Информация о ЖК 
+//-       a.dotted.scrollTo(href="#location") Расположение  
+//-   // end inner-nav
+//-   // start project-desc
+//-   .project-desc.padded
+//-     .row
+//-       .col-xs-12.col-sm-12.col-md-8.col-lg-4
+//-         table
+//-           tr
+//-             td #[span.colored-gray Застройщик]
+//-             td
+//-               img(src="img/zastroy-pic.jpg")
+//-           tr
+//-             td #[span.colored-gray Класс ЖК]
+//-             td Бизнес класс
+//-           tr
+//-             td #[span.colored-gray Тип дома]
+//-             td Монолитный
+//-           tr
+//-             td #[span.colored-gray Домов]
+//-             td 8 корпусов
+//-           tr
+//-             td #[span.colored-gray Этажность]
+//-             td 24 этажа
+//-           tr
+//-             td #[span.colored-gray Паркинг]
+//-             td Крытая парковка
+//-       .col-xs-12.col-sm-12.col-md-6.col-lg-6
+//-         table
+//-           tr
+//-             td #[span.colored-gray Срок сдачи]
+//-             td 
+//-               div от 2-го квартала 2019 до 2-го квартала 2020, есть сданные:
+//-               div 2-й квартал 2019 — 5 очередь
+//-               div 2-й квартал 2020 — 6 очередь
+//-         table
+//-           tr
+//-             td #[span.colored-gray Квартиры]
+//-             td 
+//-               div #[a.dotted(href="#") 1-комнатные] от 3 398 892 #[span.ruble Р] за 35 м²
+//-               div #[a.dotted(href="#") 2-комнатные] от 5 130 173 #[span.ruble Р] за 53 м²
+//-               div #[a.dotted(href="#") 3-комнатные] от 6 928 262 #[span.ruble Р] за 83 м²
+//-     a.btn.btn-action
+//-       span.text Записаться на просмотр
+//-       .ic
+//-         include data/city.svg
+//-   // end project-desc
+//-   // start filter-inner
+//-   section.filter-inner.padded#filter-inner
+//-     .top
+//-       h3 Стоимость
+//-       a.follow-price-link(href="#")
+//-         include data/cell.svg
+//-         span.text.dotted Следить за изменением цены
+//-     .content
+//-       // start filter-block
+//-       .filter-block 
+//-         p.ttl Количество комнат
+//-         #number_rooms.group_btn
+//-           button.gb 1
+//-           button.gb 2
+//-           button.gb 3
+//-           button.gb 4
+//-           button.gb 5+
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block
+//-         p.ttl Общая площадь, м#[sup 2]
+//-         .row_in
+//-           input.intg(type='text', placeholder='от')
+//-           input.intg(type='text', placeholder='до')
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block
+//-         p.ttl
+//-           | Цена: 
+//-           button#f_all.btn_price.active за все
+//-           span /
+//-           button#p_meter.btn_price за метр
+//-         .row_in
+//-           input.intg(type='text', placeholder='от')
+//-           input.intg(type='text', placeholder='до')
+//-           span.ru Р
+//-       // end filter-block
+//-       .filter-results
+//-         a.btn.btn-action(href="#")
+//-           span.text Найдено 150 квартир
+//-           .ic
+//-             include data/city.svg
+//-         button.adv_search
+//-           span.dotted Расширенный поиск
+//-     .js-filter-toggle
+//-       // start filter-block
+//-       .filter-block.filter-block-select
+//-         p.ttl Срок сдачи
+//-         select.select
+//-           option Дом сдан
+//-           option 3 кв. 2017
+//-           option 3 кв. 2018
+//-           option 4 кв. 2020
+//-           option 1 кв. 2021
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block
+//-         p.ttl Этаж
+//-         .row_in
+//-           input.intg(type='text', placeholder='от')
+//-           input.intg(type='text', placeholder='до')
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block.filter-block-checkbox
+//-         input(type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox")
+//-         label(for="checkboxG4" class="css-label") Балкон / лоджия
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block 
+//-         p.ttl Отделка
+//-         #number_rooms.group_btn.trio_btn
+//-           button.gb Есть
+//-           button.gb Нет
+//-           button.gb Не важно
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block 
+//-         p.ttl Расположение
+//-         #number_rooms.group_btn.trio_btn
+//-           button.gb Метро
+//-           button.gb Район
+//-           button.gb Область карты
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block.filter-block-select
+//-         p.ttl Класс объекта
+//-         select.select
+//-           option Класс объекта
+//-           option Комфорт
+//-           option Стандарт
+//-           option Премиум
+//-           option Элитное
+//-       // end filter-block
+//-       // start filter-block
+//-       .filter-block.filter-block-select
+//-         p.ttl Материал строительства
+//-         select.select
+//-           option Кирпич
+//-           option Керамоблок
+//-           option Газобетонные блоки
+//-           option Пеноблок
+//-       // end filter-block
+//-       .filter-block.filter-block-select
+//-         p.ttl Материал строительства
+//-         select.select
+//-           option ГК Эталон
+//-           option ГК МонАрх
+//-           option СК ПЕТРОСТРОЙ
+//-           option ГК Европея
+//-           option Группа компаний КомСтрин
+//-           option Кировский сельский строительный комбинат
+//-           option RDI Group
+//-           option Окружной фонд развития жилищного строительства Жилище
+//-     .filter-sort-buttons
+//-       button.js-sort-btn.active
+//-         span.dotted Все
+//-       button.js-sort-btn 
+//-         span.dotted Строящиеся корпуса
+//-       button.js-sort-btn 
+//-         span.dotted Готовые корпуса
+//-   // end filter-inner
+//-   // start projects-table
+//-   section.projects-table.padded
+//-     .table-responsive.js-table-wrap
+//-       table
+//-         thead
+//-           tr
+//-             th Корпус #[span.sep /] готовность
+//-             th Студия
+//-             th 1-комн. кв
+//-             th 2-комн. кв
+//-             th 3-комн. кв
+//-             th 4-комн. кв
+//-         tbody
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray.labeled(data-text="5%") 2 корпус
+//-               .projects-circle.js-circle( data-value="0.25" data-fill='{ "color": "#f75538" }') 25%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 3 корпус
+//-               .projects-circle.js-circle( data-value="0.75" data-fill='{ "color": "#a6d260" }') 75%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-           tr
+//-             td 
+//-               span.colored-gray 1 корпус
+//-               .projects-circle.js-circle( data-value="0.5" data-fill='{ "color": "#efc448" }') 50%
+//-               span.colored-black IV кв-л 2018 г.
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray  26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.icon-stuff
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-             td 
+//-               .projects-table-area
+//-                 span.colored-gray 26,8 м #[sup 2]
+//-                 .projects-table-price 
+//-                   span 2 126 448 
+//-                   span.ruble Р
+//-                   span.ruble Р
+//-     // start bottomline
+//-     .bottomline
+//-       a.btn.js-table-toggle
+//-         span.text Показать все
+//-         .ic
+//-           include data/arr-down.svg
+//-     // end bottomline
+//-   // end projects-table
+//-   // start ipoteka
+//-   section.ipoteka#ipoteka
+//-     .container
+//-       h3 Ипотека от 9,4% от ведущих банков России
+//-       .logos
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo1.png" alt="")
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo2.png" alt="")
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo3.png" alt="")
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo4.png" alt="" style="margin-top: -4px")
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo5.png" alt="")
+//-         .ipoteka-logo
+//-           img(src="img/ipoteka-logo6.png" alt="")
+//-       .group
+//-         .range-block
+//-           p Стоимость недвижимости, #[span.ruble Р]
+//-           .range-input-wrap
+//-             input.js-input(type="text" name="price" id="ipoteka-price")
+//-             .js-triangle
+//-           .range-slider.js-range-slider(id="range-slider-price")
+//-           .labels
+//-             span 1,8 млн
+//-             span 30 млн
+//-         .range-block
+//-           p Первоначальный взнос, #[span.ruble Р]
+//-           .range-input-wrap
+//-             input.js-input(type="text" name="price" id="ipoteka-vznos")
+//-             .js-triangle
+//-           .range-slider.js-range-slider(
+//-             data-min="500000"
+//-             data-max="3200000"
+//-             data-from="1200000"
+//-             id="range-slider-price")
+//-           .labels
+//-             span 15 %
+//-             span 95 %
+//-         .range-block
+//-           p Срок, #[span.colored-gray лет]
+//-           .range-input-wrap
+//-             input.js-input(type="text" name="price" id="ipoteka-vznos")
+//-             .js-triangle
+//-           .range-slider.js-range-slider(
+//-             data-min="1"
+//-             data-max="20"
+//-             data-from="5"
+//-             data-step="1"
+//-             id="range-slider-price")
+//-           .labels
+//-             span 1 год
+//-             span 20 лет
+//-         .ipoteka-overall
+//-           p Платеж, #[span.colored-gray мес]
+//-           h3 35 246 #[span.ruble Р]
+//-       .bottomline
+//-         a.btn.btn-action
+//-           span.text Оставить заявку
+//-   // end ipoteka
+//-   // start project-info
+//-   section.project-info#info 
+//-     .left
+//-       .inner
+//-         h3.lined Информация о ЖК
+//-         p Квартал «Новые Котельники» — это новый масштабный комплекс комфорт-класса, расположенный к юго-востоку от Москвы, всего в 1,5 км от МКАД.  Строительство квартала осуществляется в несколько этапов. В первую очередь будут построены 5 жилых корпусов и многофункциональный центр, то есть более 48 тыс. м2 жилья и объекты инфраструктуры. В этих высотных монолитных домах представлен широкий ассортимент квартир площадью от 26 до 73 квадратных метров, начиная от компактных студий и заканчивая просторными трёхкомнатными квартирами. 
+//-         a.btn
+//-           span.text Узнать больше
+//-           .ic
+//-             include data/arr-right.svg
+//-     .project-preview-slider.swiper-container
+//-       .swiper-wrapper
+//-         .swiper-slide.slide-video
+//-           video(class="video-js vjs-big-play-centered" data-setup='{"controls": true, "poster": "img/project1.jpg"}')
+//-             source(src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4")
+//-             source(src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm")
+//-         .swiper-slide
+//-           .slide-image-bg(style="background-image: url(img/project1.jpg)")
+//-         .swiper-slide
+//-           .slide-image-bg(style="background-image: url(img/project1.jpg)")
+//-       .swiper-pagination.swiper-pagination-project
+//-       .swiper-button-prev
+//-       .swiper-button-next
+//-   // end project-info
+//-   // start why-project
+//-   section.why-project 
+//-     .container
+//-       h3 Почему стоит выбрать #[span.colored-red ЖК «Новые Котельники»]
+//-       .group
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 м. «Котельники»
+//-           p 10 минут на транспорте
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 МКАД — 1,5 км.
+//-           p 10 минут на транспорте
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 Архитектура
+//-           p Стиль «Сталинский ампир»
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 Пляж и спорт
+//-           p Зоны в пешей доступности
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 Монолитные дома
+//-           p Высота домов 13-25 этажей
+//-         .why-project-item
+//-           img(src="img/palace.svg" alt="ЖК Новые Котельники")
+//-           h5 Инфраструктура
+//-           p Школы, дет.сады, мед. центры
+//-   // end why-project
+//-   // start project-location
+//-   .project-location#location
+//-     .left
+//-       .inner
+//-         h3 Расположение
+//-         ul.metro-list
+//-           // start metro-item
+//-           li.metro-item
+//-             img(src="img/m_purple.png" alt="")
+//-             a.metro-link(href="#") #[span.dotted Котельники] 
+//-             .metro-item-distance
+//-               span.dist-by-foot 7 мин.
+//-               span.dist-by-car 3 мин.
+//-           // end metro-item
+//-           // start metro-item
+//-           li.metro-item
+//-             img(src="img/m_purple.png" alt="")
+//-             a.metro-link(href="#") #[span.dotted Лермонтовский проспект]
+//-             .metro-item-distance
+//-               span.dist-by-foot 7 мин.
+//-               span.dist-by-car 3 мин.
+//-           // end metro-item
+//-           // start metro-item
+//-           li.metro-item
+//-             img(src="img/m_purple.png" alt="")
+//-             a.metro-link(href="#") #[span.dotted Жулебино] 
+//-             .metro-item-distance
+//-               span.dist-by-foot 7 мин.
+//-               span.dist-by-car 3 мин.
+//-           // end metro-item
+//-         ul.ring-list
+//-           // start ring-item
+//-           li.ring-item
+//-             a.ring-link(href="#") #[span.dotted МКАД] 
+//-             .metro-item-distance
+//-               span.dist-by-car 3 мин.
+//-           // end ring-item
+//-           // start ring-item
+//-           li.ring-item
+//-             a.ring-link(href="#") #[span.dotted ТТК] 
+//-             .metro-item-distance
+//-               span.dist-by-car 3 мин.
+//-           // end ring-item
+//-           // start ring-item
+//-           li.ring-item
+//-             a.ring-link(href="#") #[span.dotted Садовое] 
+//-             .metro-item-distance
+//-               span.dist-by-car 3 мин.
+//-           // end ring-item
+//-         a.btn(href="#")
+//-           span.text Как добраться
+//-           .ic
+//-             include data/pointer.svg
+//-     // start right
+//-     .project-location-map
+//-       .map-label
+//-         .text МКАД
+//-         .distance 1.5 км
+//-       #location-map
+//-     // end right
+//-   // end project-location
+//-   // start form
+//-   .cnt_form
+//-     .cf_ttl
+//-       h3 Записаться на просмотр объекта 
+//-       p Просмотры проводятся еженедельно по субботам с 10:00 до 19:00 часов
+//-     .cf_form
+//-       form(action='#', method='post')
+//-         .clearfix.rows
+//-           .cols
+//-             input(type='text', placeholder='ФИО')
+//-           .cols
+//-             input.phone(type='text', placeholder='Телефон')
+//-           button.btn.btn-action
+//-             span.text Записаться
+//-             .ic
+//-               include data/city.svg
+//-   // end form
+//-   // start housing_complex
+//-   //- .housing_complex
+//-   //-   .hc_ttl
+//-   //-     h3 Мы нашли варианты, похожие на ЖК «Новые котельники»
+//-   //-   .hc_list
+//-   //-     ul.mc_list
+//-   //-       li
+//-   //-         .desc
+//-   //-           a(href='#')
+//-   //-             .desc_in
+//-   //-               .desc_img
+//-   //-                 img(src='img/img1.jpg', alt='')
+//-   //-                 .labels
+//-   //-                   span.building
+//-   //-                 span.over
+//-   //-               .desc_txt
+//-   //-                 h3 Квартал «Новые Котельники»
+//-   //-                 .clearfix.desc_txt_str2
+//-   //-                   .dts_l
+//-   //-                     .underground
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_orange.png', alt='')
+//-   //-                         |  Площадь Ильича
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_green.png', alt='')
+//-   //-                         |  Римская
+//-   //-                   .dts_r
+//-   //-                     p
+//-   //-                       | от 2.4 млн. 
+//-   //-                       span.ru_s P
+//-   //-                     p
+//-   //-                       | от 81 000 
+//-   //-                       span.ru_s P
+//-   //-                       | /м
+//-   //-                       sup 2
+//-   //-       li
+//-   //-         .desc
+//-   //-           a(href='#')
+//-   //-             .desc_in
+//-   //-               .desc_img
+//-   //-                 img(src='img/img1.jpg', alt='')
+//-   //-                 .labels
+//-   //-                   span.new
+//-   //-                   span.building
+//-   //-                 span.over
+//-   //-               .desc_txt
+//-   //-                 h3 Квартал «Новые Котельники»
+//-   //-                 .clearfix.desc_txt_str2
+//-   //-                   .dts_l
+//-   //-                     .underground
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_orange.png', alt='')
+//-   //-                         |  Площадь Ильича
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_green.png', alt='')
+//-   //-                         |  Римская
+//-   //-                   .dts_r
+//-   //-                     p
+//-   //-                       | от 2.4 млн. 
+//-   //-                       span.ru_s P
+//-   //-                     p
+//-   //-                       | от 81 000 
+//-   //-                       span.ru_s P
+//-   //-                       | /м
+//-   //-                       sup 2
+//-   //-       li
+//-   //-         .desc
+//-   //-           a(href='#')
+//-   //-             .desc_in
+//-   //-               .desc_img
+//-   //-                 img(src='img/img1.jpg', alt='')
+//-   //-                 .labels
+//-   //-                   span.key
+//-   //-                 span.over
+//-   //-               .desc_txt
+//-   //-                 h3 Квартал «Новые Котельники»
+//-   //-                 .clearfix.desc_txt_str2
+//-   //-                   .dts_l
+//-   //-                     .underground
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_purple.png', alt='')
+//-   //-                         |  Площадь Ильича
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_green.png', alt='')
+//-   //-                         |  Римская
+//-   //-                   .dts_r
+//-   //-                     p
+//-   //-                       | от 2.4 млн. 
+//-   //-                       span.ru_s P
+//-   //-                     p
+//-   //-                       | от 81 000 
+//-   //-                       span.ru_s P
+//-   //-                       | /м
+//-   //-                       sup 2
+//-   //-       li
+//-   //-         .desc
+//-   //-           a(href='#')
+//-   //-             .desc_in
+//-   //-               .desc_img
+//-   //-                 img(src='img/img1.jpg', alt='')
+//-   //-                 .labels
+//-   //-                   span.new
+//-   //-                 span.over
+//-   //-               .desc_txt
+//-   //-                 h3 Квартал «Новые Котельники»
+//-   //-                 .clearfix.desc_txt_str2
+//-   //-                   .dts_l
+//-   //-                     .underground
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_orange.png', alt='')
+//-   //-                         |  Площадь Ильича
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_green.png', alt='')
+//-   //-                         |  Римская
+//-   //-                   .dts_r
+//-   //-                     p
+//-   //-                       | от 2.4 млн. 
+//-   //-                       span.ru_s P
+//-   //-                     p
+//-   //-                       | от 81 000 
+//-   //-                       span.ru_s P
+//-   //-                       | /м
+//-   //-                       sup 2
+//-   //-       li
+//-   //-         .desc
+//-   //-           a(href='#')
+//-   //-             .desc_in
+//-   //-               .desc_img
+//-   //-                 img(src='img/img1.jpg', alt='')
+//-   //-                 .labels
+//-   //-                   span.key
+//-   //-                   span.building
+//-   //-                 span.over
+//-   //-               .desc_txt
+//-   //-                 h3 Квартал «Новые Котельники»
+//-   //-                 .clearfix.desc_txt_str2
+//-   //-                   .dts_l
+//-   //-                     .underground
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_orange.png', alt='')
+//-   //-                         |  Площадь Ильича
+//-   //-                       p
+//-   //-                         span
+//-   //-                           img(src='img/m_darkgreen.png', alt='')
+//-   //-                         |  Римская
+//-   //-                   .dts_r
+//-   //-                     p
+//-   //-                       | от 2.4 млн. 
+//-   //-                       span.ru_s P
+//-   //-                     p
+//-   //-                       | от 81 000 
+//-   //-                       span.ru_s P
+//-   //-                       | /м
+//-   //-                       sup 2
+//-   // end housing_complex

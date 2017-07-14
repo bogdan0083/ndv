@@ -1,5 +1,5 @@
-<!DOCTYPE html> 
-<html lang="ru"> 
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,8 @@
     <title>NDV</title>
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/styles.css">
-</head> 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
 <body>
     <div class="sic global_filter">
         <div class="gf_in">
@@ -22,16 +23,16 @@
                         </div>
                         <div class="desc_txt" style="display: block">
                             <div class="clearfix rows">
-                                <p class="ttl">Цена: 
-                                    <button id="f_all" class="btn_price active">за все</button> 
-                                    <span>/</span> 
+                                <p class="ttl">Цена:
+                                    <button id="f_all" class="btn_price active">за все</button>
+                                    <span>/</span>
                                     <button id="p_meter" class="btn_price">за метр</button>
                                 </p>
                                 <div class="row_in">
                                     <input type="text" class="intg" placeholder="от">
                                     <input type="text" class="intg" placeholder="до">
-                                    <span class="ru">Р</span>                                    
-                                </div> 
+                                    <span class="ru">Р</span>
+                                </div>
                             </div>
                             <div class="clearfix rows">
                                 <p class="ttl">Срок сдачи</p>
@@ -40,7 +41,7 @@
                                     <option>3 кв. 2017</option>
                                     <option>3 кв. 2018</option>
                                     <option>4 кв. 2020</option>
-                                    <option>1 кв. 2021</option>                                    
+                                    <option>1 кв. 2021</option>
                                 </select>
                             </div>
                             <div class="clearfix rows">
@@ -52,62 +53,62 @@
                                     <button class="gb">4</button>
                                     <button class="gb">5+</button>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="clearfix rows adv_search_desc">
                                 <div class="clearfix rows_in">
                                     <p class="ttl">Общая площадь, м<sup>2</sup></p>
                                     <div class="row_in">
                                         <input type="text" class="intg" placeholder="от">
-                                        <input type="text" class="intg" placeholder="до">                                   
-                                    </div>                                
+                                        <input type="text" class="intg" placeholder="до">
+                                    </div>
                                 </div>
                                 <div class="clearfix rows_in">
                                     <p class="ttl">Этаж</p>
                                     <div class="row_in">
                                         <input type="text" class="intg" placeholder="от">
-                                        <input type="text" class="intg" placeholder="до">                                   
-                                    </div>                                
-                                </div>  
+                                        <input type="text" class="intg" placeholder="до">
+                                    </div>
+                                </div>
                                 <div class="clearfix rows_in" style="margin-bottom: 14px;">
                                     <input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" />
-                                    <label for="checkboxG1" class="css-label">Балкон / лоджия</label>                                                            
-                                </div> 
+                                    <label for="checkboxG1" class="css-label">Балкон / лоджия</label>
+                                </div>
                                 <div class="clearfix rows_in">
-                                    <p class="ttl">Отделка</p> 
+                                    <p class="ttl">Отделка</p>
                                     <div id="finish_btn" class="group_btn trio_btn">
                                         <button class="gb">Есть</button>
                                         <button class="gb">Нет</button>
                                         <button class="gb">Не важно</button>
-                                    </div>                                                                  
-                                </div>  
+                                    </div>
+                                </div>
                                 <div class="clearfix rows_in">
-                                    <p class="ttl">Расположение</p> 
+                                    <p class="ttl">Расположение</p>
                                     <div id="location_btn" class="group_btn trio_btn">
                                         <button class="gb">Метро</button>
                                         <button class="gb">Район</button>
                                         <button class="gb">Область карты</button>
-                                    </div>                                                                  
+                                    </div>
                                 </div>
                                 <div class="clearfix rows_in">
-                                    <p class="ttl">Класс объекта</p> 
+                                    <p class="ttl">Класс объекта</p>
                                     <select class="select">
                                         <option>Комфорт</option>
                                         <option>Стандарт</option>
                                         <option>Премиум</option>
-                                        <option>Элитное</option>                                    
-                                    </select>                                                                 
-                                </div> 
+                                        <option>Элитное</option>
+                                    </select>
+                                </div>
                                 <div class="clearfix rows_in">
-                                    <p class="ttl">Материал строительства</p> 
+                                    <p class="ttl">Материал строительства</p>
                                     <select class="select">
                                         <option>Кирпич</option>
                                         <option>Керамоблок</option>
                                         <option>Газобетонные блоки</option>
-                                        <option>Пеноблок</option>                                    
-                                    </select>                                                                 
-                                </div> 
+                                        <option>Пеноблок</option>
+                                    </select>
+                                </div>
                                 <div class="clearfix rows_in">
-                                    <p class="ttl">Застройщик</p> 
+                                    <p class="ttl">Застройщик</p>
                                     <select class="select">
                                         <option>Пример: ГК ПИК</option>
                                         <option>ГК Эталон</option>
@@ -117,22 +118,22 @@
                                         <option>Группа компаний КомСтрин</option>
                                         <option>Кировский сельский строительный комбинат</option>
                                         <option>RDI Group</option>
-                                        <option>Окружной фонд развития жилищного строительства Жилище</option>                                    
-                                    </select>                                                                 
-                                </div>                                                                                                          
-                            </div>                          
+                                        <option>Окружной фонд развития жилищного строительства Жилище</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="clearfix rows">
                                 <button class="adv_search">
                                     <span>Расширенный поиск</span>
                                 </button>
-                            </div> 
+                            </div>
                             <div class="offers_shares">
                                 <button class="os_btn">Предложения по акциям</button>
                             </div>
                             <div class="clearfix rows offers_shares_desc">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores saepe vero, obcaecati numquam esse rerum itaque quae adipisci nam. Eius labore quia possimus adipisci earum quaerat aspernatur saepe, amet et!</p>
-                            </div>                                     
-                        </div>                           
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <div class="desc_ttl">
@@ -142,7 +143,7 @@
                             <div class="clearfix rows">
                                 <p class="ttl">Срок сдачи</p>
                             </div>
-                        </div>                        
+                        </div>
                     </li>
                     <li>
                         <div class="desc_ttl">
@@ -152,7 +153,7 @@
                             <div class="clearfix rows">
                                 <p class="ttl">Срок сдачи</p>
                             </div>
-                        </div>                        
+                        </div>
                     </li>
                     <li>
                         <div class="desc_ttl">
@@ -162,7 +163,7 @@
                             <div class="clearfix rows">
                                 <p class="ttl">Срок сдачи</p>
                             </div>
-                        </div>                        
+                        </div>
                     </li>
                     <li>
                         <div class="desc_ttl">
@@ -172,10 +173,10 @@
                             <div class="clearfix rows">
                                 <p class="ttl">Срок сдачи</p>
                             </div>
-                        </div>                        
+                        </div>
                     </li>
                 </ul>
-            </div>            
+            </div>
         </div>
     </div>
     <div id="wrapper" class="sic clearfix">
@@ -221,7 +222,7 @@
                 <button class="favorites">В избранное</button>
             </div>
         </div>
-        
+
         <div class="clearfix card_product">
             <div id="cp_l" class="clearfix cp">
                 <div class="cpl_l">
@@ -268,7 +269,7 @@
                                             <span class="drive">2 мин</span>
                                         </div>
                                     </div>
-                                </li>                                                                
+                                </li>
                             </ul>
                             <p>г. Котельники, ул. Угрешская</p>
                         </div>
@@ -324,10 +325,10 @@
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-                </div>                
+                </div>
             </div>
         </div>
-        
+
         <div class="cp_mdl_menu">
             <ul class="cmm_menu">
                 <li><a href="#">Общее</a></li>
@@ -356,7 +357,7 @@
             </div>
             <div class="cbm_desc">
                 <div class="route_tabs">
-                    
+
                     <ul class="route_tabs_list">
                         <li class="active"><span>Автомобиль</span></li>
                         <li><span>Общ. транспорт</span></li>
@@ -485,11 +486,11 @@
                     </li>
                     <li>
                         <img src="img/m_purple.png" alt="">
-                        <span>Лермонтовский проспект</span>                        
+                        <span>Лермонтовский проспект</span>
                     </li>
                     <li>
                         <img src="img/m_purple.png" alt="">
-                        <span>Жулебино</span>                        
+                        <span>Жулебино</span>
                     </li>
                 </ul>
                 <div class="phone">
@@ -521,7 +522,7 @@
                                 <img src="img/cnt_g1s3.jpg" alt="">
                             </a>
                         </li>
-                    </ul>                   
+                    </ul>
                 </div>
             </div>
         </div>
@@ -563,8 +564,8 @@
                                     <div class="desc_img">
                                         <img src="img/img1.jpg" alt="">
                                         <div class="labels">
-                                            <span class="building"></span>                                   
-                                        </div> 
+                                            <span class="building"></span>
+                                        </div>
                                         <span class="over"></span>
                                     </div>
                                     <div class="desc_txt">
@@ -598,8 +599,8 @@
                                         <div class="labels">
                                             <!-- <span class="key"></span> -->
                                             <span class="new"></span>
-                                            <span class="building"></span>                                   
-                                        </div> 
+                                            <span class="building"></span>
+                                        </div>
                                         <span class="over"></span>
                                     </div>
                                     <div class="desc_txt">
@@ -623,7 +624,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>  
+                    </li>
                     <li>
                         <div class="desc">
                             <a href="#">
@@ -633,8 +634,8 @@
                                         <div class="labels">
                                             <span class="key"></span>
         <!--                                     <span class="new"></span>
-                                            <span class="building"></span>  -->                                  
-                                        </div> 
+                                            <span class="building"></span>  -->
+                                        </div>
                                         <span class="over"></span>
                                     </div>
                                     <div class="desc_txt">
@@ -668,8 +669,8 @@
                                         <div class="labels">
                                            <!--  <span class="key"></span> -->
                                             <span class="new"></span>
-                                            <!-- <span class="building"></span> -->                                   
-                                        </div> 
+                                            <!-- <span class="building"></span> -->
+                                        </div>
                                         <span class="over"></span>
                                     </div>
                                     <div class="desc_txt">
@@ -703,8 +704,8 @@
                                         <div class="labels">
                                             <span class="key"></span>
                                             <!-- <span class="new"></span> -->
-                                            <span class="building"></span>                                   
-                                        </div> 
+                                            <span class="building"></span>
+                                        </div>
                                         <span class="over"></span>
                                     </div>
                                     <div class="desc_txt">
@@ -728,8 +729,8 @@
                                 </div>
                             </a>
                         </div>
-                    </li>                  
-                </ul>                
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -760,7 +761,7 @@
                                 <li><a href="#">Калужско-Рижская линия</a></li>
                                 <li><a href="#">Каховская линия</a></li>
                                 <li><a href="#">Кольцевая линия</a></li>
-                                <li><a href="#">Все станции</a></li>
+                                <li><a href="#"><span class="dotted">Все станции</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">В районе</a></li>
@@ -771,7 +772,7 @@
                                 <li><a href="#">Северный округ</a></li>
                                 <li><a href="#">Северо-Восточный округ</a></li>
                                 <li><a href="#">Северо-Западный округ</a></li>
-                                <li><a href="#">Все районы</a></li>
+                                <li><a href="#"><span class="dotted">Все районы</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">Шоссе</a></li>
@@ -782,7 +783,7 @@
                                 <li><a href="#">Курское напр.</a></li>
                                 <li><a href="#">Ленинградское напр.</a></li>
                                 <li><a href="#">Павелецкое напр.</a></li>
-                                <li><a href="#">Все шоссе</a></li>
+                                <li><a href="#"><span class="dotted">Все шоссе</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">О компании</a></li>
@@ -804,7 +805,7 @@
                                 <li><a href="#">Калужско-Рижская линия</a></li>
                                 <li><a href="#">Каховская линия</a></li>
                                 <li><a href="#">Кольцевая линия</a></li>
-                                <li><a href="#">Все станции</a></li>
+                                <li><a href="#"><span class="dotted">Все станции</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">В районе</a></li>
@@ -815,7 +816,7 @@
                                 <li><a href="#">Северный округ</a></li>
                                 <li><a href="#">Северо-Восточный округ</a></li>
                                 <li><a href="#">Северо-Западный округ</a></li>
-                                <li><a href="#">Все районы</a></li>
+                                <li><a href="#"><span class="dotted">Все районы</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">Шоссе</a></li>
@@ -826,7 +827,7 @@
                                 <li><a href="#">Курское напр.</a></li>
                                 <li><a href="#">Ленинградское напр.</a></li>
                                 <li><a href="#">Павелецкое напр.</a></li>
-                                <li><a href="#">Все шоссе</a></li>
+                                <li><a href="#"><span class="dotted">Все шоссе</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">О компании</a></li>
@@ -848,7 +849,7 @@
                                 <li><a href="#">Калужско-Рижская линия</a></li>
                                 <li><a href="#">Каховская линия</a></li>
                                 <li><a href="#">Кольцевая линия</a></li>
-                                <li><a href="#">Все станции</a></li>
+                                <li><a href="#"><span class="dotted">Все станции</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">В районе</a></li>
@@ -859,7 +860,7 @@
                                 <li><a href="#">Северный округ</a></li>
                                 <li><a href="#">Северо-Восточный округ</a></li>
                                 <li><a href="#">Северо-Западный округ</a></li>
-                                <li><a href="#">Все районы</a></li>
+                                <li><a href="#"><span class="dotted">Все районы</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">Шоссе</a></li>
@@ -870,7 +871,7 @@
                                 <li><a href="#">Курское напр.</a></li>
                                 <li><a href="#">Ленинградское напр.</a></li>
                                 <li><a href="#">Павелецкое напр.</a></li>
-                                <li><a href="#">Все шоссе</a></li>
+                                <li><a href="#"><span class="dotted">Все шоссе</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">О компании</a></li>
@@ -891,7 +892,7 @@
                                 <li><a href="#">Калужско-Рижская линия</a></li>
                                 <li><a href="#">Каховская линия</a></li>
                                 <li><a href="#">Кольцевая линия</a></li>
-                                <li><a href="#">Все станции</a></li>
+                                <li><a href="#"><span class="dotted">Все станции</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">В районе</a></li>
@@ -902,7 +903,7 @@
                                 <li><a href="#">Северный округ</a></li>
                                 <li><a href="#">Северо-Восточный округ</a></li>
                                 <li><a href="#">Северо-Западный округ</a></li>
-                                <li><a href="#">Все районы</a></li>
+                                <li><a href="#"><span class="dotted">Все районы</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">Шоссе</a></li>
@@ -913,7 +914,7 @@
                                 <li><a href="#">Курское напр.</a></li>
                                 <li><a href="#">Ленинградское напр.</a></li>
                                 <li><a href="#">Павелецкое напр.</a></li>
-                                <li><a href="#">Все шоссе</a></li>
+                                <li><a href="#"><span class="dotted">Все шоссе</span></a></li>
                             </ul>
                             <ul class="f_list">
                                 <li><a href="#">О компании</a></li>
@@ -927,7 +928,7 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
         <div id="footer" class="clearfix footer">
             <div class="social">
@@ -942,88 +943,90 @@
                 <div class="copyright">
                     <p>© NDV, 1997-2017 г. Все права защищены</p>
                 </div>
-                <span>/</span> 
+                <span>/</span>
                 <div class="developer">
                    <p>Разработка сайта — <a href="http://www.liqium.ru/" target="_blank">Liqium</a></p>
-               </div>                       
+               </div>
             </div>
-        </div>         
-    </div>        
+        </div>
+    </div>
     <script src="js/lib.min.js"></script>
-    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUzkTMNpgd0SuQyESCTt5mQH5ve2tm6Ds'></script>    
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUzkTMNpgd0SuQyESCTt5mQH5ve2tm6Ds'></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/video.min.js"></script>
     <script src="js/custom.js"></script>
 
     <div id="gal1" class="gals">
         <a rel="gl1" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl1" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl1" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl1" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+        <a rel="gl1" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal2" class="gals">
         <a rel="gl2" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl2" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl2" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl2" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+        <a rel="gl2" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal3" class="gals">
         <a rel="gl3" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl3" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl3" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl3" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl3" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal4" class="gals">
         <a rel="gl4" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl4" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl4" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl4" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl4" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal5" class="gals">
         <a rel="gl5" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl5" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl5" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl5" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl5" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal6" class="gals">
         <a rel="gl6" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl6" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl6" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl6" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl6" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal7" class="gals">
         <a rel="gl7" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl7" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl7" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl7" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl7" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal8" class="gals">
         <a rel="gl8" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl8" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl8" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl8" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl8" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal9" class="gals">
         <a rel="gl9" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl9" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl9" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl9" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl9" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal10" class="gals">
         <a rel="gl10" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl10" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl10" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl10" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>         
+        <a rel="gl10" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal11" class="gals">
         <a rel="gl11" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl11" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl11" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl11" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+        <a rel="gl11" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
     <div id="gal12" class="gals">
         <a rel="gl12" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl12" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
         <a rel="gl12" class="fancy_albums" href="img/g2.jpg"><img src="img/g1.jpg" alt="" /></a>
-        <a rel="gl12" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>        
+        <a rel="gl12" class="fancy_albums" href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>
     </div>
 
 

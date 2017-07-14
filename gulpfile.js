@@ -51,7 +51,12 @@ function errorHandler() {
 }
 
 function renderHtml(onlyChanged) {
-  return gulp.src(['app/templates/[^_]*.pug']).pipe($.plumber({errorHandler: errorHandler})).pipe($.if (onlyChanged, changed('app/', {extension: '.html'})) ).pipe(pug()).pipe(prettify()).pipe(gulp.dest('app/')).pipe(reload({stream: true}));
+  return gulp.src(['app/templates/[^_]*.pug'])
+    .pipe($.plumber({errorHandler: errorHandler}))
+    .pipe($.if (onlyChanged, changed('app/', {extension: '.html'})) )
+    .pipe(pug({ pretty: true }))
+    .pipe(prettify())
+    .pipe(gulp.dest('app/')).pipe(reload({stream: true}));
   }
 
   gulp.task('pug', function() {
