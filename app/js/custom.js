@@ -435,57 +435,213 @@ $(window).load(function () {
   		paginationType: 'fraction'
     });
 
+    // Открытие изменений в документах при клике
+    $('.js-toggle-changes').click(function (e) {
+      e.preventDefault();
+      $(this).toggleClass('active');
+      $(this).closest('.js-doc').find('.doc-changes').slideToggle();
+    });
+
+    // Открытие всех документов в блоке
+    $('.js-docs-toggle').click(function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      $this.toggleClass('active')
+      if ($this.hasClass('active')) {
+        $this.find('span').text('Скрыть');
+        $this.parent().prev().slideToggle();
+      } else {
+        $this.find('span').text('Еще 15');
+        $this.parent().prev().slideToggle();
+      }
+    });
+
+    // Показываем ВСЕ блоки с документами в определенной секции (кнопка "Показать все")
+
+    $('.js-all-docs-toggle').click(function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      $this.toggleClass('active');
+      var $hiddenDocs = $this.parent().prev('.js-hidden-docs');
+      var $hiddenDocsInner = $hiddenDocs.find('.inner');
+      var height = $hiddenDocsInner.height();
+      if ($this.hasClass('active')) {
+        $this.find('span').text('Скрыть все');
+        $hiddenDocs.animate({ height: height });
+      } else {
+        $this.find('span').text('Показать все');
+        $hiddenDocs.animate({ height: 168 });
+      }
+    });
+
     // Яндекс карты
     ymaps.ready(init);
-    var locationMap;
+    var locationMap, infrastructureMap;
 
     function init(){
-        // Карта с локациями (обзорная страница проекта)
+        // Карта
 
+        // Задаем шаблон для метки. Это необходимо, т.к метка это кружочек и внутри иконка. Сохранять каждую метку вместе с кружком не нужно, можно через свойства метки добавить нужную иконку в круг
+
+        var markLayout = ymaps.templateLayoutFactory.createClass('<div class="map-mark $[properties.class]"><img src="$[properties.imgSrc]"/></div>');
+
+        // Карта локации
         // Если элемент присутствует в DOM, запускаем карту
-        if ($('.location-map').length > 0) {
+        if ($('#location-map').length > 0) {
           locationMap = new ymaps.Map("location-map", {
               center: [55.637988, 37.845992],
               zoom: 16,
               controls: []
           });
           // Метки
-          myPlacemark1 = new ymaps.Placemark([55.639902, 37.849477], {}, {
-            iconLayout: 'default#image',
-            iconImageSize: [47, 50],
-            iconImageHref: 'img/mark-building.svg'
+          myPlacemark1 = new ymaps.Placemark([55.640402, 37.849277], {imgSrc: 'img/building-big.svg', class: 'red'}, {
+            // Шаблон иконки
+            iconLayout: markLayout,
+            iconImageSize: [47, 50]
           });
 
-          myPlacemark2 = new ymaps.Placemark([55.638340, 37.846000], {}, {
-            iconLayout: 'default#image',
+          myPlacemark2 = new ymaps.Placemark([55.638900, 37.845500], {imgSrc: 'img/bus.svg'}, {
+            iconLayout: markLayout,
             iconImageSize: [47, 50],
-            iconImageHref: 'img/mark-bus.svg'
           });
 
-          myPlacemark3 = new ymaps.Placemark([55.637502, 37.846901], {}, {
-            iconLayout: 'default#image',
-            iconImageSize: [47, 50],
-            iconImageHref: 'img/mark-bus.svg'
+          myPlacemark3 = new ymaps.Placemark([55.638022, 37.846301], {imgSrc: 'img/bus.svg'}, {
+            iconLayout: markLayout,
+            iconImageSize: [47, 50]
           });
 
-          myPlacemark4 = new ymaps.Placemark([55.637976, 37.841279], {}, {
-            iconLayout: 'default#image',
-            iconImageSize: [47, 50],
-            iconImageHref: 'img/mark-bus.svg'
+          myPlacemark4 = new ymaps.Placemark([55.638500, 37.841050], {imgSrc: 'img/bus.svg'}, {
+            iconLayout: markLayout,
+            iconImageSize: [47, 50]
           });
 
-          myPlacemark5 = new ymaps.Placemark([55.637108, 37.839906], {}, {
-            iconLayout: 'default#image',
-            iconImageSize: [47, 50],
-            iconImageHref: 'img/mark-metro.svg'
+          myPlacemark5 = new ymaps.Placemark([55.637408, 37.839626], {imgSrc: 'img/m.svg'}, {
+            iconLayout: markLayout,
+            iconImageSize: [47, 50]
           });
-          
+
           locationMap.geoObjects
             .add(myPlacemark1)
             .add(myPlacemark2)
             .add(myPlacemark3)
             .add(myPlacemark4)
-            .add(myPlacemark5)
+            .add(myPlacemark5);
+          }
+
+          // Карта инфраструктур ЖК
+          if ($('#infrastructure-map').length > 0) {
+            infrastructureMap = new ymaps.Map("infrastructure-map", {
+                center: [55.637988, 37.845992],
+                zoom: 15,
+                controls: []
+            });
+            // Метки
+            myPlacemark1 = new ymaps.Placemark([55.637594, 37.844335], {imgSrc: 'img/cart.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark2 = new ymaps.Placemark([55.634651, 37.852961], {imgSrc: 'img/smile.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+            myPlacemark3 = new ymaps.Placemark([55.637758, 37.850086], {imgSrc: 'img/r.png'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark4 = new ymaps.Placemark([55.640075, 37.850876], {imgSrc: 'img/building-big.svg', class: "red"}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark5 = new ymaps.Placemark([55.640415, 37.853579], {imgSrc: 'img/r.png'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark6 = new ymaps.Placemark([55.641823, 37.845404], {imgSrc: 'img/med.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark7 = new ymaps.Placemark([55.644080, 37.848387], {imgSrc: 'img/school.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark8 = new ymaps.Placemark([55.642976, 37.853086], {imgSrc: 'img/cart.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark9 = new ymaps.Placemark([55.645883, 37.853834], {imgSrc: 'img/smile.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+            myPlacemark10 = new ymaps.Placemark([55.641927, 37.858212], {imgSrc: 'img/school.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+            myPlacemark11 = new ymaps.Placemark([55.640471, 37.859843], {imgSrc: 'img/tree.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+            myPlacemark12 = new ymaps.Placemark([55.641369, 37.868082], {imgSrc: 'img/tree.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+            myPlacemark13 = new ymaps.Placemark([55.642291, 37.871644], {imgSrc: 'img/tree.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+
+            myPlacemark14 = new ymaps.Placemark([55.645616, 37.869756], {imgSrc: 'img/tree.svg'}, {
+              // Шаблон иконки
+              iconLayout: markLayout,
+              iconImageSize: [47, 50],
+              iconOffset: [-23, -50]
+            });
+
+            infrastructureMap.geoObjects
+              .add(myPlacemark1)
+              .add(myPlacemark2)
+              .add(myPlacemark3)
+              .add(myPlacemark4)
+              .add(myPlacemark5)
+              .add(myPlacemark6)
+              .add(myPlacemark7)
+              .add(myPlacemark8)
+              .add(myPlacemark9)
+              .add(myPlacemark10)
+              .add(myPlacemark11)
+              .add(myPlacemark12)
+              .add(myPlacemark13)
+              .add(myPlacemark14)
           }
     }
 })(jQuery);

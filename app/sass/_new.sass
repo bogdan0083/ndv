@@ -129,6 +129,13 @@ svg path
       margin-bottom: 14px
   table td:first-child
     width: 150px
+  &-text
+    color: #707070
+    line-height: 1.8
+    margin-bottom: 20px
+    font-size: 15px
+    max-width: 600px
+
 /* end project-desc */
 
 .ruble
@@ -682,10 +689,15 @@ svg path
   border-bottom: 1px solid #e5e5e5
   .swiper-slide
     position: relative
-  .left, .project-preview-slider
+  .desc-content, .project-preview-slider, .zastroy-info
     width: 50%
-  .left
-    padding: 60px 100px 20px 30px
+    +r($screen-sm)
+      width: 100%
+  .desc-content
+    padding: 50px 120px 20px 30px
+    +r(1600px)
+      padding-right: 30px
+
     h3
       padding-bottom: 24px
       margin-bottom: 30px
@@ -693,6 +705,7 @@ svg path
       font-size: 15px
       color: #707070
       line-height: 1.8
+      margin-bottom: 30px
   .inner
     float: right
     max-width: 600px
@@ -707,7 +720,58 @@ svg path
     top: 0
     width: 100%
     height: 100%
+  &-right
+    .desc-content
+      padding-right: 30px
+      padding-left: 110px
+      +r(1600px)
+        padding-left: 30px
+    .inner
+      float: left
+  &-zastroy
+    background-color: #f7f7f7
+    padding-bottom: 30px
+    .desc-content
+      padding-left: 0
+      padding-top: 50px
+      +rmin($screen-sm)
+        padding-left: 10px
+  &.no-border
+    border: none
+  .zastroy-info
+    padding-left: 75px
+    padding-top: 50px
+    .group
+      margin-top: 20px
+      position: relative
+      padding-left: 120px
+      img
+        left: 0
+        top: 0
+        position: absolute
 
+.zastroy-info-list
+  max-width: 315px
+  +r($screen-sm)
+    max-width: 290px
+  li
+    border-bottom: 1px solid #e6e6e6
+    padding: 12px 0 8px
+  .count
+    font-size: 43px
+    color: #000
+    line-height: 1
+    +calibri()
+    font-weight: 400
+    display: inline-block
+    vertical-align: middle
+    margin-right: 30px
+    +r($screen-sm)
+      margin-right: 10px
+  .text
+    display: inline-block
+    color: #000
+    font-size: 17px
 .slide-image-bg
   position: absolute
   left: 0
@@ -716,7 +780,7 @@ svg path
   height: 100%
 
 .project-preview-slider
-  height: 440px
+  min-height: 440px
 
 .lined
   position: relative
@@ -730,6 +794,25 @@ svg path
     height: 1px
     width: 300px
     background-color: #e7e7e7
+
+.slide-image-bg
+  position: relative
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  &:after
+    content: ''
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: #000
+    position: absolute
+    opacity: .2
+    +tr(all 0.5s)
+  &:hover
+    &:after
+      opacity: 0
 
 .video-js
   &:after
@@ -846,6 +929,28 @@ svg path
       +calibri()
     p
       color: #969696
+  &-features
+    background-color: #f7f7f7
+    text-align: left
+    .container
+      max-width: 1600px
+      padding-left: 75px
+      padding-right: 75px
+      +r($screen-lg)
+        padding-left: 30px
+        padding-right: 30px
+      +r($screen-md)
+        padding-left: 15px
+        padding-right: 15px
+      .group
+        margin-left: -15px
+        max-width: 1300px
+        +rmin($screen-lg)
+          margin-left: 0
+      .why-project-item
+        max-width: 400px
+        +r($screen-lg)
+          max-width: 300px
   .group
     display: -webkit-flex
     display: -ms-flex
@@ -870,12 +975,12 @@ svg path
     margin-bottom: 30px
   .swiper-slide
     position: relative
-  .left, &-map
+  .desc-content, &-map
     width: 50%
-  .left
-    padding-top: 30px
+  .desc-content
+    padding-top: 50px
     padding-bottom: 50px
-    padding-right: 100px
+    padding-right: 120px
   .inner
     float: right
     max-width: 600px
@@ -888,7 +993,7 @@ svg path
 
   &-map
     position: relative
-    #location-map
+    #location-map, #infrastructure-map
       position: absolute
       left: 0
       top: 0
@@ -983,3 +1088,198 @@ svg path
         border-color: transparent !important
       span.dotted
         color: #000
+
+.infra-list
+  li
+    position: relative
+    padding-left: 30px
+    padding-top: 10px
+    padding-bottom: 7px
+    .dotted
+      font-size: 19px
+    img
+      position: absolute
+      left: 10px
+      top: 50%
+      transform: translate(-50%, -50%)
+    .count
+      margin-left: 10px
+      font-size: 19px
+
+.map-label
+  width: 136px
+  height: 34px
+  line-height: 34px
+  position: absolute
+  left: 55px
+  top: 55px
+  z-index: 10
+  background-image: url(../img/map-label.png)
+  padding-left: 17px
+  .text, .distance
+    display: inline-block
+  .text
+    color: #fff
+    font-weight: 700
+    margin-right: 16px
+    font-size: 17px
+  .distance
+    color: #000
+    font-size: 17px
+    font-weight: 400
+
+.map-mark
+  width: 47px
+  height: 50px
+  background-image: url(../img/map-marker.svg)
+  position: relative
+  img
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 3px
+    margin: auto
+  &.red
+    background-image: url(../img/map-marker-red.svg)
+
+.zastroy-link
+  padding-left: 22px
+  background: url(../img/globe.svg) no-repeat 0 center
+
+.nomargin
+  margin: 0
+
+.docs-container
+  padding-bottom: 50px
+  padding-top: 1px
+  &:last-child
+    .docs-block
+      border: 0
+  h3
+    margin-top: 42px
+    margin-bottom: 30px
+  &:nth-child(2n)
+    background-color: #f7f7f7
+  > .docs-block:first-of-type
+    padding-top: 0
+  .js-all-docs-toggle
+    border-color: $color-red
+  .btn
+    .text
+      font-weight: 400
+    svg path
+      fill: $color-red
+    &.active
+      svg
+        transform: rotate(-180deg)
+  .bottomline
+    margin-top: 30px
+
+.js-hidden-docs
+  overflow: hidden
+  height: 168px
+
+.docs-block
+  max-width: 1600px
+  margin: auto
+  padding-left: 75px
+  padding-right: 75px
+  padding-top: 30px
+  padding-bottom: 30px
+  border-bottom: 1px solid #cccccc
+  +calibri()
+
+
+.js-docs-rest
+  display: none
+
+.top-doc
+  max-width: 1200px
+  font-size: 17px
+  position: relative
+  padding-bottom: 20px
+  margin-bottom: 10px
+  &:after
+    content: ''
+    position: absolute
+    width: 100%
+    left: 0
+    bottom: 0
+    background-color: #ededed
+    height: 1px
+    margin-left: -24px
+    margin-right: -24px
+  > .dotted
+    margin-bottom: 6px
+    display: inline-block
+    line-height: 1.1
+    font-size: 19px
+  .doc-item-wrap
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+
+.top-doc, .doc-item
+  max-width: 1200px
+  color: #9d9d9d
+  .doc-published, .date, .time
+    margin-right: 26px
+  .js-toggle-changes
+    margin-left: -20px
+    position: relative
+    font-size: 15px
+    &:before
+      content: ''
+      width: 12px
+      height: 12px
+      background: url(../img/pencil.svg) no-repeat center
+      position: absolute
+      left: -20px
+      top: 50%
+      margin-top: -8px
+
+.doc-item
+  padding: 10px 0
+  &-wrap
+    > .dotted
+      line-height: 1
+      margin-right: 30px
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    align-items: center
+
+.doc-rest
+  margin-left: auto
+  margin-right: 0
+  flex-shrink: 1
+  white-space: nowrap
+
+.date
+  color: #9d9d9d
+  padding-left: 20px
+  background: url(../img/calendar.svg) no-repeat left center
+  padding-top: 4px
+  margin-top: -4px
+  line-height: 1
+
+.doc-file
+  display: inline-block
+  white-space: nowrap
+  margin-left: 35px
+
+.doc-changes
+  margin: 10px 0 10px -25px
+  padding: 25px
+  background-color: #f6f6f6
+  font-size: 13px
+  line-height: 1.5
+  max-width: 750px
+  display: none
+  +r($screen-lg)
+    margin-left: 0
