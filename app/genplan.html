@@ -17,7 +17,7 @@
             </div>
             <div class="gf_sl">
                 <ul class="gf_list">
-                    <li class="">
+                    <li class="active">
                         <div class="desc_ttl">
                             <h4><span>Новостройки</span></h4>
                         </div>
@@ -135,18 +135,14 @@
                             </div>
                         </div>
                     </li>
-                    <li class="active">
+                    <li>
                         <div class="desc_ttl">
                             <h4><span>Ипотека</span><span class="lbl">от 10%</span></h4>
                         </div>
-                        <div class="desc_txt" style="display: block">
-                          <div class="clearfix rows">
-                          <nav class="global-filter-nav">
-                            <a href="#" class="active">Ипотека</a>
-                            <a href="#">Военная ипотека</a>
-                            <a href="#">Часто задаваемые вопросы</a>
-                          </nav>
-                          </div>
+                        <div class="desc_txt">
+                            <div class="clearfix rows">
+                                <p class="ttl">Срок сдачи</p>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -208,234 +204,336 @@
             </div>
             <div class="hdr_request_call"><a href="#">Заказать звонок</a></div>
         </div>
-        <nav class="ipoteka-nav">
-          <a href="#" class="active">Ипотека</a>
-          <a href="#">Военная ипотека</a>
-          <a href="#">Часто задаваемые вопросы</a>
-        </nav>
-        <!-- start ipoteka-promo -->
-        <div class="ipoteka-promo">
-          <h1>Ипотека</h1>
-          <div class="group">
-            <div class="text">Успей получить ипотеку</div>
-            <div class="circle">
-              <div class="from">от</div>
-              <div class="percentage">
-                9,4<span>%</span>
-              </div>
-              <p>от ведущих <br>банков России</p>
+        <div class="clearfix gr_btns_brds">
+            <div class="go_back_ln">
+                <a href="#" class="go_back_link">К списку</a>
             </div>
-            <div class="text">по индивидуальной ставке!</div>
+            <div class="bread_crumbs">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Все квартиры в новостройках</a></li>
+                    <li><a href="#">Новостройки</a></li>
+                    <li><a href="#">Подмосковья</a></li>
+                    <li><a href="#">Квартал «Новые Котельники»</a></li>
+                </ul>
+            </div>
+            <div class="rgh_btn">
+                <button class="comparison">К сравнению</button>
+                <button class="favorites">В избранное</button>
+            </div>
+        </div>
+        <div class="clearfix card_product">
+            <div id="cp_l" class="clearfix cp">
+                <div class="cpl_l">
+                    <div class="cpl_ttl">
+                        <h3>«Новые Котельники»</h3>
+                        <p>Сдача в 4 кв. 2017</p>
+                        <div class="brdh"></div>
+                    </div>
+                    <div class="clearfix cp_desc">
+                        <div class="cpd_l">
+                            <ul class="cpd_list">
+                                <li class="active">
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Котельники</h5>
+                                        </div>
+                                        <div class="desc_txt"  style="display: block">
+                                            <span class="foot">7 мин</span>
+                                            <span class="drive">3 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Лермонтовский проспект</h5>
+                                        </div>
+                                        <div class="desc_txt">
+                                            <span class="foot">8 мин</span>
+                                            <span class="drive">4 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="desc">
+                                        <div class="desc_ttl">
+                                            <img src="img/m_purple.png" alt="">
+                                            <h5>Жулебино</h5>
+                                        </div>
+                                        <div class="desc_txt">
+                                            <span class="foot">5 мин</span>
+                                            <span class="drive">2 мин</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p>г. Котельники, ул. Угрешская</p>
+                        </div>
+                        <div class="cpd_r">
+                            <p class="price"><span class="sl">от</span> 2.1 млн. <span class="ru_b">P</span></p>
+                            <p class="price_m"><span class="sl">от</span> 64 160 <span class="ru_s">P</span>/м<sup>2</sup></p>
+                            <p class="mortgage">Ипотека <span class="lbl"><span>от </span>10%</span></p>
+                        </div>
+                    </div>
+                    <div class="clearfix cp_btm">
+                        <a href="#" class="submit_your_application">Оставить заявку</a>
+                        <a href="#" class="forum_inhabitants">Форум жителей</a>
+                        <a href="#" class="house_link">kvartal-kotelniki.ru</a>
+                    </div>
+                </div>
+                <div class="cpl_r">
+                    <div class="virtual_tour">
+                        <a href="#" class="vt_link">Виртуальный тур</a>
+                    </div>
+                    <div class="webcams">
+                        <a href="#" class="wc_link">Веб-камеры <span>3</span></a>
+                    </div>
+                    <div class="cp_map">
+                        <div id="cp_map"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="cp_r" class="cp">
+                <div class="swiper-container slr_card_product">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/cp1.jpg" alt="">
+                            <div class="benefit_up">
+                                <p>Выгода до 150 000 <span class="ru">Р</span></p>
+                            </div>
+                            <span class="key"></span>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cp_mdl_menu">
+            <ul class="cmm_menu">
+                <li><a href="#">Общее</a></li>
+                <li><a href="#">Квартиры в наличии</a></li>
+                <li><a href="#">О проекте</a></li>
+                <li><a href="#">Ход строительства</a></li>
+                <li><a href="#">Документы</a></li>
+                <li><a href="#">Генплан</a></li>
+                <li class="active"><a href="#">Как добраться</a></li>
+            </ul>
+        </div>
+        <!-- start inner-nav -->
+        <nav class="inner-nav padded">
+          <h3>Генплан</h3>
+          <div class="links">
+            <a class="dotted scrollTo" href="#infra">Инфраструктура</a>
           </div>
-          <div class="ipoteka-promo-bottom">
-            <a href="" class="btn submit_your_application">Оставить заявку</a>
+        </nav>
+        <!-- end inner-nav -->
+        <!-- start genplan -->
+        <div class="genplan">
+          <div class="map-label">
+              <div class="text">МКАД</div>
+              <div class="distance">1.5 км</div>
+          </div>
+          <img src="img/genplan.jpg" alt="" class="genplan-mega-img js-genplan-img" width="1617" height="650">
+          <div class="numbers">
+            <div class="num" style="left: 22.9%; top: 10.7%">1</div>
+            <div class="num" style="left: 28.1%; top: 5.7%">2</div>
+            <div class="num" style="left: 24.1%; top: 24.7%">3</div>
+            <div class="num" style="left: 37.3%; top: 11.7%">4</div>
+            <div class="num" style="left: 43.6%; top: 19.7%">5</div>
+            <div class="num" style="left: 40.1%; top: 27.7%">6</div>
+            <div class="num" style="left: 36.1%; top: 34.7%">7</div>
+            <div class="num" style="left: 34.1%; top: 45.7%">8</div>
+            <div class="num" style="left: 49.2%; top: 22.2%">9</div>
+            <div class="num" style="left: 56.0%; top: 24.2%">10</div>
+            <div class="num" style="left: 46.5%; top: 34.4%">11</div>
+            <div class="num" style="left: 39.5%; top: 44.9%">12</div>
+            <div class="num" style="left: 46%; top: 42.4%">13</div>
+            <div class="num" style="left: 40.4%; top: 64.9%">14</div>
+            <div class="num" style="left: 22.9%; top: 50.0%">15</div>
+            <div class="num" style="left: 17.2%; top: 57.6%">16</div>
+            <div class="num" style="left: 12.9%; top: 63.6%">17</div>
+            <div class="num" style="left: 54.0%; top: 55.4%">19</div>
+            <div class="num" style="left: 69.5%; top: 30.9%">18</div>
+          </div>
+          <div class="buildings">
+            <div class="mask js-mask js-tooltip"
+                 style="left: 52.3%; top: 54.5%"
+                 data-actual-width="89"
+                 data-tooltip-content="#tooltip-content1">
+              <img src="img/mask1.png" alt="">
+            </div>
+          </div>
+          <div class="markers">
+            <div class="map-mark orange" style="left: 18.2%; top: 25.4%">
+              <img src="img/school.svg" alt="">
+            </div>
+            <div class="map-mark green" style="left: 22.2%; top: 44.4%">
+              <img src="img/key.svg" alt="">
+            </div>
+            <div class="map-mark pink" style="left: 16.2%; top: 54.4%">
+              <img src="img/paint.svg" alt="">
+            </div>
+            <div class="map-mark pink" style="left: 11.2%; top: 61.4%">
+              <img src="img/paint.svg" alt="">
+            </div>
+            <div class="map-mark" style="left: 11.2%; top: 50.8%">
+              <img src="img/r.png" alt="">
+            </div>
+            <div class="map-mark left" style="left: 4.2%; top: 44.8%">
+              <img src="img/m.svg" alt="">
+            </div>
+            <div class="map-mark purple" style="left: 24.2%; top: 80.4%">
+              <img src="img/kran.svg" alt="">
+            </div>
+            <div class="map-mark purple" style="left: 32.2%; top: 84.4%">
+              <img src="img/kran.svg" alt="">
+            </div>
+            <div class="map-mark" style="left: 38.2%; top: 84.4%">
+              <img src="img/m.svg" alt="">
+            </div>
+            <div class="map-mark" style="left: 46.2%; top: 80.0%">
+              <img src="img/r.png" alt="">
+            </div>
+            <div class="map-mark orange" style="left: 59.2%; top: 82.0%">
+              <img src="img/school.svg" alt="">
+            </div>
+            <div class="map-mark green" style="left: 72.2%; top: 75.7%">
+              <img src="img/key.svg" alt="">
+            </div>
+            <div class="map-mark green" style="left: 38.2%; top: 57.3%">
+              <img src="img/key.svg" alt="">
+            </div>
+            <div class="map-mark purple" style="left: 46.2%; top: 57.3%">
+              <img src="img/kran.svg" alt="">
+            </div>
+            <div class="map-mark pink" style="left: 43.2%; top: 44.3%">
+              <img src="img/paint.svg" alt="">
+            </div>
+            <div class="map-mark green" style="left: 45.2%; top: 32.3%">
+              <img src="img/key.svg" alt="">
+            </div>
+            <div class="map-mark blue" style="left: 52.2%; top: 37.3%">
+              <img src="img/kran.svg" alt="">
+            </div>
+            <div class="map-mark pink" style="left: 54.2%; top: 23.8%">
+              <img src="img/paint.svg" alt="">
+            </div>
+            <div class="map-mark green" style="left: 62.2%; top: 33.8%">
+              <img src="img/key.svg" alt="">
+            </div>
+            <div class="map-mark blue" style="left: 79.2%; top: 50.8%">
+              <img src="img/kran.svg" alt="">
+            </div>
+          </div>
+          <div class="compass"></div>
+        </div>
+        <!-- end genplan -->
+        <div class="genplan-showcase padded">
+          <div class="group">
+            <div class="genplan-showcase-item">
+              <div class="map-mark pink">
+                <img src="img/paint.svg" alt="">
+              </div>
+              <div class="text">Дизайнерская отделка</div>
+            </div>
+            <div class="genplan-showcase-item">
+              <div class="map-mark green">
+                <img src="img/key.svg" alt="">
+              </div>
+              <div class="text">Выдача ключей</div>
+            </div>
+            <div class="genplan-showcase-item">
+              <div class="map-mark blue">
+                <img src="img/kran.svg" alt="">
+              </div>
+              <div class="text">II очередь</div>
+            </div>
+            <div class="genplan-showcase-item">
+              <div class="map-mark purple">
+                <img src="img/kran.svg" alt="">
+              </div>
+              <div class="text">III очередь</div>
+            </div>
+            <div class="genplan-showcase-item">
+              <div class="map-mark orange">
+                <img src="img/school.svg" alt="">
+              </div>
+              <div class="text">Школа / дет.сад</div>
+            </div>
+            <div class="genplan-showcase-item">
+              <div class="map-mark">
+                <img src="img/r.png" alt="">
+              </div>
+              <div class="text">Паркинг</div>
+            </div>
           </div>
         </div>
-        <!-- end ipoteka-promo -->
-        <!-- start ipoteka-features -->
-        <section class="ipoteka-features">
-          <div class="container">
-            <h3>С нами легко удивлять</h3>
-            <div class="group">
-              <img src="img/people.png" alt="С нами легко удивлять!" class="mega-image">
-              <div class="flex">
-                <div class="ipoteka-features-left">
-                  <ul class="features-list">
-                    <li class="first">
-                      <div class="icon"><img src="img/clock.svg" alt=""></div>
-                      <div class="text">Экономим время</div>
-                    </li>
-                    <li>
-                      <div class="icon"><img src="img/phone.svg" alt=""></div>
-                      <div class="text">Вам не нужно посещать офис —<br>заполните заявку онлайн</div>
-                    </li>
-                    <li>
-                      <div class="icon"><img src="img/user.svg" alt=""></div>
-                      <div class="text">Вас будет сопровождать <br>персональный менеджер</div>
-                    </li>
-                    <li>
-                      <div class="icon"><img src="img/doc.svg" alt=""></div>
-                      <div class="text">С вас только документы</div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="ipoteka-features-right">
-                  <ul class="features-list">
-                    <li class="first">
-                      <div class="icon"><img src="img/purse.svg" alt=""></div>
-                      <div class="text">Экономим деньги</div>
-                    </li>
-                    <li>
-                      <div class="icon"><img src="img/graph.svg" alt=""></div>
-                      <div class="text">Для клиентов НДВ действует <br>пониженная ставка</div>
-                    </li>
-                    <li>
-                      <div class="icon"><img src="img/marker.svg" alt=""></div>
-                      <div class="text">Мы отправляем вашу заявку сразу <br>в несколько банков</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+        <!-- start tooltip-templates -->
+        <div class="tooltip-templates">
+          <div class="tooltip-content" id="tooltip-content1">
+            <a href="" class="tooltip-close"></a>
+            <h5>Доступно <span>7 квартир</span></h5>
+            <p>Забронировано 10</p>
+            <div class="table-wrap">
+              <table>
+                <tr>
+                  <td>1-комн. от 47 м<sup>2</sup></td>
+                  <td>7 056 000 <span class="ruble">Р</span></td>
+                </tr>
+                <tr>
+                  <td>2-комн. от 58 м<sup>2</sup></td>
+                  <td>9 655 800 <span class="ruble">Р</span>
+                </tr>
+                <tr>
+                  <td>3-комн. от 117,4 м<sup>2</sup></td>
+                  <td>17 607 000 <span class="ruble">Р</span>
+                </tr>
+              </table>
             </div>
           </div>
-        </section>
-        <!-- end ipoteka-features -->
-        <!-- start ipoteka-steps -->
-        <section class="ipoteka-steps">
-          <h3>Как это работает</h3>
-          <div class="group">
-            <div class="ipoteka-step" data-step="1">
-              <div class="circle">
-                <img src="img/envelope.svg" alt="">
-              </div>
-              <h4>Заполните</h4>
-              <p>онлайн-заявку <br>всего в 2 шага</p>
-            </div>
-            <div class="ipoteka-step" data-step="2">
-              <div class="circle">
-                <img src="img/headset.svg" alt="">
-              </div>
-              <h4>С Вами свяжется</h4>
-              <p>персональный менеджер <br>и уточнит список<br> документов</p>
-            </div>
-            <div class="ipoteka-step" data-step="3">
-              <div class="circle">
-                <img src="img/columns.svg" alt="">
-              </div>
-              <h4>Мы отправим</h4>
-              <p>вашу заявку в несколько <br>банков</p>
-            </div>
-            <div class="ipoteka-step" data-step="4">
-              <div class="circle">
-                <img src="img/thumb-up.svg" alt="">
-              </div>
-              <h4>Мы оформим</h4>
-              <p>ипотеку на лучших <br>условиях</p>
-            </div>
-          </div>
-        </section>
-        <!-- end ipoteka-steps -->
-        <!-- start ipoteka-->
-        <section class="ipoteka ipoteka-calculate" id="ipoteka">
-            <div class="top">
-                <h3>Расчитайте вашу ипотеку</h3>
-                <div class="ipoteka-calculate-methods">
-                  <a href="#" class="active">Новостройка</a>
-                  <a href="#">Квартира на вторичке</a>
-                  <a href="#">Машиноместа</a>
-                  <a href="#">Коммерческая недвижимость</a>
-                </div>
-            </div>
-            <div class="middle">
-              <div class="ipoteka-calculate-results">
-                <div class="group">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="ipoteka-overall">
-                          <p>Ставка от</p>
-                          <h3>9,4 %</h3>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="ipoteka-overall">
-                          <p>Платеж от</p>
-                          <h3>8 902 <span class="ruble">Р</span></h3>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="ipoteka-overall">
-                          <p>Сумма до</p>
-                          <h3>975 400 <span class="ruble">Р</span></h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ipoteka-calculate-controls">
-                <div class="group">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="range-block">
-                        <p>Стоимость недвижимости, <span class="ruble">Р</span>
-                        </p>
-                        <div class="range-input-wrap">
-                            <input class="js-input" type="text" name="price" id="ipoteka-price">
-                            <div class="js-triangle"></div>
-                        </div>
-                        <div class="range-slider js-range-slider" id="range-slider-price"></div>
-                        <div class="labels"><span>1,8 млн</span><span>30 млн</span></div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="range-block">
-                        <p>Первоначальный взнос, <span class="ruble">Р</span></p>
-                        <div class="range-input-wrap">
-                          <input class="js-input" type="text" name="price" id="ipoteka-vznos">
-                          <div class="js-triangle"></div>
-                        </div>
-                        <div class="range-slider js-range-slider" data-min="500000" data-max="3200000" data-from="1200000" id="range-slider-price"></div>
-                        <div class="labels"><span>15 %</span><span>95 %</span></div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                      <div class="range-block">
-                        <p>Срок, <span class="colored-gray">лет</span>
-                        </p>
-                        <div class="range-input-wrap">
-                          <input class="js-input" type="text" name="price" id="ipoteka-vznos">
-                          <div class="js-triangle"></div>
-                        </div>
-                        <div class="range-slider js-range-slider" data-min="1" data-max="20" data-from="5" data-step="1" id="range-slider-price"></div>
-                        <div class="labels"><span>1 год</span><span>20 лет</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="logos">
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo1.png" alt="">
-                  </div>
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo2.png" alt="">
-                  </div>
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo3.png" alt="">
-                  </div>
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo4.png" alt="" style="margin-top: -4px;">
-                  </div>
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo5.png" alt="">
-                  </div>
-                  <div class="ipoteka-logo">
-                      <img src="img/ipoteka-logo6.png" alt="">
-                  </div>
-              </div>
-            </div>
-        </section>
-        <!-- end ipoteka-->
+        </div>
+        <!-- end tooltip-templates -->
         <!-- start form-->
-        <div class="cnt_form cnt_form_ipoteka nomargin">
+        <div class="cnt_form nomargin">
             <div class="cf_ttl">
-                <p>Чтобы узнать, какие программы доступны именно вам</p>
-                <h3>Отправьте онлайн-заявку</h3>
+                <h3>Записаться на просмотр объекта </h3>
+                <p>Просмотры проводятся еженедельно по субботам с 10:00 до 19:00 часов</p>
             </div>
             <div class="cf_form">
                 <form action="#" method="post">
-                  <div class="clearfix rows">
-                      <div class="cols"><input type="text" placeholder="ФИО"></div>
-                      <div class="cols"><input type="text" placeholder="Телефон" class="phone"></div>
-                      <div class="cols"><input type="text" placeholder="Email"></div>
-                  </div>
-                  <div class="clearfix rows">
-                      <div class="cols_txt">
-                          <textarea placeholder="Комментарий"></textarea>
-                      </div>
-                  </div>
-                  <button class="btn btn-action">
-                    <span class="text">Оставить заявку</span>
-                  </button>
+                    <div class="clearfix rows">
+                        <div class="cols">
+                            <input type="text" placeholder="ФИО">
+                        </div>
+                        <div class="cols">
+                            <input class="phone" type="text" placeholder="Телефон">
+                        </div>
+                        <button class="btn btn-action"><span class="text">Записаться</span>
+                            <div class="ic">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15">
+                                    <path fill="#193863" d="M3 3v2h2V3zm11 1H8V0H0v15h14zM7 14H1V1h6zm1-9h5v9H8v-1h3v-1H8v-1h3v-1H8V9h3V8H8V7h3V6H8zM3 6v2h2V6zm0 3v2h2V9z" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -864,6 +962,7 @@
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUzkTMNpgd0SuQyESCTt5mQH5ve2tm6Ds'></script>
     <script src="js/ion.rangeSlider.min.js"></script>
     <script src="js/video.min.js"></script>
+    <script src="js/tooltipster.bundle.min.js"></script>
     <script src="js/custom.js"></script>
     <div id="gal1" class="gals">
         <a rel="gl1" class="fancy_albums"  href="img/g1.jpg"><img src="img/g1.jpg" alt="" /></a>

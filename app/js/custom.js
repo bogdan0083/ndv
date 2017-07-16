@@ -474,6 +474,40 @@ $(window).load(function () {
       }
     });
 
+    var heroWidth =  $('.js-genplan-img').attr('width');
+
+    function onGenplanResize() {
+      var currentHeroWidth = $('.js-genplan-img').width();
+
+      var diffWidth = currentHeroWidth / heroWidth;
+      $('.js-mask').each(function (idx, item) {
+        var $item = $(item);
+        var newWidth = parseInt(parseInt($item.data('actual-width')) * diffWidth);
+        $item.css('width', newWidth);
+      });
+    }
+
+    // Реализация интерактивного генплана.
+
+    if ($('.genplan').length > 0) {
+      onGenplanResize();
+      $(window).on('resize', onGenplanResize);
+    }
+
+
+    // Активируем всплывающую подсказку
+    $('.js-tooltip').tooltipster({
+      theme: 'tooltipster-noir',
+      animation: 'fall',
+      interactive: true,
+      trigger: 'click'
+    });
+
+    $('.tooltip-close').click(function (e) {
+      e.preventDefault();
+      $('.js-tooltip').tooltipster('close');
+    });
+
     // Яндекс карты
     ymaps.ready(init);
     var locationMap, infrastructureMap;

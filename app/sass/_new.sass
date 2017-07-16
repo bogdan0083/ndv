@@ -186,7 +186,39 @@ svg path
         fill: #f60304
     .text
       font-size: 17px
-
+  &.submit_your_application
+    font: normal 17px/17px 'Etelka'
+    color: #000
+    position: relative
+    display: inline-block
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    background: #fff
+    padding: 19px 54px 18px 30px
+    height: auto
+    border: 1px solid transparent
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3)
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3)
+    -webkit-transition: 0.35s
+    -o-transition: 0.35s
+    transition: 0.35s
+  &.submit_your_application:hover
+    -webkit-box-shadow: 0px 1px 3px 0px transparent
+    box-shadow: 0px 1px 3px 0px transparent
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    -webkit-transition: 0.35s
+    -o-transition: 0.35s
+    transition: 0.35s
+  &.submit_your_application:hover:after
+    background: url(../img/i46h.png) no-repeat 0 0
+  &.submit_your_application:after
+    content: ""
+    background: url(../img/i46.png) no-repeat 0 0
+    width: 19px
+    height: 17px
+    position: absolute
+    top: 18px
+    right: 26px
 /* start why */
 .filter-inner
   padding-top: 50px
@@ -631,6 +663,44 @@ svg path
     .btn
       font-size: 19px
       line-height: 34px
+  &-calculate
+    background-color: #fff
+    padding-bottom: 0
+    border-bottom: 0
+    &-results, &-controls
+      .group
+        max-width: 1280px
+        margin: 0 auto
+      .range-block
+        margin-left: 0
+        margin-right: 0
+      .ipoteka-overall
+        margin-left: 0
+        margin-right: 0
+        p
+          margin-bottom: 10px
+        h3
+          font-size: 28px
+          margin-bottom: 6px
+        .ruble
+          &:after
+            top: 0.65em
+            left: 1px
+    &-controls
+      border-top: 1px solid #e1e1e1
+      border-bottom: 1px solid #e1e1e1
+      margin-left: 75px
+      margin-right: 75px
+      padding-bottom: 12px
+      +r($screen-lg)
+        margin-left: 0
+        margin-right: 0
+    .middle
+      background-color: #f7f7f7
+    .logos
+      max-width: none
+      border: 0
+      padding-top: 30px
 /* end ipoteka */
 
 .container
@@ -1072,11 +1142,24 @@ svg path
 
 /* start cnt_form */
 .cnt_form
+  text-align: center
   .btn
     padding-left: 36px
     padding-right: 30px
     height: 42px
     line-height: 40px
+  &_ipoteka
+    border-top: 0
+    padding-top: 10px
+    .cf_ttl
+      p
+        margin-bottom: 10px
+        font-size: 21px
+    .btn
+      margin-top: 30px
+      font-size: 19px
+      padding-left: 20px
+      padding-right: 20px
 /* end cnt_form */
 
 .f_menu .f_list
@@ -1140,8 +1223,27 @@ svg path
     right: 0
     bottom: 3px
     margin: auto
+    max-width: 40%
+    max-height: 40%
   &.red
     background-image: url(../img/map-marker-red.svg)
+  &.orange
+    background-image: url(../img/map-marker-orange.svg)
+  &.blue
+    background-image: url(../img/map-marker-blue.svg)
+  &.green
+    background-image: url(../img/map-marker-green.svg)
+  &.pink
+    background-image: url(../img/map-marker-pink.svg)
+  &.purple
+    background-image: url(../img/map-marker-purple.svg)
+  &.left
+    background-image: url(../img/map-marker-left.svg)
+    width: 50px
+    height: 47px
+    img
+      bottom: 1px
+      left: 3px
 
 .zastroy-link
   padding-left: 22px
@@ -1283,3 +1385,429 @@ svg path
   display: none
   +r($screen-lg)
     margin-left: 0
+
+/* start ipoteka-nav */
+.ipoteka-nav, .ipoteka-calculate-methods
+  text-align: center
+  border-bottom: 1px solid #ededed
+  +calibri()
+  a
+    color: #193863
+    font-size: 17px
+    height: 54px
+    line-height: 54px
+    position: relative
+    display: inline-block
+    padding-left: 30px
+    padding-right: 30px
+    +tr()
+    margin-right: -3px
+    &:before
+      content: ''
+      position: absolute
+      right: 0
+      top: 50%
+      height: 12px
+      margin-top: -6px
+      background-color: #d8d8d8
+      width: 1px
+    &:last-child:before
+      display: none
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: -2px
+      height: 2px
+      background-color: #e41a1b
+      width: 100%
+      display: none
+    &.active
+      color: #000
+      &:after
+        display: block
+    &:hover
+      color: #000
+/* end ipoteka-nav */
+
+/* start ipoteka-promo */
+.ipoteka-promo
+  text-align: center
+  padding: 40px 0 50px
+  overflow: hidden
+  +calibri()
+  &-bottom
+    margin-top: 40px
+  h1
+    margin-bottom: 20px
+  .group
+    margin: 0 auto
+    position: relative
+    left: 16px
+  .circle, .text
+    display: inline-block
+    vertical-align: middle
+  .text
+    color: #868686
+    font-size: 21px
+    margin-top: 18px
+  .circle
+    margin-left: 60px
+    margin-right: 60px
+    width: 250px
+    height: 250px
+    background-color: #e41a1b
+    border-radius: 50%
+    color: #fff
+    padding-top: 24px
+    .from
+      font-family: 'Etelka'
+      font-weight: 400
+      font-size: 25px
+    .percentage
+      font-size: 66px
+      font-family: 'Etelka'
+      font-weight: 300
+      line-height: 1
+      position: relative
+      left: 18px
+      padding-bottom: 10px
+      display: inline-block
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100px
+        height: 1px
+        background-color: #fff
+        opacity: 0.23
+      &:before
+        content: ''
+        position: absolute
+        left: 50%
+        bottom: 0
+        width: 310px
+        margin-left: -173px
+        height: 1px
+        background-color: $color-red
+        opacity: 0.23
+      span
+        font-size: 45px
+    p
+      font-size: 22px
+      line-height: 1.4
+      margin-top: 14px
+
+h1
+  font-size: 40px
+  font-family: 'Etelka', Calibri, sans-serif
+  font-weight: 400
+
+/* end ipoteka-promo */
+
+/* start ipoteka-features */
+.ipoteka-features
+  text-align: center
+  overflow: hidden
+  padding: 40px 0 40px
+  min-height: 565px
+  background-color: #f4f4f4
+  h3
+    margin-bottom: 30px
+  .group
+    max-width: 1170px
+    margin: 0 auto
+    position: relative
+    .mega-image
+      position: absolute
+      left: 50%
+      margin-left: -205px
+  .flex
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+
+.features-list
+  text-align: left
+  font-size: 17px
+  color: #353535
+  padding-top: 60px
+  &:first-child
+    padding-left: 50px
+  +calibri()
+  li
+    margin-bottom: 30px
+    position: relative
+    padding-left: 44px
+    .text
+      padding-top: 4px
+    .icon
+      position: absolute
+      left: 10px
+      transform: translateX(-50%)
+    img
+      display: block
+    &:not(.first)
+      img
+        opacity: .4
+    &.first
+      margin-bottom: 70px
+      padding-left: 64px
+      .icon
+        width: 68px
+        height: 68px
+        display: inline-block
+        box-shadow: 0 1px 2px rgba(229, 229, 229, 0.75)
+        border: 1px solid #cbcbcb
+        border-radius: 50%
+        background-color: #fff
+        img
+          position: absolute
+          left: 0
+          top: 0
+          bottom: 2px
+          right: 0
+          margin: auto
+      .text
+        padding-top: 20px
+        font-size: 21px
+/* end ipoteka-features */
+
+/* start ipoteka-steps */
+.ipoteka-steps
+  text-align: center
+  padding: 60px 0 70px
+  overflow: hidden
+  h3
+    margin-bottom: 20px
+  .group
+    display: inline-block
+    position: relative
+    &:after
+      content: ''
+      background-color: #f4f4f4
+      height: 1px
+      width: 100%
+      position: absolute
+      top: 50%
+      left: 0
+      +r($screen-lg)
+        display: none
+
+.ipoteka-step
+  display: inline-block
+  width: 255px
+  height: 255px
+  border: 1px solid #d7d7d7
+  text-align: center
+  vertical-align: top
+  border-radius: 50%
+  box-shadow: 0 0 0 8px #f4f4f4
+  background-color: #fff
+  margin-right: 100px
+  padding-top: 40px
+  font-size: 17px
+  margin-top: 20px
+  margin-bottom: 20px
+  position: relative
+  z-index: 10
+  +calibri()
+  &:after
+    content: attr(data-step)
+    right: -64px
+    position: absolute
+    top: 50%
+    width: 25px
+    height: 40px
+    margin-top: -36px
+    background: url(../img/arr-right-long.png) no-repeat bottom
+    font-size: 13px
+    color: #a4a4a4
+  &:last-child
+    margin-right: 0
+    &:after, &:before
+      display: none
+  .circle
+    border: 1px solid #e41a1b
+    width: 67px
+    height: 67px
+    margin: 0 auto 14px
+    position: relative
+    padding-left: 30px
+    padding-right: 30px
+    border-radius: 50%
+    img
+      margin: auto
+      position: absolute
+      left: 0
+      bottom: 0
+      right: 0
+      top: 0
+  h4
+    font-size: 18px
+    font-weight: 400
+    margin-bottom: 8px
+  p
+    font-size: 17px
+    line-height: 1.3
+/* end ipoteka-steps */
+
+.global-filter-nav
+  a
+    display: block
+    padding: 10px 0
+    color: #456081
+    font-size: 16px
+    +calibri()
+    +tr()
+    &.active, &:hover
+      color: #000
+
+/* start genplan */
+.genplan
+  position: relative
+  .map-label
+    left: 75px
+    +r(1700px)
+      left: 30px
+      top: 30px
+  +calibri()
+  &-mega-img
+    display: block
+    width: 100%
+  .numbers, .buildings, .markers
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+  .num
+    z-index: 20
+    background-color: rgba(#19355b, 0.9)
+    width: 24px
+    height: 24px
+    line-height: 24px
+    border-radius: 50%
+    text-align: center
+    color: #fff
+    font-size: 12px
+    font-weight: 400
+    position: absolute
+    +r(1600px)
+      width: 18px
+      height: 18px
+      line-height: 18px
+  .map-mark
+    transform: translate(-25%, -100%)
+    position: absolute
+    +r(1800px)
+      transform: translate(-25%, -100%) scale(0.8)
+    +r(1600px)
+      transform: translate(-25%, -100%) scale(0.6)
+    +r(1200px)
+      transform: translate(-25%, -100%) scale(0.5)
+  .compass
+    position: absolute
+    right: 100px
+    bottom: 100px
+    width: 96px
+    height: 97px
+    background-image: url(../img/compass.png)
+    +r(1700px)
+      right: 30px
+      bottom: 30px
+    +r($screen-lg)
+      transform: scale(0.5)
+      right: 10px
+      bottom: 10px
+  .mask
+    display: block
+    position: absolute
+    cursor: pointer
+    z-index: 20
+    img
+      display: block
+      opacity: 0
+      +tr()
+    &:hover
+      img
+        opacity: .3
+/* end genplan */
+
+.genplan-showcase
+  background-color: #f9f9f9
+  padding-top: 14px
+  padding-bottom: 14px
+  +calibri()
+  .group
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    max-width: 1340px
+    width: 100%
+    +r(1700px)
+      max-width: 600px
+      margin: 0 auto
+  &-item
+    margin: 20px 0
+  .map-mark
+    display: inline-block
+    vertical-align: middle
+    margin-right: 10px
+    height: 47px
+    img
+      bottom: 0
+  .text
+    display: inline-block
+    font-size: 17px
+    color: #353535
+/* start tooltip-content */
+.tooltip-content
+  width: 279px
+  border-radius: 3px
+  background-color: #fff
+  padding: 18px 0 18px
+  position: relative
+  +calibri()
+  font-size: 15px
+  .tooltip-close
+    width: 7px
+    height: 7px
+    position: absolute
+    right: 10px
+    top: 10px
+    background-image: url(../img/cross-red.svg)
+  h5, p, .table-wrap
+    padding-left: 18px
+    padding-right: 18px
+  p
+    font-size: 15px
+    color: #353535
+    opacity: .5
+  h5
+    font-size: 15px
+    +calibri(400)
+    color: #000
+    span
+      color: #193863
+  .tooltip-close
+    position: absolute
+  .table-wrap
+    padding-top: 12px
+    border-top: 1px solid #f1f1f1
+    margin-top: 12px
+    table
+      width: 100%
+      td:first-child
+        color: #193863
+        height: 27px
+      td:last-child
+        text-align: right
+/* end tooltip-content */
+
+.tooltip-templates
+  display: none

@@ -2783,6 +2783,377 @@ video::-webkit-media-text-track-display {
   color: #99a4ac;
 }
 
+/* This is the core CSS of Tooltipster */
+/* GENERAL STRUCTURE RULES (do not edit this section) */
+.tooltipster-base {
+  /* this ensures that a constrained height set by functionPosition,
+	if greater that the natural height of the tooltip, will be enforced
+	in browsers that support display:flex */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  pointer-events: none;
+  /* this may be overriden in JS for fixed position origins */
+  position: absolute;
+}
+
+.tooltipster-box {
+  /* see .tooltipster-base. flex-shrink 1 is only necessary for IE10-
+	and flex-basis auto for IE11- (at least) */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.tooltipster-content {
+  /* prevents an overflow if the user adds padding to the div */
+  box-sizing: border-box;
+  /* these make sure we'll be able to detect any overflow */
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.tooltipster-ruler {
+  /* these let us test the size of the tooltip without overflowing the window */
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+/* ANIMATIONS */
+/* Open/close animations */
+/* fade */
+.tooltipster-fade {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.tooltipster-fade.tooltipster-show {
+  opacity: 1;
+}
+
+/* grow */
+.tooltipster-grow {
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-backface-visibility: hidden;
+}
+
+.tooltipster-grow.tooltipster-show {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+/* swing */
+.tooltipster-swing {
+  opacity: 0;
+  -webkit-transform: rotateZ(4deg);
+  transform: rotateZ(4deg);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+.tooltipster-swing.tooltipster-show {
+  opacity: 1;
+  -webkit-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+  transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
+}
+
+/* fall */
+.tooltipster-fall {
+  -webkit-transition-property: top;
+  transition-property: top;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.tooltipster-fall.tooltipster-initial {
+  top: 0 !important;
+}
+
+.tooltipster-fall.tooltipster-dying {
+  -webkit-transition-property: all;
+  transition-property: all;
+  top: 0 !important;
+  opacity: 0;
+}
+
+/* slide */
+.tooltipster-slide {
+  -webkit-transition-property: left;
+  transition-property: left;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.tooltipster-slide.tooltipster-initial {
+  left: -40px !important;
+}
+
+.tooltipster-slide.tooltipster-dying {
+  -webkit-transition-property: all;
+  transition-property: all;
+  left: 0 !important;
+  opacity: 0;
+}
+
+/* Update animations */
+/* We use animations rather than transitions here because
+ transition durations may be specified in the style tag due to
+ animationDuration, and we try to avoid collisions and the use
+ of !important */
+/* fade */
+@-webkit-keyframes tooltipster-fading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tooltipster-fading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tooltipster-update-fade {
+  -webkit-animation: tooltipster-fading 400ms;
+          animation: tooltipster-fading 400ms;
+}
+
+/* rotate */
+@-webkit-keyframes tooltipster-rotating {
+  25% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@keyframes tooltipster-rotating {
+  25% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  75% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.tooltipster-update-rotate {
+  -webkit-animation: tooltipster-rotating 600ms;
+          animation: tooltipster-rotating 600ms;
+}
+
+/* scale */
+@-webkit-keyframes tooltipster-scaling {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes tooltipster-scaling {
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.tooltipster-update-scale {
+  -webkit-animation: tooltipster-scaling 600ms;
+          animation: tooltipster-scaling 600ms;
+}
+
+/**
+ * DEFAULT STYLE OF THE SIDETIP PLUGIN
+ *
+ * All styles are "namespaced" with .tooltipster-sidetip to prevent
+ * conflicts between plugins.
+ */
+/* .tooltipster-box */
+.tooltipster-sidetip .tooltipster-box {
+  background: #565656;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-box {
+  margin-top: 8px;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-box {
+  margin-right: 8px;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-box {
+  margin-left: 8px;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-box {
+  margin-bottom: 8px;
+}
+
+/* .tooltipster-content */
+.tooltipster-sidetip .tooltipster-content {
+  line-height: 18px;
+}
+
+/* .tooltipster-arrow : will keep only the zone of .tooltipster-arrow-uncropped that
+corresponds to the arrow we want to display */
+.tooltipster-sidetip .tooltipster-arrow {
+  overflow: hidden;
+  position: absolute;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow {
+  height: 10px;
+  /* half the width, for centering */
+  margin-left: -10px;
+  top: 0;
+  width: 20px;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow {
+  height: 20px;
+  margin-top: -10px;
+  right: 0;
+  /* top 0 to keep the arrow from overflowing .tooltipster-base when it has not
+	been positioned yet */
+  top: 0;
+  width: 10px;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow {
+  height: 20px;
+  margin-top: -10px;
+  left: 0;
+  /* same as .tooltipster-left .tooltipster-arrow */
+  top: 0;
+  width: 10px;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow {
+  bottom: -2px;
+  height: 10px;
+  margin-left: -10px;
+  width: 20px;
+}
+
+/* common rules between .tooltipster-arrow-background and .tooltipster-arrow-border */
+.tooltipster-sidetip .tooltipster-arrow-background, .tooltipster-sidetip .tooltipster-arrow-border {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+/* .tooltipster-arrow-background */
+.tooltipster-sidetip .tooltipster-arrow-background {
+  border: 10px solid transparent;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  border-bottom-color: #565656;
+  left: 0px;
+  top: 3px;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background {
+  border-left-color: #565656;
+  left: -3px;
+  top: 0px;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background {
+  border-right-color: #565656;
+  left: 3px;
+  top: 0px;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+  border-top-color: white;
+  left: 0px;
+  top: -3px;
+}
+
+/* .tooltipster-arrow-border */
+.tooltipster-sidetip .tooltipster-arrow-border {
+  left: 0;
+  top: 0;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
+  border-bottom-color: black;
+}
+
+.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border {
+  border-left-color: black;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border {
+  border-right-color: black;
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: black;
+}
+
+/* tooltipster-arrow-uncropped */
+.tooltipster-sidetip .tooltipster-arrow-uncropped {
+  position: relative;
+}
+
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped {
+  top: -10px;
+}
+
+.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped {
+  left: -10px;
+}
+
 @font-face {
   font-family: 'Calibri';
   src: url("../fonts/calibri/calibri-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/calibri/calibri-bold.woff") format("woff"), url("../fonts/calibri/calibri-bold.ttf") format("truetype"), url("../fonts/calibri/calibri-bold.svg#calibri") format("svg");
@@ -7582,6 +7953,42 @@ svg path {
   font-size: 17px;
 }
 
+.btn.submit_your_application {
+  font: normal 17px/17px 'Etelka';
+  color: #000;
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  background: #fff;
+  padding: 19px 54px 18px 30px;
+  height: auto;
+  border: 1px solid transparent;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.btn.submit_your_application:hover {
+  box-shadow: 0px 1px 3px 0px transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.btn.submit_your_application:hover:after {
+  background: url(../img/i46h.png) no-repeat 0 0;
+}
+
+.btn.submit_your_application:after {
+  content: "";
+  background: url(../img/i46.png) no-repeat 0 0;
+  width: 19px;
+  height: 17px;
+  position: absolute;
+  top: 18px;
+  right: 26px;
+}
+
 /* start why */
 .filter-inner {
   padding-top: 50px;
@@ -8207,6 +8614,66 @@ svg path {
 .ipoteka .bottomline .btn {
   font-size: 19px;
   line-height: 34px;
+}
+
+.ipoteka-calculate {
+  background-color: #fff;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.ipoteka-calculate-results .group, .ipoteka-calculate-controls .group {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ipoteka-calculate-results .range-block, .ipoteka-calculate-controls .range-block {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ipoteka-calculate-results .ipoteka-overall, .ipoteka-calculate-controls .ipoteka-overall {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.ipoteka-calculate-results .ipoteka-overall p, .ipoteka-calculate-controls .ipoteka-overall p {
+  margin-bottom: 10px;
+}
+
+.ipoteka-calculate-results .ipoteka-overall h3, .ipoteka-calculate-controls .ipoteka-overall h3 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.ipoteka-calculate-results .ipoteka-overall .ruble:after, .ipoteka-calculate-controls .ipoteka-overall .ruble:after {
+  top: 0.65em;
+  left: 1px;
+}
+
+.ipoteka-calculate-controls {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  margin-left: 75px;
+  margin-right: 75px;
+  padding-bottom: 12px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .ipoteka-calculate-controls {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.ipoteka-calculate .middle {
+  background-color: #f7f7f7;
+}
+
+.ipoteka-calculate .logos {
+  max-width: none;
+  border: 0;
+  padding-top: 30px;
 }
 
 /* end ipoteka */
@@ -8864,11 +9331,32 @@ svg path {
 }
 
 /* start cnt_form */
+.cnt_form {
+  text-align: center;
+}
+
 .cnt_form .btn {
   padding-left: 36px;
   padding-right: 30px;
   height: 42px;
   line-height: 40px;
+}
+
+.cnt_form_ipoteka {
+  border-top: 0;
+  padding-top: 10px;
+}
+
+.cnt_form_ipoteka .cf_ttl p {
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.cnt_form_ipoteka .btn {
+  margin-top: 30px;
+  font-size: 19px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* end cnt_form */
@@ -8951,10 +9439,43 @@ svg path {
   right: 0;
   bottom: 3px;
   margin: auto;
+  max-width: 40%;
+  max-height: 40%;
 }
 
 .map-mark.red {
   background-image: url(../img/map-marker-red.svg);
+}
+
+.map-mark.orange {
+  background-image: url(../img/map-marker-orange.svg);
+}
+
+.map-mark.blue {
+  background-image: url(../img/map-marker-blue.svg);
+}
+
+.map-mark.green {
+  background-image: url(../img/map-marker-green.svg);
+}
+
+.map-mark.pink {
+  background-image: url(../img/map-marker-pink.svg);
+}
+
+.map-mark.purple {
+  background-image: url(../img/map-marker-purple.svg);
+}
+
+.map-mark.left {
+  background-image: url(../img/map-marker-left.svg);
+  width: 50px;
+  height: 47px;
+}
+
+.map-mark.left img {
+  bottom: 1px;
+  left: 3px;
 }
 
 .zastroy-link {
@@ -9152,4 +9673,636 @@ svg path {
   .doc-changes {
     margin-left: 0;
   }
+}
+
+/* start ipoteka-nav */
+.ipoteka-nav, .ipoteka-calculate-methods {
+  text-align: center;
+  border-bottom: 1px solid #ededed;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.ipoteka-nav a, .ipoteka-calculate-methods a {
+  color: #193863;
+  font-size: 17px;
+  height: 54px;
+  line-height: 54px;
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-right: -3px;
+}
+
+.ipoteka-nav a:before, .ipoteka-calculate-methods a:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 12px;
+  margin-top: -6px;
+  background-color: #d8d8d8;
+  width: 1px;
+}
+
+.ipoteka-nav a:last-child:before, .ipoteka-calculate-methods a:last-child:before {
+  display: none;
+}
+
+.ipoteka-nav a:after, .ipoteka-calculate-methods a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #e41a1b;
+  width: 100%;
+  display: none;
+}
+
+.ipoteka-nav a.active, .ipoteka-calculate-methods a.active {
+  color: #000;
+}
+
+.ipoteka-nav a.active:after, .ipoteka-calculate-methods a.active:after {
+  display: block;
+}
+
+.ipoteka-nav a:hover, .ipoteka-calculate-methods a:hover {
+  color: #000;
+}
+
+/* end ipoteka-nav */
+/* start ipoteka-promo */
+.ipoteka-promo {
+  text-align: center;
+  padding: 40px 0 50px;
+  overflow: hidden;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.ipoteka-promo-bottom {
+  margin-top: 40px;
+}
+
+.ipoteka-promo h1 {
+  margin-bottom: 20px;
+}
+
+.ipoteka-promo .group {
+  margin: 0 auto;
+  position: relative;
+  left: 16px;
+}
+
+.ipoteka-promo .circle, .ipoteka-promo .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ipoteka-promo .text {
+  color: #868686;
+  font-size: 21px;
+  margin-top: 18px;
+}
+
+.ipoteka-promo .circle {
+  margin-left: 60px;
+  margin-right: 60px;
+  width: 250px;
+  height: 250px;
+  background-color: #e41a1b;
+  border-radius: 50%;
+  color: #fff;
+  padding-top: 24px;
+}
+
+.ipoteka-promo .circle .from {
+  font-family: 'Etelka';
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.ipoteka-promo .circle .percentage {
+  font-size: 66px;
+  font-family: 'Etelka';
+  font-weight: 300;
+  line-height: 1;
+  position: relative;
+  left: 18px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.ipoteka-promo .circle .percentage:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.23;
+}
+
+.ipoteka-promo .circle .percentage:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 310px;
+  margin-left: -173px;
+  height: 1px;
+  background-color: #ff0318;
+  opacity: 0.23;
+}
+
+.ipoteka-promo .circle .percentage span {
+  font-size: 45px;
+}
+
+.ipoteka-promo .circle p {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-top: 14px;
+}
+
+h1 {
+  font-size: 40px;
+  font-family: 'Etelka', Calibri, sans-serif;
+  font-weight: 400;
+}
+
+/* end ipoteka-promo */
+/* start ipoteka-features */
+.ipoteka-features {
+  text-align: center;
+  overflow: hidden;
+  padding: 40px 0 40px;
+  min-height: 565px;
+  background-color: #f4f4f4;
+}
+
+.ipoteka-features h3 {
+  margin-bottom: 30px;
+}
+
+.ipoteka-features .group {
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ipoteka-features .group .mega-image {
+  position: absolute;
+  left: 50%;
+  margin-left: -205px;
+}
+
+.ipoteka-features .flex {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.features-list {
+  text-align: left;
+  font-size: 17px;
+  color: #353535;
+  padding-top: 60px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.features-list:first-child {
+  padding-left: 50px;
+}
+
+.features-list li {
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 44px;
+}
+
+.features-list li .text {
+  padding-top: 4px;
+}
+
+.features-list li .icon {
+  position: absolute;
+  left: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.features-list li img {
+  display: block;
+}
+
+.features-list li:not(.first) img {
+  opacity: .4;
+}
+
+.features-list li.first {
+  margin-bottom: 70px;
+  padding-left: 64px;
+}
+
+.features-list li.first .icon {
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(229, 229, 229, 0.75);
+  border: 1px solid #cbcbcb;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.features-list li.first .icon img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 2px;
+  right: 0;
+  margin: auto;
+}
+
+.features-list li.first .text {
+  padding-top: 20px;
+  font-size: 21px;
+}
+
+/* end ipoteka-features */
+/* start ipoteka-steps */
+.ipoteka-steps {
+  text-align: center;
+  padding: 60px 0 70px;
+  overflow: hidden;
+}
+
+.ipoteka-steps h3 {
+  margin-bottom: 20px;
+}
+
+.ipoteka-steps .group {
+  display: inline-block;
+  position: relative;
+}
+
+.ipoteka-steps .group:after {
+  content: '';
+  background-color: #f4f4f4;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+@media only screen and (max-width: 1300px) {
+  .ipoteka-steps .group:after {
+    display: none;
+  }
+}
+
+.ipoteka-step {
+  display: inline-block;
+  width: 255px;
+  height: 255px;
+  border: 1px solid #d7d7d7;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #f4f4f4;
+  background-color: #fff;
+  margin-right: 100px;
+  padding-top: 40px;
+  font-size: 17px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.ipoteka-step:after {
+  content: attr(data-step);
+  right: -64px;
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 40px;
+  margin-top: -36px;
+  background: url(../img/arr-right-long.png) no-repeat bottom;
+  font-size: 13px;
+  color: #a4a4a4;
+}
+
+.ipoteka-step:last-child {
+  margin-right: 0;
+}
+
+.ipoteka-step:last-child:after, .ipoteka-step:last-child:before {
+  display: none;
+}
+
+.ipoteka-step .circle {
+  border: 1px solid #e41a1b;
+  width: 67px;
+  height: 67px;
+  margin: 0 auto 14px;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 50%;
+}
+
+.ipoteka-step .circle img {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.ipoteka-step h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.ipoteka-step p {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+/* end ipoteka-steps */
+.global-filter-nav a {
+  display: block;
+  padding: 10px 0;
+  color: #456081;
+  font-size: 16px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.global-filter-nav a.active, .global-filter-nav a:hover {
+  color: #000;
+}
+
+/* start genplan */
+.genplan {
+  position: relative;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.genplan .map-label {
+  left: 75px;
+}
+
+@media only screen and (max-width: 1700px) {
+  .genplan .map-label {
+    left: 30px;
+    top: 30px;
+  }
+}
+
+.genplan-mega-img {
+  display: block;
+  width: 100%;
+}
+
+.genplan .numbers, .genplan .buildings, .genplan .markers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.genplan .num {
+  z-index: 20;
+  background-color: rgba(25, 53, 91, 0.9);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+}
+
+@media only screen and (max-width: 1600px) {
+  .genplan .num {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+  }
+}
+
+.genplan .map-mark {
+  -webkit-transform: translate(-25%, -100%);
+          transform: translate(-25%, -100%);
+  position: absolute;
+}
+
+@media only screen and (max-width: 1800px) {
+  .genplan .map-mark {
+    -webkit-transform: translate(-25%, -100%) scale(0.8);
+            transform: translate(-25%, -100%) scale(0.8);
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .genplan .map-mark {
+    -webkit-transform: translate(-25%, -100%) scale(0.6);
+            transform: translate(-25%, -100%) scale(0.6);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .genplan .map-mark {
+    -webkit-transform: translate(-25%, -100%) scale(0.5);
+            transform: translate(-25%, -100%) scale(0.5);
+  }
+}
+
+.genplan .compass {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  width: 96px;
+  height: 97px;
+  background-image: url(../img/compass.png);
+}
+
+@media only screen and (max-width: 1700px) {
+  .genplan .compass {
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .genplan .compass {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.genplan .mask {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.genplan .mask img {
+  display: block;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.genplan .mask:hover img {
+  opacity: .3;
+}
+
+/* end genplan */
+.genplan-showcase {
+  background-color: #f9f9f9;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+}
+
+.genplan-showcase .group {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1340px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1700px) {
+  .genplan-showcase .group {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.genplan-showcase-item {
+  margin: 20px 0;
+}
+
+.genplan-showcase .map-mark {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 47px;
+}
+
+.genplan-showcase .map-mark img {
+  bottom: 0;
+}
+
+.genplan-showcase .text {
+  display: inline-block;
+  font-size: 17px;
+  color: #353535;
+}
+
+/* start tooltip-content */
+.tooltip-content {
+  width: 279px;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 18px 0 18px;
+  position: relative;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.tooltip-content .tooltip-close {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-image: url(../img/cross-red.svg);
+}
+
+.tooltip-content h5, .tooltip-content p, .tooltip-content .table-wrap {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.tooltip-content p {
+  font-size: 15px;
+  color: #353535;
+  opacity: .5;
+}
+
+.tooltip-content h5 {
+  font-size: 15px;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 400;
+  color: #000;
+}
+
+.tooltip-content h5 span {
+  color: #193863;
+}
+
+.tooltip-content .tooltip-close {
+  position: absolute;
+}
+
+.tooltip-content .table-wrap {
+  padding-top: 12px;
+  border-top: 1px solid #f1f1f1;
+  margin-top: 12px;
+}
+
+.tooltip-content .table-wrap table {
+  width: 100%;
+}
+
+.tooltip-content .table-wrap table td:first-child {
+  color: #193863;
+  height: 27px;
+}
+
+.tooltip-content .table-wrap table td:last-child {
+  text-align: right;
+}
+
+/* end tooltip-content */
+.tooltip-templates {
+  display: none;
 }
