@@ -508,6 +508,82 @@ $(window).load(function () {
       $('.js-tooltip').tooltipster('close');
     });
 
+    $('.js-toggle-infra').click(function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      $this.toggleClass('active');
+      var $list = $this.prev();
+      if ($this.hasClass('active')) {
+        // $hiddenDocs.animate({ height: height });
+        var totalHeight = 0;
+        $list.children().each(function (_, child) {
+          totalHeight += $(child).outerHeight();
+        });
+
+        $list.animate({ 'max-height': totalHeight });
+
+      } else {
+        var h = $list.data('height') || 100
+        $list.animate({ 'max-height': h });
+      }
+    });
+
+  var stroikaSlider, thumbsSlider;
+
+	$(".fancybox-stroika").fancybox({
+    closeBtn: false,
+    fitToView: false,
+    scrolling: 'visible',
+    padding: 0,
+    beforeShow: function() {
+      $(".fancybox-skin").css({
+        "backgroundColor": "transparent",
+        "border-radius": 0,
+        "box-shadow": 'none',
+      });
+
+      stroikaSlider = new Swiper('.fancybox-inner .stroika-slider', {
+        speed: 1000,
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction',
+        observe: true,
+        observeParents: true,
+        autoHeight: true,
+        observeParents: true,
+        autoHeight: true,
+        prevButton: '.fancybox-inner .arr.prev',
+        nextButton: '.fancybox-inner .arr.next',
+        onSlideChangeStart: function(swiper){
+          var activeIndex = swiper.activeIndex;
+          $(thumbsSlider.slides).removeClass('is-selected');
+          $(thumbsSlider.slides).eq(activeIndex).addClass('is-selected');
+          thumbsSlider.slideTo(activeIndex,500, false);
+        }
+      });
+
+      thumbsSlider = new Swiper('.fancybox-inner .thumbs-slider', {
+        speed: 1000,
+        observe: true,
+        observeParents: true,
+        autoHeight: true,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true
+      //   onClick: function (swiper, event){
+      //     var clicked = swiper.clickedIndex
+      //     $(swiper.slides).removeClass('is-selected');
+      //     $(swiper.clickedSlide).addClass('is-selected');
+      //     stroikaSlider.slideTo(clicked,500, false);
+      // }
+      });
+
+      $('.thumbs-slider').on('click', '.swiper-slide', function () {
+        var clicked = $(this).index();
+        $('.thumbs-slider .swiper-slide').removeClass('is-selected');
+        $(this).addClass('is-selected');
+        stroikaSlider.slideTo(clicked,500, false);
+      });
+    }
+  });
     // Яндекс карты
     ymaps.ready(init);
     var locationMap, infrastructureMap;
