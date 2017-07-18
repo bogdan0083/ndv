@@ -18,11 +18,12 @@ $color-red: #ff0318
 svg path
   +tr()
 
-// .icon-check
-//   width: 11px
-//   height: 10px
-//   background-image: url(../img/check.png)
+.vjs-poster
+  background-size: cover
 
+body
+  overflow-x: hidden
+  position: relative
 .cross-button
   position: absolute
   background-color: white
@@ -51,9 +52,10 @@ svg path
 
 /* start inner-nav */
 .inner-nav
-  margin-bottom: 30px
+  margin-bottom: 20px
   h3
     display: inline-block
+    margin-bottom: 10px
   .links
     display: inline-block
     font-size: 19px
@@ -70,7 +72,7 @@ svg path
       margin: 0 20px
       font-weight: 300
       +r($screen-sm)
-        margin: 4px
+        display: none
 /* end inner-nav */
 
 .dotted
@@ -121,21 +123,31 @@ svg path
   z-index: 20
   position: relative
   +calibri()
+  +r($screen-sm)
+    font-size: 15px
+    text-align: center
   td
     height: 34px
     vertical-align: top
+    text-align: left
   table
     margin-bottom: 30px
+    width: 100%
     div
       margin-bottom: 14px
   table td:first-child
     width: 150px
+    +r($screen-sm)
+      width: 40%
+    +r($screen-xs)
+      width: 30%
   &-text
     color: #707070
     line-height: 1.8
     margin-bottom: 20px
     font-size: 15px
     max-width: 600px
+    text-align: left
 
 /* end project-desc */
 
@@ -229,10 +241,14 @@ svg path
   box-shadow: 0 0 10px 0 rgba(black, 0.1)
   background-color: #fff
   z-index: 10
+  +r($screen-sm)
+    text-align: center
   .top
     position: relative
     margin-bottom: 10px
     max-width: 1230px
+    +r($screen-sm)
+      text-align: center
   .follow-price-link
     font-size: 16px
     font-weight: 300
@@ -245,12 +261,19 @@ svg path
       margin-left: 10px
       &:after
         background-image: url(../img/i79.png)
+    +r($screen-sm)
+      position: static
+      margin-top: 12px
+      display: inline-block
   .adv_search
     position: relative
     background: none
     border: 0
     padding-left: 25px
     margin-left: 30px
+    +r($screen-sm)
+      margin-left: 0
+      margin-top: 14px
   .adv_search:after
     content: ""
     position: absolute
@@ -313,6 +336,8 @@ svg path
     -o-transition: 0.35s
     transition: 0.35s
   .adv_search
+    +r($screen-sm)
+      display: inline-block
     &:hover
       &:before, &:after
         background-color: #ff051a
@@ -332,6 +357,10 @@ svg path
   width: 232px
   display: inline-block
   vertical-align: bottom
+  +r($screen-sm)
+    vertical-align: middle
+    margin-left: 10px
+    margin-right: 10px
   .ttl
     font: 300 16px/16px 'Calibri'
     color: #353535
@@ -463,6 +492,9 @@ svg path
   display: inline-block
   vertical-align: middle
   margin: 10px 0
+  +r($screen-sm)
+    vertical-align: middle
+    width: 210px
   .btn
     height: 35px
     line-height: 33px
@@ -474,6 +506,8 @@ svg path
 
 .filter-sort-buttons
   margin-top: 40px
+  +r($screen-sm)
+    text-align: center
   button
     background-color: transparent
     border: none
@@ -495,11 +529,23 @@ svg path
         color: #000
         &:after
           opacity: 0
+    +r($screen-sm)
+      width: 100%
+      display: block
+      font-size: 14px
+      padding-right: 0
+      padding-top: 8px
+      padding-bottom: 8px
+      &:after
+        display: none
 /* start projects-table */
 .projects-table
   max-width: 1400px
   padding-top: 30px
   padding-bottom: 40px
+  .table-responsive
+    +r($screen-sm)
+      border: 0
   table
     width: 100%
     font-size: 17px
@@ -521,6 +567,8 @@ svg path
       &:first-child
         .colored-gray
           font-size: 15px
+      +r($screen-sm)
+        padding-right: 30px
   span
     white-space: nowrap
   &-area
@@ -610,6 +658,8 @@ svg path
     padding-bottom: 30px
     border-bottom: 1px solid #e0e0e0
     text-align: center
+    +r($screen-sm)
+      text-align: center
   &-logo
     display: inline-block
     vertical-align: middle
@@ -618,6 +668,7 @@ svg path
     +r($screen-lg)
       padding-left: 20px
       padding-right: 20px
+
     &:after
       content: ''
       width: 1px
@@ -629,6 +680,12 @@ svg path
       top: 50%
     &:last-child:after
       display: none
+    +r($screen-sm)
+      width: 32%
+      padding-left: 10px
+      padding-right: 10px
+      &:after
+        display: none
   h3
     text-align: center
     margin-bottom: 24px
@@ -643,6 +700,10 @@ svg path
     margin: 20px 40px
     text-align: left
     +calibri()
+    +rmin($screen-sm)
+      width: 235px
+      margin-left: 20px
+      margin-right: 20px
     p
       font-size: 16px
       color: #353535
@@ -662,8 +723,10 @@ svg path
     text-align: center
     margin-top: 18px
     .btn
-      font-size: 19px
       line-height: 34px
+      line-height: 37px
+      .text
+        font-size: 19px
   &-calculate
     background-color: #fff
     padding-bottom: 0
@@ -714,6 +777,9 @@ svg path
   vertical-align: top
   margin: 20px 40px 20px
   +calibri()
+  +r($screen-sm)
+    margin-left: 20px
+    margin-right: 20px
   p
     font-size: 16px
     color: #353535
@@ -758,17 +824,18 @@ svg path
   display: flex
   +calibri()
   border-bottom: 1px solid #e5e5e5
+  +r(900px)
+    display: block
   .swiper-slide
     position: relative
   .desc-content, .project-preview-slider, .zastroy-info
     width: 50%
-    +r($screen-sm)
+    +r(900px)
       width: 100%
   .desc-content
-    padding: 50px 120px 20px 30px
+    padding: 50px 120px 60px 30px
     +r(1600px)
       padding-right: 30px
-
     h3
       padding-bottom: 24px
       margin-bottom: 30px
@@ -781,8 +848,9 @@ svg path
     float: right
     max-width: 600px
     width: 100%
+    +r(900px)
+      float: none
   .btn
-    margin-top: 30px
     svg path
       fill: $color-red
   .video-js
@@ -792,6 +860,8 @@ svg path
     width: 100%
     height: 100%
   &-right
+    .project-preview-slider
+      order: -1
     .desc-content
       padding-right: 30px
       padding-left: 110px
@@ -799,19 +869,23 @@ svg path
         padding-left: 30px
     .inner
       float: left
+      +r(900px)
+        float: none
   &-zastroy
     background-color: #f7f7f7
     padding-bottom: 30px
     .desc-content
       padding-left: 0
       padding-top: 50px
-      +rmin($screen-sm)
-        padding-left: 10px
+      +r(1000px)
+        padding-left: 30px
   &.no-border
     border: none
   .zastroy-info
     padding-left: 75px
     padding-top: 50px
+    +r($screen-sm)
+      padding: 30px
     .group
       margin-top: 20px
       position: relative
@@ -820,6 +894,13 @@ svg path
         left: 0
         top: 0
         position: absolute
+      +r($screen-sm)
+        padding-left: 0
+        position: static
+        img
+          position: static
+          margin-left: 40px
+          margin-bottom: 10px
 
 .zastroy-info-list
   max-width: 315px
@@ -851,7 +932,11 @@ svg path
   height: 100%
 
 .project-preview-slider
-  min-height: 440px
+  width: 100%
+  +r(900px)
+    .swiper-slide
+      height: 400px
+      width: 100%
 
 .lined
   position: relative
@@ -863,7 +948,8 @@ svg path
     left: 0
     position: absolute
     height: 1px
-    width: 300px
+    max-width: 300px
+    width: 100%
     background-color: #e7e7e7
 
 .slide-image-bg
@@ -934,6 +1020,8 @@ svg path
   right: auto
   top: auto
   bottom: 28px
+  +r($screen-lg)
+    left: 30%
 
 .project-preview-slider .swiper-button-prev:after
   content: ""
@@ -960,6 +1048,8 @@ svg path
   left: auto
   top: auto
   bottom: 28px
+  +r($screen-lg)
+    right: 30%
 
 .project-preview-slider .swiper-button-next:after
   content: ""
@@ -1028,6 +1118,9 @@ svg path
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    +r(1000px)
+      justify-content: space-around
+
 /* end why-project */
 
 .project-location
@@ -1036,7 +1129,9 @@ svg path
   display: flex
   overflow: hidden
   +calibri()
-  border-bottom: 1px solid #e5e5e5
+  border-top: 1px solid #e5e5e5
+  +r(900px)
+    display: block
   .btn
     margin-top: 30px
     .text
@@ -1048,22 +1143,27 @@ svg path
     position: relative
   .desc-content, &-map
     width: 50%
+    +r(900px)
+      width: 100%
   .desc-content
     padding-top: 50px
     padding-bottom: 50px
     padding-right: 120px
+    padding-left: 30px
   .inner
     float: right
     max-width: 600px
     width: 100%
+    +r(900px)
+      float: none
   .ring-list
     padding-top: 20px
     margin-top: 20px
     border-top: 1px solid #ededed
-
-
   &-map
     position: relative
+    +r(900px)
+      height: 400px
     #location-map, #infrastructure-map
       position: absolute
       left: 0
@@ -1153,7 +1253,8 @@ svg path
 
 /* start cnt_form */
 .cnt_form
-  text-align: center
+  padding-left: 15px
+  padding-right: 15px
   .btn
     padding-left: 36px
     padding-right: 30px
@@ -1162,6 +1263,7 @@ svg path
   &_ipoteka
     border-top: 0
     padding-top: 10px
+    text-align: center
     .cf_ttl
       p
         margin-bottom: 10px
@@ -1171,6 +1273,16 @@ svg path
       font-size: 19px
       padding-left: 20px
       padding-right: 20px
+  .cf_form
+    .rows
+      .cols
+        +r(900px)
+          width: 100%
+          margin: 5px 0
+    +r(900px)
+      text-align: center
+      .btn
+        margin-top: 30px
 /* end cnt_form */
 
 .f_menu .f_list
@@ -1288,6 +1400,8 @@ svg path
         transform: rotate(-180deg)
   .bottomline
     margin-top: 30px
+    +r(1000px)
+      text-align: center
 
 .js-hidden-docs
   overflow: hidden
@@ -1302,6 +1416,10 @@ svg path
   padding-bottom: 30px
   border-bottom: 1px solid #cccccc
   +calibri()
+  +r(1000px)
+    padding-left: 30px
+    padding-right: 30px
+    text-align: center
 
 
 .js-docs-rest
@@ -1334,12 +1452,24 @@ svg path
     display: flex
     flex-wrap: wrap
     width: 100%
+    +r(1000px)
+      justify-content: center
 
 .top-doc, .doc-item
   max-width: 1200px
   color: #9d9d9d
-  .doc-published, .date, .time
+  .doc-published, .date-block, .time
     margin-right: 26px
+    +r(1000px)
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-left: auto
+      margin-right: auto
+  .doc-published
+    +r(1000px)
+      width: 100%
+      white-space: nowrap
+      text-align: center
   .js-toggle-changes
     margin-left: -20px
     position: relative
@@ -1356,10 +1486,16 @@ svg path
 
 .doc-item
   padding: 10px 0
+  +r(1000px)
+    padding-top: 20px
+    padding-bottom: 20px
   &-wrap
     > .dotted
       line-height: 1
       margin-right: 30px
+      +r(1000px)
+        margin-right: auto
+        margin-left: auto
     display: -webkit-flex
     display: -ms-flex
     display: flex
@@ -1372,6 +1508,14 @@ svg path
   margin-right: 0
   flex-shrink: 1
   white-space: nowrap
+  +r(1000px)
+    width: 100%
+    flex-shrink: 0
+    margin-left: auto
+    margin-right: auto
+    padding-top: 10px
+    .dotted
+      margin-left: 0
 
 .date-block
   color: #9d9d9d
@@ -1679,15 +1823,26 @@ h1
 /* start genplan */
 .genplan
   position: relative
+  +r(1000px)
+    overflow: auto
+    &-inner
+      min-width: 1000px
+      position: relative
   .map-label
     left: 75px
     +r(1700px)
       left: 30px
       top: 30px
+    +r(1000px)
+      display: none
   +calibri()
   &-mega-img
     display: block
     width: 100%
+    +r(1000px)
+      height: 400px
+      width: auto
+      max-width: none
   .numbers, .buildings, .markers
     position: absolute
     left: 0
@@ -1695,7 +1850,7 @@ h1
     height: 100%
     width: 100%
   .num
-    z-index: 20
+    z-index: 50
     background-color: rgba(#19355b, 0.9)
     width: 24px
     height: 24px
@@ -1710,14 +1865,16 @@ h1
       width: 18px
       height: 18px
       line-height: 18px
+    +r(1000px)
+      font-size: 10px
   .map-mark
     transform: translate(-25%, -100%)
     position: absolute
     +r(1800px)
       transform: translate(-25%, -100%) scale(0.8)
     +r(1600px)
-      transform: translate(-25%, -100%) scale(0.6)
-    +r(1200px)
+      transform: translate(-25%, -100%) scale(0.8)
+    +r(1000px)
       transform: translate(-25%, -100%) scale(0.5)
   .compass
     position: absolute
@@ -1763,8 +1920,9 @@ h1
     +r(1700px)
       max-width: 600px
       margin: 0 auto
+      justify-content: center
   &-item
-    margin: 20px 0
+    margin: 20px 14px
   .map-mark
     display: inline-block
     vertical-align: middle
@@ -1828,10 +1986,23 @@ h1
   padding-bottom: 40px
   h3
     margin-bottom: 30px
+    +r(1000px)
+      text-align: center
+  .row
+    > div:nth-child(3n+1)
+      clear: left
+      +r(1200px)
+        clear: none
+    > div:nth-child(2n+1)
+      +r(1200px)
+        clear: left
 
 .infra-item
   font-size: 17px
   margin: 20px 0 30px
+  +r(1000px)
+    width: 290px
+    margin: 20px auto
   +calibri()
   .top, .infra-topic
     padding-left: 30px
@@ -1931,6 +2102,20 @@ h1
   padding-left: 150px
   padding-right: 150px
   position: relative
+  +r(1500px)
+    max-width: 1200px
+  +r(1300px)
+    max-width: 1000px
+    padding-left: 100px
+    padding-right: 100px
+  +r(1100px)
+    max-width: 800px
+  +r(900px)
+    max-width: 600px
+  +r(700px)
+    max-width: 290px
+    padding-left: 0
+    padding-right: 0
   .stroika-slider
     position: relative
   &-middle
@@ -1946,6 +2131,9 @@ h1
     padding-top: 30px
     padding-bottom: 30px
     +calibri()
+    +r($screen-sm)
+      padding-left: 10px
+      padding-right: 10px
     .top
       margin-bottom: 20px
     h3
@@ -1959,10 +2147,16 @@ h1
       background-image: url(../img/calendar-red.svg)
       padding-left: 30px
       margin-top: 6px
+      +r($screen-sm)
+        font-size: 14px
+        float: none
     p
       font-size: 17px
       color: #555
       line-height: 1.6
+      +r($screen-sm)
+        font-size: 15px
+        line-height: 1.5
   .swiper-pagination-fraction
     width: 62px
     height: 62px
@@ -1982,11 +2176,22 @@ h1
       margin-right: -2px
     .swiper-pagination-total
       color: #000
+    +r($screen-sm)
+      width: 40px
+      height: 40px
+      line-height: 40px
+      font-size: 13px
+      right: 20px
+      top: 20px
   &-bottom
     padding: 4px
     .swiper-slide
       padding: 4px
       width: 25%
+      +r(1000px)
+        width: 30%
+      +r(700px)
+        width: 40%
       div
         position: relative
         cursor: pointer
@@ -2021,6 +2226,8 @@ h1
   top: 30%
   background-clip: padding-box
   +tr()
+  +r($screen-sm)
+    display: none
   &:hover
     border-color: white
   &.swiper-button-disabled
